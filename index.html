@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assumptions of Physics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    </head>
+    <body style="padding-top: 50px">
+        <!-- Navigation bar -->
+        <!-- ============== -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand"><!--<img class="pull-left" src="favicon.png">-->&nbsp;<b>Assumptions of Physics</b></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://github.com/assumptionsofphysics"><i class="fa fa-github fa-fw"></i>&nbsp;GitHub</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Assumptions of Physics</h1>
+                <p>Putting physics first by deriving the mathematical frameworks from simple physical assumptions.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="text-align: center">Assumptions and consequences</h1>
+                    <p>From each physical assumption we can derive a set of physical and mathematical consequences.
+                        This allows us to better understand what Hamiltonian/Lagrangian Classical/Quantum systems are.</p>
+                    <div class="panel panel-default">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Assumption</th>
+                                    <th>Consequence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="right">I</td>
+                                    <td><b>Determinism and reversibility.</b> Given the present state of the system under study, all future and past state are uniquely identified.</td>
+                                    <td><b>Dynamical system.</b> State space is a Hausdorff, second countable topological space. Deterministic and reversible
+                                        evolution is a self-homeomorphism. Trajectories in state space are continuous.</td>
+                                </tr>
+                                <tr>
+                                    <td align="right">II.a</td>
+                                    <td><b>Classical assumption of infinitesimal reducibility.</b> The system under study is made of a
+                                        homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
+                                        is equivalent to giving the state of the each part. The evolution of each part is deterministic
+                                        and reversible.</td>
+                                    <td><b>Classical Hamiltonian particle mechanics.</b> The state space of the homogeneous material is isomorphic to the set of 
+                                        Lebesgue integrable continuous real functions that describe the distribution of the material of the states of the infinitesimal
+                                        parts. The state space of the infinitesimal parts (i.e. phase space) is the cotangent bundle of the manifold that determines the system of units.
+                                        On phase space the canonical two-form is a metric that returns the number of possibilities for each degree of freedom.
+                                        Each infinitesimal part evolves according to Hamilton's equations.</td>
+                                </tr>
+                                <tr>
+                                    <td align="right">II.b</td>
+                                    <td><b>Quantum assumption of irreducibility.</b>The system under study is made of a
+                                        homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
+                                        does not give the state of the each part. The evolution of each part is non-deterministic
+                                        and non-reversible as it is not described by the state of the whole system.</td>
+                                    <td><b>Quantum Hamiltonian particle mechanics.</b> The state space of the homogeneous material is isomorphic to the set of 
+                                        Lebesgue square-integrable continuous complex functions that describe the distribution of material in terms of two
+                                        independent stochastic variables. The whole system evolves according to the Schroedinger equation.</td>
+                                </tr>
+                                <tr>
+                                    <td align="right">III</td>
+                                    <td><b>Kinematic equivalence.</b> For the system under study, the kinematics (i.e. trajectories in physical space-time) 
+                                        and the dynamics (i.e. trajectories in state space) are equivalent. Giving a set of initial conditions, such as position
+                                        and velocity, is equivalent to giving the initial state.</td>
+                                    <td><b>Lagrangian particle mechanics with scalar/vector potential forces.</b> The Hamiltonian is limited to the class of
+                                        massive particles moving under forces described by scalar or vector potentials. We can define a Legendre transformation
+                                        for the Hamiltonian.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h1 class="panel-title">Videos</h1></div>
+                        <div class="panel-body">
+                            <div style="width:100%;height:0;padding-bottom:51%;position:relative">
+                                <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDd9Qj4VxNL8dijiWZCAzanl" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <br>
+                            <p>A series of videos introducing the relationship between Hamiltonian mechanics and determinism/reversibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h1 class="panel-title">Papers</h1></div>
+                        <div class="panel-body">
+                            <p><b><a href="http://arxiv.org/abs/1503.04469">From physical principles to relativistic classical Hamiltonian and Lagrangian particle mechanics</a></b>.
+                                This preliminary work shows the connection between the basic assumptions and classical mechanics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h1 class="panel-title">Work in progress</h1></div>
+                        <div class="panel-body">
+                            <p><b><a href="draft.pdf">Draft for the full derivation</a></b>: the full formal derivation from the discussion the basic assumptions to
+                                the details of the mathematical frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
