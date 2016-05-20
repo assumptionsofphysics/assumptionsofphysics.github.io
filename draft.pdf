@@ -1,0 +1,586 @@
+\documentclass[aps,pra,10pt,twocolumn,floatfix,nofootinbib]{revtex4-1}
+
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{dutchcal}
+
+\newtheorem{assump}{Assumption}
+\renewcommand*{\theassump}{\Roman{assump}}
+\newtheorem{thrm}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[section]
+
+\newenvironment{rationale}{\emph{Rationale}.}{\qed}
+\newenvironment{justification}{\emph{Justification}.}{\qed}
+\renewenvironment{proof}{\emph{Proof}.}{\qed}
+
+\begin{document}
+
+\title{DRAFT \\ From physical principles to classical and quantum \\ Hamiltonian and Lagrangian particle mechanics}
+\author{Gabriele Carcassi}
+\affiliation{University of Michigan, Ann Arbor, MI 48109}
+\email{carcassi@umich.edu}
+\date{\today}
+
+\begin{abstract}
+\textbf{This manuscript is a work in progress.} Ideas are constantly reshaped to find more precise and elegant arguments. It is provided as is to stimulate discussion.
+
+The aim of this work is to show that particle mechanics, both classical and quantum, Hamiltonian and Lagrangian, can be derived from few simple physical assumptions.
+
+Assuming deterministic and reversible time evolution will give us a dynamical system, whose set of states form a topological space and whose law of evolution is a self-homeomorphism. Assuming the system is infinitesimally reducible, giving the state and the dynamics of the whole system is equivalent to giving the state and the dynamics of its infinitesimal parts, will give us a classical Hamiltonian system. Assuming the system is irreducible, giving the state and the dynamics of the whole system tells us nothing about the state and the dynamics of its substructure, will give us a quantum Hamiltonian system. Assuming kinematic equivalence, studying trajectories is equivalent to studying state evolution, will give us Lagrangian mechanics together and limit the form of the Hamiltonian/Lagrangian to the one with scalar and vector potential forces.
+
+We work strives as much as possible to be philosophically consistent, physically meaningful and mathematically precise.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+TODO: Point out most modern physics starts by assuming some mathematical framework. Pros and cons of that.
+
+TODO: High level view of the derivation
+
+%While some branches of fundamental physics (e.g. Newtonian mechanics and special relativity) are founded on physical laws or principles others (e.g. Lagrangian/Hamiltonian/Quantum mechanics) start by postulating mathematical frameworks or relationships. The latter approach presents a significant drawback: the mathematical structure is not enough to define the physical system it describes. We are left asking: under what physical conditions a particular system is described by Lagrangian (or Quantum) mechanics? Naturally one \emph{can} define a Lagrangian system (or a Quantum system) as one that obeys those rules, but that begs the question. Another issue is that each element of the mathematical structure may or may not correspond to some physical concept. Suppose the earning (or losses) of two companies are governed by Hamiltonian's equations, which variable is on the cotangent space of the other? In other words: if we want to fully appreciate what the fundamental theories of physics are describing, what each mathematical concept corresponds to in the physical world, we need to start by characterizing the physical system we are describing in a precise enough way that it can be encoded in mathematical language. Naturally, the physical insight we gain will be relevant for only that type of system (i.e. other different systems may \emph{happen} to use the same equations), but what we'll see is that the assumptions we make are minimal and can apply to a variety of systems, especially the ones that are considered fundamental. It is indeed surprising how so much can be derived by imposing so little.
+
+
+%This work aims to re-organize the known elements and equations in a more consistent and comprehensive way, leading to better insight on why the fundamental concepts and laws are what they are. We will start with physical assumptions, that clarify the models we impose on the physical world, and give arguments on when those assumptions can be considered valid. We will justify our mathematical definitions, based on the formal properties of the objects of our discussion. And will, as a consequence, re-derive known results and theories. We will strive to do this in a way that is mathematically meaningful, philosophically consistent and mathematically precise.
+
+
+%We'll use concepts from different disciplines, such as set theory, differential geometry, relativity, Hamiltonian and Lagrangian mechanics, and we'll find interesting connections among them. We'll keep names and notation as consistent as possible to current use across the different disciplines. This may sometimes lead to some non sequitur as it will not be immediately clear why the new definitions are equivalent to the standard ones. These are typically resolved by subsequent derivation of the expected properties.
+
+%No mathematical breakthrough should be expected: the goal, after all, is to derive the \emph{known} framework from a set of \emph{simple} definitions in the most \emph{obvious} way possible. No proof is longer than a couple of paragraphs, so the word \emph{theorem} is avoided in favor of \emph{proposition} and \emph{corollary}. The novel, and surprising, result is how so much can be derived from so little.
+
+\section{Organization and style}
+
+The work is organized into:
+\begin{description}
+  \item[Assumptions] these characterize the physical system we are studying and constitute the premise of our discussion. A \textbf{rationale} follows each assumption, which uses physical and sometimes philosophical arguments to motivate why (or why not) such an assumption makes sense (in a particular case).
+  \item[Propositions] these characterize the mathematical properties of the physical concepts we are studying. A \textbf{justification} follows each proposition to show why such characterization follows from the physical properties of the system. While the style of a justification is formal, it is not a pure mathematical proof as it necessarily has to mix physical and mathematical arguments.
+  
+  Before or after each proposition there is a \textbf{discussion} that conceptually explains the motivation and the result in a less formal, more approachable way.
+  
+  \item[Theorems] these are pure mathematical statements that are used to simplify propositions. A mathematical \textbf{proof} follows each proposition. No mathematical breakthrough should be expected as we mostly use well known results from different fields. Theorems are grouped in the appendix.
+\end{description}
+This should allow readers with different focus and background to concentrate on the parts that are more keen on.
+
+\section{On studying a physical system}
+
+% Status: Conceptual work done. Text ready. Incorporated Dave, Isaac and Christine feedback
+
+Our first task is to develop a conceptual model that applies to all realms of physics we'll be considering: classical, statistical and, later, quantum mechanics. We will take the standard picture of system plus environment and extend it to differentiate between the state of the system (i.e. the aspects under study) from the unstated part of the system (i.e. the aspects missing from our description).
+
+We will assume that the state evolves according to a deterministic and reversible law (i.e. for each present state there is one and only one future state). While the unstated part does not influence the state evolution, we'll see how it constrains what states are available and what type of description can or cannot be given to the system.
+
+\subsection{States and their evolution}
+
+We start by fixing a \emph{physical system}, meaning something we can interact with and perform measurements on (e.g. a planet, a fluid, ...). We call \emph{environment} everything else. We set what particular aspect we want to study (e.g. the motion around a star, the flow in a pipe, ...). We call \emph{state} a physically distinguishable configuration of the aspect under study at a particular time (e.g. position/momentum of center of mass, velocity field, ...). Since the state does not, in general, exhaust the description of the system, a part remains \emph{unstated}, and as such we'll call it, for lack of a better word (e.g. the chemical composition, the motion of each of its molecules, ...). Note that the environment plays an essential role here as it's what allows us to define two states as physically distinguishable: we can find an external process (i.e. part of the environment) whose outcome changes depending on the different state. As such processes are what we can use to perform measurements, we consider the experimental apparatus (and us performing measurements) independent of the system, part of the environment.\footnote{This is true even in the case of general relativity, where we can imagine multiple researchers on small spaceships collecting data without greatly influencing the motion of stars and planets. The case where the physical system is the whole universe and there is no environment presents practical problems  and conceptual challenges that the current physical theories do not seem to be equipped to address, and therefore will be absent from our discussion. For example, what physical device can we use to store and process the state of the whole universe to make predictions and compare? How do we define physically distinguishable? Do the physical laws determine which measurements we are going to make and does that limit what is actually distinguishable?}
+ 
+In this context, we call the evolution of the system \emph{deterministic} if the state at a given time uniquely identifies states at future times, and \emph{reversible} if it uniquely identifies states at past times. While this is a common enough definition, we need to be clear how this applies to the unstated part. Note that the concept of determinism outlined here is context dependent because the state itself represents only the part of the system that we choose to (or can) describe. In this sense, the unstated part is \emph{always} non-deterministic (and non-reversible) in the sense that the state of the system does not determine its evolution. For example, suppose we define the state as position and momentum of the center of mass of a cannonball. Suppose that the evolution is deterministic on that state. What does it tell us about the cannonball temperature, or about the motion of each of its atoms? Nothing. In this sense, the unstated part is non-deterministic and non-reversible. Could we extend the state and the laws of evolution to account for temperature? Yes, but that would be a different evolution defined on a different state. Does it mean the unstated part is always evolving chaotically? Not at all. The temperature may remain constant throughout the motion of the cannonball. Yet we wouldn't know, since we are not studying it: the evolution is deterministic and/or reversible only as far as the state is concerned. With this in mind, we will restrict ourselves to the cases where the following is valid:
+
+\begin{assump}[Determinism and reversibility]\label{detrevass}
+The state of the physical system under study undergoes deterministic and reversible evolution.
+\end{assump}
+
+\begin{rationale}
+As it is an assumption, we first need to discuss when it is valid. More specifically, we need to understand that the non-deterministic/non-reversible evolution of the unstated part plays as much of a fundamental role as the deterministic/reversible evolution of the state. In fact, the non-deterministic part contributes in determining what states are available to the system.
+
+Suppose we study the motion of a cannonball; its state under gravitational and inertial forces will be properly described by the position and momentum of the center of mass. While light and air molecules may scatter off its surface unpredictably, its trajectory is not greatly affected as it is a massive rigid body. Suppose we study the motion of a small particle, small enough that the random scattering does influence the trajectory and it undergoes Brownian motion: its state will be a probability distribution for position and momentum of the center of mass. Gravitational and inertial forces have not changed, yet the states have changed from ``pure" to statistical ensembles. In other words, the set of states must be closed under both the deterministic evolution of the state and the non-deterministic evolution of the unstated part. If the Brownian motion is not negligible, we do not end in a well defined position/momentum pair, even if we start from one.
+
+A similar more drastic effect: consider a book and its motion under gravitation and inertial forces, its state being the position and momentum of the center of mass. As we increase the temperature of the air around the book, its motion remains unaffected until, at some point, the book burns. Clearly, the non-deterministic evolution has pushed one of the states outside the set of states, to the point that the system is no longer recognizable.
+
+As we have hinted, sometimes the state is identified by a distribution (either statistical or actual). Even in this case, the state can be deterministic and reversible. That is, given the distribution at one time we can determine the distribution at future times. The shape and the parameters of the distribution can be deterministic, even if the evolution of the parts are not as they fall within the unstated part. Note that we \emph{cannot} assume trajectories and states are always defined for the unstated part, as this includes also the unknown unknowns. We will return to this aspect when discussing quantum systems.
+
+It should also be clear that what constitutes state and unstated part does not depend only on the system under study, but also on the processes we are considering. In some circumstances, the chemical composition of a fluid may be relevant, in others it may not. The choices of environment, state and unstated part are not independent from each other. By choosing a particular set of states, we are not only saying that the state evolution is well approximated by a deterministic/reversible map from initial to final state, but we are also saying that the non-deterministic/non-reversible evolution of the unstated part does not change the nature of the system, and processes that do not satisfy these conditions are not under consideration.
+
+As with all assumptions, we should also ask whether it is necessary. That is, could we define a set of physically distinguishable states and yet have no deterministic and reversible processes defined on them? The claim is that this assumption is indeed needed, as without it we cannot properly define states or write useful physics laws. We can provide different arguments that point in the same direction.
+
+First, to be able to identify the system, we must be able to tell it apart from anything else. Intuitively, we can distinguish between two chairs because we can move the first to another room and sit on it without having touched the second. We can manipulate the state of the first system without affecting the second, and vice-versa. So, to identify a system it has to be sufficiently isolated from everything else. This means that the system future and past states are with good approximation determined only by its own state: the state undergoes deterministic and reversible evolution.
+
+Second, the aim of physics is to write laws that can be used to make predictions that can be validated experimentally. If I drop an anvil from a tower, it will accelerate at $9.81$~m/s$^2$; if I want the anvil to reach the ground at $x$~m/s I have to drop it from $y$~m. To the extent that we want to make predictions in time, we need to have a correspondence between initial and final states.
+
+Third, operationally we must reliably prepare and measure states. That is, we need a process for which the input settings of our preparing device determine the outgoing state of the system; and a process for which the incoming state of the system can be reconstructed by the output of the measuring device. That is, our system must, at least in some cases, be able to participate in a deterministic and reversible process with the preparing and measuring device. Without it we wouldn't be able to calibrate our experimental apparatus.
+
+Fourth, to be able to ascribe a property to a system we need to claim that, at least for a finite interval of time, the system either held or did not hold such property. That is, there is a deterministic and reversible process for that finite period of time for such property.
+
+This link between state definition and deterministic processes should not be too surprising as the state, in the context of thermodynamics and systems theory, is often defined as \emph{the set of variables needed to determine the future evolution of the system}. As we saw before, this applies also to statistical processes: the distribution (the ensemble) as a whole can indeed be calculated, measured and prepared. We can also describe the evolution of each element of the distribution provided that: we have a way to isolate it and study it under deterministic and reversible motion (so that we can define microstates); the non-deterministic motion does not alter the system (the set of microstates is preserved by the evolution).
+
+As with many assumptions, we should stress that it's an idealization: it can never be completely achieved in practice. A system can be prepared or measured up to a certain level of precision. Perfect determinism and isolation of a system is impossible both practically (e.g. black-body radiation, gravity, ...) and conceptually (e.g. if the system is perfectly isolated, we cannot interact with it: how can it be physically distinguished?). It's a simplifying assumption that can only be taken if the environment and the internal dynamics of the system interact in such a way that they little affect and are little affected by the aspect we are studying. As we saw before, for example, assuming that the state consists of the position and momentum of the center of mass requires assuming that the Brownian motion of the body is negligible.
+
+Yet, this is a fundamental assumption in the sense that it is needed. If a particular set of states does not satisfy deterministic and reversible evolution under certain conditions, what we do is to keep at it until we find a set that does. That is, we work to restore the assumption. Finding new sets of states with new laws of evolution is, in fact, what leads to new physics. We will therefore call \emph{fundamental model of physics} the triad of state, unstated part and environment, with the assumption that the state may undergo deterministic and reversible evolution, and the unstated part undergoes non-deterministic non-reversible evolution that does not alter the set of states.
+\end{rationale}
+
+\section{States and state space}
+
+% Status: First subsection. Conceptual work done. Text ready. Incorporated Christine feedback
+% Second subsection. Conceptual work almost done. Need to finish the text
+
+%Open questions: smoothness (obviously required to define densities later, is it required in general? What does it means that physical processes/measurements don't give a smooth topology?)
+
+We now proceed to characterize states and physical distinguishability in more precise terms so that we can capture their description mathematically. What we'll see is that the outcomes of all physical processes that can be used to gain information about the system, that can be used to perform a measurement, induce a topology on the set of states that is Hausdorff and second countable. That is, physical distinguishability is mathematically captured by topological distinguishability. Deterministic and reversible evolution will then preserve the topology, and they will be mathematically captured by self-homeomorphisms.
+
+We'll focus on state spaces that can be described by a set of independent state variables, either discrete or continuous, and see what can be said in general on the evolution of state variables.
+
+\subsection{States and topology}
+
+As the term "measurement" has become particularly loaded, let's first characterize what we mean by physical distinguishability in our context.
+
+Consider the motion of a cannonball under inertial and gravitational forces. Light will scatter off of it; as it lands the ground will be deformed and the impact will make the temperature slightly rise. Those external physical processes, which happen no matter what we do, can be used to distinguish the motion of the cannonball as their outcomes are correlated. Therefore we can learn the position by looking at the reflected light, and learn the final kinetic energy by looking at the deformation of the ground. In principle, any external process that has a correlation with the states under study can be used to perform a measurement, and any measurement is based on such a process. That is, for us a measurement is simply a physical process that we can use to distinguish states. Setting up an experiment means choosing a particular process with desired outcomes and forcing the system under study to interact with it one or more times. After that, there is no special role played by the "observer" in making outcomes come about.
+
+This external process may be quite complicated: when a particle enters a calorimeter, a shower of particles is produced, photons are captured and are directed to photomultipliers, a current is read out, the current is then digitized, and so on. Some processes interfere with the system, they affect its dynamics, and others are destructive, the system no longer can be described by the original set of states. A tracking chamber is an example of the first (the magnetic field curves the motion of a charged particle); burning a substance to determine its caloric content is an example of the latter. Therefore intimate knowledge of the process is always needed to ensure that one makes the proper link between outcomes and the \emph{original} states, and properly accounts for systematic uncertainties that would skew that link.
+
+Repeatability is also fundamental. First, to make sure the process is indeed correlated to the states. Second, because "a single take does not a measurement make". One has to gather enough statistics. Note that the number of takes influences the outcomes: with greater statistics the precision and number of distinguishable cases increases. Therefore the processes, as we defined them, may require repeated interactions with similarly prepared states. They may even be a combination of different kinds of interactions that, taken all together, create a set of distinguishable outcomes. But in the end, however complicated it is, the conceptual model remains the same: each process has a set of possible outcomes, and each possible outcome will be associated with a set of states consistent with that outcome. For example, if the cannonball deformed the ground by this amount then its kinetic energy at impact was within this range; if the electron follows a certain path, then its state is among the ones that have spin $+1/2$.
+
+However precise our measurements are, we can only gather a finite amount of statistics and each outcome is expressed by a finite set of digits; therefore, the set of outcomes is countable.\footnote{The information provided by the process as measured by Shannon's entropy is finite.} Note that different outcomes for the same process can overlap. For example, $4.12 \pm 0.05$ cm and $4.13 \pm 0.05$ cm are both legitimate possible outputs of the same measurement device. But since all states must be distinguishable, given two arbitrary states there must be a process precise enough to tell them apart. That is, the potential outcomes associated with the two states do not overlap. For example, $4.12 \pm 0.0005$ cm and $4.13 \pm 0.0005$ cm do not overlap anymore.
+
+We can also conceptually combine two different processes into a single one. That is, having a way to measure quantity $x$ and a way to measure quantity $y$ gives us a way to measure the combination $(x,y)$. For ensembles, if we can measure the marginal distribution $\rho_x(x)$ and the marginal distribution $\rho_y(y)$, we know the joint distribution $\rho(x,y)$ has to be compatible with both. Note, though, that this does not provide a way to fully measure $\rho(x,y)$ as we know nothing about the correlation between the two variables.\footnote{The quantum case is similar: we measure marginal distributions and rule out states that are incompatible with them.} Formally, the states compatible with the outcomes of the combined process will be the intersections of the states compatible with each pair of outcomes of the original processes.
+
+We can also coarsen a single process. That is, having a way to measure $(x,y)$ gives us a way to measure $x$ alone (or any $f(x,y)$). Formally, the outcomes of the coarsened process are given by performing the union of some outcomes of the original process.
+
+This model maps very naturally to a topological space. The states are elements of a set and the physical outcomes provide a topology on that set. The fact that two elements of the set can be distinguished requires the space to be Hausdorff. The fact that the potential outcomes of a process are countable requires the space to be second countable.
+
+\begin{prop}\label{statedef}
+The state space $\mathcal{S}$ of a physical system is a Hausdorff and second countable topological space.
+\end{prop}
+
+\begin{justification}
+We claim $\mathcal{S}$ is a set. Each state is well defined as it is physically distinguishable. The collection of all possible states forms a set.
+
+We claim $\mathcal{S}$ has a topology $\mathsf{T}$. Consider the set of all possible physical outcomes associated with all physical processes. Each possible outcome is associated with a set of states that are compatible with that outcome. Let $\mathsf{T}$ be the set of all sets associated with all physical outcomes. $\varnothing \in \mathsf{T}$ and is associated with impossible outcomes. $\mathcal{S} \in \mathsf{T}$ and is associated with unavoidable outcomes. Let $V_1, V_2 \in \mathsf{T}$. Then, by definition, there exists a process $P_1$ that admits $V_1$ as an outcome and a process $P_2$ that admits $V_2$ as an outcome. Consider the process $P$ that combines the outcomes of $P_1$ and $P_2$. This always exists physically as we can prepare the same state multiple times and let it interact with each process separately. $P$ will have a possible outcome $V$ corresponding to the case where $P_1$ gave outcome $V_1$ and $P_2$ gave outcome $V_2$. The states compatible with $V$ must be in both $V_1$ and $V_2$, that is $V = V_1 \cap V_2$. Therefore $\mathsf{T}$ is closed under intersection. Let $V_1, V_2 \in \mathsf{T}$. If they are physically distinguishable, then there exists a physical process $P$ that admits both as outcomes. Given $P$, we can always construct the process $P_0$ that combines $V_1, V_2$ into a single outcome $V$ by "forgetting" which of the two was given. The states compatible with $V$ must be in either $V_1$ or $V_2$, that is $V = V_1 \cup V_2$. Therefore $\mathsf{T}$ is closed under union. $\mathsf{T}$ is a topology by definition.
+
+We claim that $\mathcal{S}$ is Hausdorff. Let $\mathcal{s_1}, \mathcal{s_2} \in \mathcal{S}$. As states are physically distinguishable, there must exist a physical process with two outcomes $V_1, V_2 \in \mathsf{T}$ for which $s_1 \in V_1, s_2 \in V_2, V_1 \cap V_2 = \varnothing$. $\mathcal{S}$ is Hausdorff by definition.
+
+We claim that $\mathcal{S}$ is second countable. Consider the set of outcomes of a process. As each is identified by a finite number of digits, the set of outcomes is countable. This remains true when combining processes: the number of processes we can combine is finite as is the number of times we can prepare the same state and the set of intersections obtained from the countable outcomes of a finite number of processes is still countable. Consider a basis for the topology. Suppose it is of cardinality greater than countable. Then the basis would be able to distinguish among states in a way that no physical process ever could. The topology could distinguish among states that are not physically distinguishable. The basis for the topology cannot be of cardinality greater than countable. By contradiction, $\mathcal{S}$ must be second countable.
+
+\end{justification}
+
+Note that the arguments that led to the topological space had nothing to do with states per se, just that they are physically distinguishable. States, though, are not the only objects with that property. In fact: any element of a set of physical objects (e.g. forces, physical properties such as mass or charge, time) needs to be physically distinguishable to be well defined. We can generalize the above justification: any set of physically distinguishable elements is a topological space.
+
+\begin{prop}\label{topologically_distinguishable}
+	Any set $\mathcal{S}$ of physically distinguishable elements is a Hausdorff and second countable topological space.
+\end{prop}
+
+\begin{justification}
+	Same justification as in \ref{statedef} with "state" replaced by "element" of the set $\mathcal{S}$.
+\end{justification}
+
+With our state space defined, deterministic and reversible evolution corresponds to a bijective map between initial and final states. Moreover, a physical process that can distinguish final states is also a physical process that can distinguish initial states. That is: the topology is mapped and preserved by the deterministic and reversible evolution (i.e. initial and final states are equally distinguishable). The evolution is then a self-homeomorphism on the state space.
+
+\begin{prop}\label{detrevmap}
+A deterministic and reversible evolution map is a self-homeomorphism on the state space $\mathcal{T}_{\Delta t}:\mathcal{S} \rightarrow \mathcal{S}$.
+\end{prop}
+
+\begin{justification}
+We claim that $\mathcal{T}_{\Delta t}$ exists. The system is deterministic: given an initial state $\mathcal{s} \in \mathcal{S}$ there exists a well defined final state $\mathcal{T}_{\Delta t}(\mathcal{s})=\hat{\mathcal{s}} \in \mathcal{S}$.
+
+We claim $\mathcal{T}_{\Delta t}$ is continuous. Let $U \subseteq \mathcal{S}$ represent an outcome of a process $P$ on the final states. $U$ is an open set in the (final) state space topology by definition. Consider the process $P_0$ that evolves the initial states and then distinguishes the final state with $P$. $P_0$ is a process that distinguishes initial states. The set of initial states compatible with $U$ are $\mathcal{T}_{\Delta t}^{-1}(U)$. $\mathcal{T}_{\Delta t}^{-1}(U)$ is an open set in the (initial) state space topology by definition. $\mathcal{T}_{\Delta t}$ is a continuous map.
+
+We claim that $\mathcal{T}_{\Delta t}$ is a bijection. The system is reversible: there exists a map $\mathcal{T}_{-\Delta t}:\mathcal{S} \rightarrow \mathcal{S}$ that returns the initial state given the final state. $\mathcal{T}_{-\Delta t} \circ \mathcal{T}_{\Delta t} = \mathcal{T}_{\Delta t} \circ \mathcal{T}_{-\Delta t} = id$ as mapping forward and then backward or backwards and then forward must return the original element. $\mathcal{T}_{\Delta t}$ admits $\mathcal{T}_{-\Delta t}$ as an inverse. $\mathcal{T}_{\Delta t}$ is a bijection.
+
+We claim that $\mathcal{T}_{\Delta t}$ is a self-homeomorphism as it is a continuous bijection.
+\end{justification}
+
+Again, we note that the arguments that lead to continuity had nothing to do with states per se, just that the relationship is between physically distinguishable objects. We can then generalize the above justification.
+
+\begin{prop}\label{continuous_map}
+	A map $f:\mathcal{S_1} \rightarrow \mathcal{S_2}$ between two sets of physically distinguishable elements $\mathcal{S_1}$ and $\mathcal{S_2}$ is a continuous map.
+\end{prop}
+
+\begin{justification}
+	Same justification for continuity as in \ref{detrevmap} with "initial states" and "final states" replaced by "elements" of $\mathcal{S_1}$ and $\mathcal{S_2}$ respectively.
+\end{justification}
+
+The generality of this result explains why in physics one always assumes functions to be well behaved. As the result was derived from our notion of physical distinguishability, this is not a matter of practical convenience. Suppose we were able to prepare a force field that was zero everywhere in space except at a single point. This gives us a way to tag a specific point. But it also allows us to create an outcome compatible with only a single point. A finite precision measurement of the force provides us infinite precision of space, which we ruled out.\footnote{This assumes that we are able to position the probe perfectly, which we could do if we were able to manipulate forces at that precision.} This is what the math is telling us, that if we said before that outcomes can't distinguish isolated points (i.e. the topology is second countable) then neither can maps. It is physical consistency that limits us to continuous functions.
+
+While functions with few discontinuities are useful and used in physics and engineering, they are employed for idealized cases  (e.g.~a signal change is fast enough, a charge distribution is small enough) that are often treated as a special case (e.g.~propagation in material discontinuities). While this may be obvious and intuitive to the physicist, it may be troubling to the mathematician as the proper use of many mathematical techniques requires the inclusion of discontinuous functions. This is less of a problem than it would seem at first. Once we made sure that the objects and their relationships are physically meaningful, we can extend our mathematical spaces for the purpose of math computations. Our physically meaningful continuous function can be expanded into a sum of discontinuous functions. One just has to be mindful of the extension and be wary that mathematical results that depend on such extension may or may not be physically meaningful.
+
+\subsection{Manifolds and labeling states}
+
+To identify and name states one uses a set of quantities, typically numbers. For example, the orbital of an electron in a hydrogen atom is identified by the quantum numbers $n$, $l$, $m$ and $s$. We call each of these quantities \emph{state variables}. We call a \emph{possibility} a possible value that can be taken by a state variable. We call a state variable \emph{discrete} or \emph{continuous} if the possibilities are integer or real numbers respectively. From now on, we are going to consider state spaces whose states can be identified, at least within a region, by a finite set of discrete and continuous state variables (i.e. the state space is locally isomorphic to $\bigcup\limits_{1 \leq i \leq n} \mathbbm{R}^{m_i}$).\footnote{TODO: Is there a more physically meaningful requirement? Could we have a set of states that are not locally described by a set of quantities?}
+
+We purposely use the term state variables instead of coordinates (even though that's what they are mathematically) as it would create confusion with space-time coordinates. We also avoid the term observable or measurable, as not all state variables may be directly physically tangible (e.g. conjugate momentum in a gauge theory). The only requirements for state variables is that they identify states. This means the possible values for state variables are physically distinguishable and are defined at equal time (since states are defined and mapped at a particular time). \footnote{This is the main reason that a quantity like velocity is not a suitable state variable, as it is  defined over an interval of time. Therefore velocity is always physically well defined but is not a state variable in general, while conjugate momentum is always a state variable but is not physically well defined by itself (it requires the vector potential to be specified as well). As we'll see later, if there exists a one to one map between velocity and conjugate momentum they can both be physically well defined state variables.}
+
+\begin{prop}\label{state_variable}
+	A \emph{state variable} is a continuous map $q : U \rightarrow \mathbbm{L}$ where $U \subseteq \mathcal{S}$ and $\mathbbm{L}$ is the space for the possible values. If $\mathbbm{L}\cong \mathbbm{Z}$ the variable is said \emph{discrete}. If $\mathbbm{L}\cong \mathbbm{R}$ the variable is said \emph{continuous}.
+\end{prop}
+
+\begin{justification}
+	We claim $\mathbbm{L}$ is a topological space. $\mathbbm{L}$ is a set of physically distinguishable possibilities. $\mathbbm{L}$ is a topological space because of \ref{topologically_distinguishable}.
+	
+	We claim $q$ is a continuous map. $q$ is a map between two sets of physically distinguishable elements. $q$ is continuous because of \ref{continuous_map}.
+\end{justification}
+
+When combining multiple state variables, it is important to understand how they relate to each other. Consider the orbital of an electron in a hydrogen atom, which is identified by the quantum numbers $n$, $l$, $m$ and $s$. For each combination of $n$, $l$ and $m$, the spin $s$ can have two values. The choice of spin is independent from the rest. The choice of $l$, though, depends on the choice of $n$: for $n=1$ only $l=s$ is available; for $n=2$ we can choose $l=s$ or $l=p$. The choices are not independent. That is: two or more variables are independent if there always exists a state for any possible combination, if the total number of states is the cartesian product of the possibilities of each variable. We call \emph{state vector} a collection of independent state variables that fully identify a state.
+
+\begin{prop}\label{independent_state_variables}
+	Two state variables $q_1 : U \rightarrow \mathbbm{L}_1$ and $q_2 : U \rightarrow \mathbbm{L}_2$ are said \emph{independent} if $\exists \mathcal{s} | q_1(\mathcal{s})=l_1, q_2(\mathcal{s})=l_2 \forall l_1 \in q_1(U), l_2 \in q_2(U)$.
+\end{prop}
+
+In general, the entire state space may not be identified by a predetermined set of independent state variables. Consider the state of a pool table, determined by the number of balls together with position and momentum of the center of mass: the number of state variables is not fixed as it depends on the number of balls. But deterministic and reversible evolution cannot take us from a different number of continuous independent state variables (i.e. there is no homeomorphism between $\mathbbm{R}^n$ and $\mathbbm{R}^m$). That is the number of balls cannot change under deterministic and reversible evolution. Therefore we can restrict ourselves to the case where the number of continuous independent state variables is constant without loss of generality. This means that, at least locally, the state space is always homeomorphic to $\mathbbm{R}^n$, and is therefore a manifold.
+
+Discrete variables do not present such problems, as any number of them can be flattened out in a single one (i.e. $\mathbbm{Z}^n$ is homeomorphic to $\mathbbm{Z}$). They will determine the number of connected components of the state space. Once we introduce a continuous parameter for time evolution, though, these become irrelevant as continuous time evolution requires continuous trajectories that cannot move states across disconnected components. This justifies the special interest in path connected manifolds, as this is where trajectories for deterministic and reversible continuous evolution live.
+
+\begin{prop}\label{continuous_state_space}
+	Let $\mathcal{s} \in \mathcal{S}$ a state within a state space. The set of states $\mathcal{S}'\subseteq\mathcal{S}$ potentially reachable from $\mathcal{s}$ by deterministic and reversible continuous evolution is a path connected manifold of dimension equal to the number of independent continuous state variables necessary to identify it.
+\end{prop}
+
+\begin{justification}
+	We claim $\mathcal{S}'$ is a manifold. Let $\mathcal{s} \in \mathcal{S}$. Let $n$ be the number of independent continuous variables needed to identify $\mathcal{s}$. There exists a neighborhood $U$ around $\mathcal{s}$ where we have $(q_1,...,q_n):U\rightarrow \mathbbm{R}^n$. This map is a bijection as $\mathcal{s}$ is identified by those variables. $\mathcal{S}$ is homeomorphic to $\mathbbm{R}^n$ around  $\mathcal{s}$. Let $\mathcal{S}'$ be the set of all states potentially reachable by deterministic and reversible evolution from $\mathcal{s}$. Deterministic and reversible evolution is a homeomorphism between initial and final states. $\forall \hat{\mathcal{s}} \in \mathcal{S}'$ there exist a map $\mathcal{T}_{\Delta t}:\mathcal{S} \rightarrow \mathcal{S}$ such that $\hat{\mathcal{s}} =\mathcal{T}_{\Delta t}(\mathcal{s})$. $\hat{\mathcal{s}} \in \mathcal{T}_{\Delta t}(U)$ and $\mathcal{T}_{\Delta t}(U)$ is isomorphic to $\mathbbm{R}^n$. $\mathcal{S}'$ equipped with the subspace topology is a Hausdorff, second countable topological space everywhere homeomorphic to $\mathbbm{R}^n$. $\mathcal{S}'$ is a manifold of dimension $n$.
+	
+	We claim $\mathcal{S}'$ is path connected. Let $\hat{\mathcal{s}} \in \mathcal{S}'$. There exist map $\lambda : [t_0,t_1] \rightarrow \mathcal{S}'$ where $\lambda(t_0)=\mathcal{s}$, $\lambda(t_1)=\hat{\mathcal{s}}$ and $t_0$ and $t_1$ are the initial and final time respectively. $\lambda$ is a map between two physically distinguishable quantities, time and states. $\lambda$ is continuous by \ref{continuous_map}. All $\hat{\mathcal{s}} \in \mathcal{S}'$ are path connected to $\mathcal{s}$. $\mathcal{S}'$ is path connected.
+\end{justification}
+
+\subsection{Evolution of state variables}
+
+To study time evolution, we need to describe how state variables change under deterministic and reversible evolution. There are two ways to do it, and we'll need both. The first approach is to \emph{evolve} the state variables from the initial value $q^i(\mathcal{s})$ to the final value $q^i(\hat{\mathcal{s}})$. The result is a trajectory $q^i(t)=q^i(\lambda(t))$ which is especially useful when state variables correspond to physically meaningful quantities. For example, we track how the temperature or the pressure of an ideal gas changes. Evolved state variables, however, make it hard to find relationships that are invariant and common to all deterministic and reversible processes.
+
+The second approach is to transport the state variables. The idea is to keep the connection to the initial state by labeling the future state by the original value of $q^i$, instead of by the future values. For example, the evolved state variable will not tell us the current value of pressure, but the one for the initial conditions. So we introduce a new set of variables for which $\hat{q}^i(\hat{\mathcal{s}})=q^i(\mathcal{s})$, which we can always do as the evolution is deterministic and reversible. The level sets of $\hat{q}^i$ are the evolved level sets of $q^i$ (e.g. all the states that started with a particular value for pressure) which allows us to study how groups of states evolve in time. Given that the value of the transported state variables does not change during evolution, and that it is unique for each initial state, transported state variables also provide a way to label the trajectories themselves.
+
+Evolved state variables are useful to write equations of motions, study how physical quantities change, form a physical picture of what happens. Transported state variables are useful to write invariants, study state space trajectories, form a geometric picture for the state space.\footnote{One should not confuse evolved/transported state variable with active/passive transformations or with Schroedinger/Heisenberg pictures. In those cases, the choice is between changing the state or the coordinates/observables. In our case, the state is always changing. The choice is between tracking the change using different state variables or different values.}
+
+\begin{prop}\label{evolved_transported_variable}
+Let $q^i$ be a set of state variables and $\mathcal{T}_{\Delta t}$ a deterministic and reversible evolution map. The evolved state variables are given by $q^i \circ \mathcal{T}_{\Delta t}$. The transported state variables are given by $q^i \circ \mathcal{T}_{-\Delta t}$.
+\end{prop}
+
+To show the usefulness of transported state variables, we can prove the following:
+
+\begin{prop}\label{discrete_state_metric}
+	Let $U \subseteq \mathcal{S}$ a set of states fully identified by a set of $n$ independent discrete state variables $q^i$. Let $\Delta q^i \equiv q^i(U)$ the range of possibilities of each variable. Then $\#(\Delta q^i)=\#(\Delta \hat{q}^i) \; \forall i$ and $\#(U)=\prod\limits_{i=1}^{n}\#(\Delta q^i)=\prod\limits_{i=1}^{n}\#(\Delta \hat{q}^i)=\#(\hat{U})$ where $\hat{U}=\mathcal{T}_{\Delta t}(U)$ and $\#$ denotes the cardinality of the given set.
+\end{prop}
+
+\begin{justification}
+	We claim $\#(\Delta q^i)=\#(\Delta \hat{q}^i)$. For each $\mathcal{s} \in U$, let $\hat{\mathcal{s}}=\mathcal{T}_{\Delta t}(\mathcal{s})$. We have $\hat{q}^i(\hat{\mathcal{s}}) = q^i(\mathcal{s})$. Therefore $\Delta q^i = q^i(U) = \hat{q}^i(\hat{U})=\Delta \hat{q}^i$. $\#(\Delta q^i)=\#(\Delta \hat{q}^i)$.
+	
+	We claim $\#(U)=\prod\limits_{i=1}^{n}\#(\Delta q^i)$. As $q^i$ are independent variables, the states are the Cartesian product of the possibilities of each variable.
+\end{justification}
+
+What happens is that, because the variables are independent, the total number of states is the product of the number of possibilities for each variable. If $\Delta q^1$ and $\Delta q^2$ are ranges of possibilities for two independent variables, the total number of possibilities is $\#(\Delta q^1) \#(\Delta q^2)$. By construction, the set $\Delta q^i$ of possibilities for each independent variable is the same as the set $\Delta \hat{q}^i$ of possibilities for the transported variable. Also, the transported variables remain independent. Therefore the relationship $\#(\Delta \hat{q}^1) \#(\Delta \hat{q}^2) = \#(\Delta q^1) \#(\Delta q^2)$ is valid throughout the evolution.
+
+We'll see that very similar relationships are what define Hamiltonian and Lagrangian mechanics. But recovering them in the continuous case is trickier, and in fact will be part of the challenge in the following sections. Consider the map $q'=aq$ with $0<a<1$. At first glance, it's a bijective continuous map so we may think it can represent a deterministic and reversible evolution. Yet, $\Delta q \equiv [-b, b] \supset \Delta q'$: a set of states is mapped to a proper subset (i.e. to fewer states) which does not make sense for a reversible process. In the limit where we apply the map an infinite amount of times, any value of $q$ will be brought infinitely close to $0$, which also does not sound like a reversible process. The issue is that while deterministic evolution will map points to points, not all point to point maps can be considered deterministic and reversible. Discrete sets already come with a way to measure and compare the number of elements which is preserved by any bijective map. With continuous sets, we need to do extra work to properly define a measure (or metric) that allows one to count states and possibilities.
+
+\section{Composite systems and reducibility}
+
+%Status: conceptual work is done, need to write down
+
+Given that scientific reductionism (i.e. the idea of reducing physical systems and interactions to the sum of their constituent parts in order to make them easier to study) is at the heart of fundamental physics, we now explore how to characterize a system in terms of its components. That is, we want to study the relationship between the state space of a composite system and the state space of its parts. In general, this is quite a complicated thing to do, which requires intimate knowledge of the system at hand. So we simplify our problem and study a system made of infinitesimal homogeneous parts. What we'll find is that under the additional assumption that the system is infinitesimally reducible (i.e. its state is equivalent to the states of its parts) and that each part undergoes deterministic and reversible evolution, the motion is suitably described by the standard framework of classical Hamiltonian mechanics.
+
+\subsection{Homogeneous decomposable systems}
+The notion that a system is decomposable means the states are equipped with a rule of composition that allows one to write $\mathcal{c}=\mathcal{c}_1+\mathcal{c}_2$: the composite system is the sum of its parts. For example, the state of a ball is equal to the state of its top and bottom parts.
+
+The notion that the system is homogeneous means that the states of the composite and of the parts are not unrelated: they are made of the same material.\footnote{Whether a system is homogeneous depends on context (e.g. air can be thought as homogeneous if the mixture of gases does not change in space or in time due to phase transitions or chemical processes) and one must check that such property is maintained by time evolution.} In fact, the state space $\mathcal{C}$ of all systems composed of such material will include the state of the system as well as the states of  its parts (i.e. $\mathcal{c}, \mathcal{c}_1, \mathcal{c}_2 \in \mathcal{C}$). Since combining any two systems made of a homogeneous material will always give us a system made of the same homogeneous material (e.g. combining elements made of water gives us another element made of water), the state space $\mathcal{C}$ is closed under composition.
+
+As we study the system under evolution, we'll also want to study state changes. For example, if a stable mixture of gas expands, we'll want to know the difference between the initial and final distributions. That is: $\delta\mathcal{c}=\hat{\mathcal{c}}-\mathcal{c}$. Note that such state difference may not describe a physical state: it may remove some material from one location to add it somewhere else. Yet, these state changes are still physically distinguishable objects that provide a configuration for the same homogeneous material, therefore we extend the state space $\mathcal{C}$ to include state differences. All combined, this gives us the structure of an abelian group.
+
+\begin{prop}\label{reducible_state_space}
+The state space $\mathcal{C}$ for a decomposable homogeneous material is an additive abelian (i.e. commutative) group.
+\end{prop}
+
+\begin{justification}
+We claim $\mathcal{C}$ is an additive monoid. There exists a law of composition $+ : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ that takes two states and returns one that is the physical composition of the two. The domain and codomain match because the material is homogeneous. The law is commutative $\mathcal{c}_1 +\mathcal{c}_2 = \mathcal{c}_2+\mathcal{c}_1$ and associative $(\mathcal{c}_1 + \mathcal{c}_2) + \mathcal{c}_3 = \mathcal{c}_1 + (\mathcal{c}_2 + \mathcal{c}_3)$, as it does not matter in what order we physically compose the parts. There exists a unique zero element $\mathcal{c} + 0 = \mathcal{c}$ and it represents the physically empty state (i.e. no amount of material).
+
+We claim $\mathcal{C}$ is an additive group. As we want to describe changes during the evolution (i.e. $\hat{\mathcal{c}} = \mathcal{c} +\delta \mathcal{c}$) we introduce an inverse $- : \mathcal{C} \rightarrow \mathcal{C}$ such that $\mathcal{c} + ( - \mathcal{c}) = 0 \forall \mathcal{c} \in \mathcal{C}$. Such inverse includes objects that do not properly represent a physical state, but a state change. A change of a physically distinguishable object is itself physically distinguishable therefore $\mathcal{C}$ is still a Hausdorff and second countable topological manifold as per \ref{topologically_distinguishable}.
+\end{justification}
+
+\subsection{Classical homogeneous decomposable systems}
+We also want to be able to express the state of the composite system in terms of the state of each part. For example, given the state of a fluid we'll want to know how the material is distributed in space. This in general will depend on how much the state of the composite system "knows" about its parts. For example, the position and orientation of an ideal rigid body is enough to define where all its constituents are, while the volume/pressure/temperature of an ideal gas is not enough to determine the position and momentum of all its molecules. Therefore we need to characterize the system further.
+
+We will call a classical system one that is infinitesimally reducible. That is, it is made of arbitrarily small parts, which we call particles, and giving the state of the whole system is equivalent to giving the states of all parts. Given the state space $\mathcal{S}$ for the infinitesimal parts, which we assume to be a manifold consistently with \ref{continuous_state_space}, a composite state $\mathcal{c} \in \mathcal{C}$ will tell us the amount of material for each possible particle state. That is, each state is fully identified by a function $\rho_\mathcal{c}: \mathcal{S} \to \mathbbm{R}$ that returns the amount of material in the composite state $\mathcal{c}$ that is prepared in the particle state $\mathcal{s}$. For example, given a certain configuration of gas, we can tell the density of material that is at a specific point in space with a specific value of momentum.
+
+The notion that the parts are infinitesimal requires the co-domain of $\rho_\mathcal{c}$ to be a real number, as opposed to an integer. The state space $\mathcal{S}$, instead, can have a discrete topology. For example, for a system composed of different tanks connected by pipes, the state of the composite system could be the overall distribution of water among the tanks. The amount in each tank is continuous (as we assume the water to be infinitesimally divisible) yet there are only a finite number of tanks the water can be placed into. As it links two physically distinguishable objects, $\rho_\mathcal{c}$ is a continuous function as discussed before.
+
+As we combine the states of different parts, we sum the distributions over particle states $\rho_{\mathcal{c}}(\mathcal{s})=\rho_{\mathcal{c}_1}(\mathcal{s})+\rho_{\mathcal{c}_2}(\mathcal{s})$: the amount of material in the composite state is the sum of the amount of material of the parts. We can also increase or decrease the amount of material by a constant factor $\rho_{\mathcal{c}_1}(\mathcal{s})=a\rho_{\mathcal{c}_2}(\mathcal{s})$. This gives us the structure of a real vector space that is isomorphic to a subspace of continuous functions.
+
+\begin{prop}\label{classical_vector space}
+The state space $\mathcal{C}$ for a homogeneous classical (i.e. infinitesimally reducible) material is a vector space over $\mathbbm{R}$ isomorphic to a subspace of $C(\mathcal{S}) \equiv \{\rho:\mathcal{S} \rightarrow \mathbbm{R} \; | \; \rho$ is continuous$\}$, where $\mathcal{S}$ is the state space of an infinitesimal amount of material.
+\end{prop}
+
+\begin{justification}
+We claim $\mathcal{C}$ is an abelian group. $\mathcal{C}$ is the state space for a decomposable homogeneous system. $\mathcal{C}$ is an abelian group  by \ref{reducible_state_space}.
+
+Consider the set of transformations $T$ that increase or decrease the amount of material in the system by a constant factor. We claim $T$ is a field\footnote{Here field is intended in the abstract algebraic sense (a nonzero commutative division ring) which has no relationship to the field in the physics or differential geometry sense (a physical quantity/tensor with a value for each point in space).} isomorphic to $\mathbbm{R}$. Consider $\tau: \mathbbm{R} \rightarrow T$ the mapping between a number and the transformation that increases or decreases the amount of material by that factor. This transformation exists: the system is infinitesimally decomposable and the amount can be changed continuously. Define on $T$ an addition $+: T \times T \rightarrow T$ and a multiplication $*: T \times T \rightarrow T$ such that $\tau(a) + \tau(b) = \tau(a+b)$ and $\tau(a) * \tau(b) = \tau(a*b)$, $a,b \in \mathbbm{R}$, so that the sum and product of the transformation is equal to the sum and product of their respective factors. $\tau$ is an isomorphism between $T$ and $\mathbbm{R}$ as fields.
+
+We claim $\mathcal{C}$ is a vector space over $\mathbbm{R}$. The abelian group $\mathcal{C}$ can be extended with the operations defined by $T$, as each element $\tau \in T$ is a map $\tau : \mathcal{C} \rightarrow \mathcal{C}$. The map has the following properties: $(\tau_1 + \tau_2) \mathcal{c} = \tau_1 \mathcal{c} + \tau_2 \mathcal{c}$, increasing the amount of material by the sum of two constant factors is the same as combining the separate increases, and $\tau (\mathcal{c}_1 + \mathcal{c}_2) = \tau \mathcal{c}_1 + \tau \mathcal{c}_2$, increasing the amount of the total system is the same as the combination of the increased parts. $\mathcal{C}$ is a module over $T$, which is a field and isomorphic to $\mathbbm{R}$. $\mathcal{C}$ is (isomorphic to) a real vector space.
+
+We claim $\mathcal{C}$ is isomorphic to a subspace of $C(\mathcal{S})$ as a vector space over $\mathbbm{R}$. $\forall \mathcal{c} \in \mathcal{C} \exists ! \rho_{\mathcal{c}}:\mathcal{S} \rightarrow \mathbbm{R}$ returning the amount of material for each state $\mathcal{s} \in \mathcal{S}$. $\rho_{\mathcal{c}} \in C(\mathcal{S})$ by \ref{continuous_map}. Let $\varrho : \mathcal{C} \rightarrow C(\mathcal{S})$ such that $\varrho(\mathcal{c}) \mapsto \rho_\mathcal{c}$. 
+As the system is reducible, two distinct composite states must represent different distributions. $\forall \mathcal{c_1}, \mathcal{c_2} \in \mathcal{C}, \mathcal{c_1} \neq \mathcal{c_2} \implies \varrho(\mathcal{c_1}) \neq \varrho(\mathcal{c_2})$. $\varrho$ is injective. $\varrho$ is a bijection between $\mathcal{C}$ and $\varrho(\mathcal{C})$. Let $\mathcal{c}=\mathcal{c}_1+\mathcal{c}_2$, then $\varrho(\mathcal{c})=\varrho(\mathcal{c}_1)+\varrho(\mathcal{c}_2)$ as the amount of material of the composition of two states is the sum of the individual amounts. Let $\mathcal{c}_1=\tau(a)\mathcal{c}_2$, then $\varrho(\mathcal{c}_1)=a \varrho(\mathcal{c}_2)$ as $\tau(a)$ increases the amount of material by the factor $a$. $\varrho$ is a homomorphism. $\mathcal{C}$ is isomorphic to $\varrho(\mathcal{C}) \subseteq C(\mathcal{S})$ as a vector space.
+\end{justification}
+
+\subsection{Invariant densities}
+
+In the case where the topology of $\mathcal{S}$ is not discrete, the distribution $\rho_\mathcal{c}$ is a density, which is not something we directly measure. What we do measure experimentally are finite amounts of material. For example, the amount of fluid in a particular volume within a particular range of momentum specified in some units (e.g. moles, kg, ...). This means that given a composite state $\mathcal{c}$ and a set $U \subseteq \mathcal{S}$ of particle states compatible with an outcome of a process, we must be able to tell the amount of material that we will find associated with that outcome. That is for each open set $U \subseteq \mathcal{S}$ there will be a functional $\Lambda_U : \mathcal{C} \rightarrow \mathbbm{R}$.
+
+As we combine parts, or increase the amount of material in each part, the total amount of material found will have to be consistent with those operations. That is: $\Lambda_U(a_1 \mathcal{c}_1 + a_2 \mathcal{c}_2) = a_1 \Lambda_U(\mathcal{c}_1) + a_2 \Lambda_U(\mathcal{c}_2)$. For a proper state, one that is not the difference of two states, we will expect a positive amount of material. So, if a density $\rho_\mathcal{c}$ is positive everywhere, then the total amount is also positive. This makes $\Lambda_U$ a positive linear functional. As the amount of material we will measure is always finite, the functional applied to any composite state $\mathcal{c}$ over any set $U$ will be finite.
+
+The ability to associate finite amount of material with sets of states allows us to define finite regions of $\mathcal{S}$ and compare them. Consider a region of position and momentum in phase space. If we are able to spread a finite amount of material into a non-infinitesimal uniform distribution, then we know we have a finite region. And the density will give us an indication of how big the region is: if we double the region, the density will halve. In other words: because we are describing densities over $\mathcal{S}$, we are able to give a unique measure $\mu$ for the size of sets of $\mathcal{S}$. From the measure we get a metric $d\mu$ and our positive linear functionals become integrals, $\Lambda_U (\mathcal{c}) = \int_U \rho_{\mathcal{c}} d \mu$.
+
+This intuitive picture is formalized mathematically by the Riesz representation theorem for linear functionals, which gives $\mathcal{S}$ the structure of a measure space, with a suitable Borel $\sigma$-algebra and measure $\mu$.
+
+\begin{prop}\label{integration}
+	Let $\mathcal{S}$ be the state space for the particles of a homogeneous classical material. Let each state $\mathcal{s} \in \mathcal{S}$ be fully identified by a finite number of independent state variables. Then $\mathcal{S}$ is endowed with a Borel measure $\mu$. The state space $\mathcal{C}$ is isomorphic to the space of Lebesgue integrable continuous functions over $\mathcal{S}$. That is: $\mathcal{C} \cong C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$ where $L^1(\mathcal{S}, \mu) = \{ \rho : \mathcal{S} \rightarrow \mathbbm{R} \; | \; \int_{\mathcal{S}} |\rho| d\mu < \infty \}$.
+\end{prop}
+
+\begin{justification}
+	We claim there exists a positive linear functional $\Lambda_U : \mathcal{C} \rightarrow \mathbbm{R}$ for each $U \subseteq \mathcal{S}$ such that $\Lambda_U = \Lambda_{\mathrm{int}(U)}$. Let $\Lambda_{U} : \mathcal{C} \rightarrow \mathbbm{R}$ be the functional that returns the amount of material in $\mathcal{c}$ compatible with the outcome associated with the open set $U \subseteq \mathcal{S}$. $\Lambda_U$ is linear. $\Lambda_U(a_1 \mathcal{c}_1 + a_2 \mathcal{c}_2) = a_1 \Lambda_U(\mathcal{c}_1) + a_2 \Lambda_U(\mathcal{c}_2)$ as it has to be consistent with the operations of composing states and increasing/decreasing the amount of material by a factor. $\Lambda_U$ is positive. If the value of the distribution for each particle state is positive then the total amount of material is positive. Let $U \subseteq \mathcal{S}$ not necessarily open. Define $\Lambda_U$ as $\Lambda_{\mathrm{int}(U)}$.
+	
+	We claim that $|\Lambda_{U}(\mathcal{c})| < \infty \; \forall \mathcal{c} \in \mathcal{C} \; \forall U \subseteq \mathcal{S}$. Let $U \subseteq \mathcal{S}$ be an open set of particle states associated with an outcome. Let $\mathcal{c} \in \mathcal{C}$ a composite state. The amount of material of $\mathcal{c}$ associated with the outcome $U$ must be finite, as physically we always work with finite quantities. $|\Lambda_{U}(\mathcal{c})| < \infty$. Let $U \subseteq \mathcal{S}$ not necessarily open. The same argument applies to $\mathrm{int}(U)$.
+	
+	We claim that $\Lambda_{U_1} + \Lambda_{U_2} = \Lambda_{U_1 \cup U_2} + \Lambda_{U_1 \cap U_2}$ $\forall $ $U_1, U_2 \in \mathcal{S}$. Let $U_1, U_2 \in \mathcal{S}$ be open sets of particle states associated with two outcomes. Suppose $U_1 \cap U_2 = 0$, $\Lambda_{U_1 \cup U_2} = \Lambda_{U_1} + \Lambda_{U_2}$ as the material found in $U_1 \cup U_2$ must be either in $U_1$ or $U_2$. Suppose $U_1 \cap U_2 \neq 0$, $\Lambda_{U_1 \cup U_2} = \Lambda_{U_1} + \Lambda_{U_2} - \Lambda_{U_1 \cap U_2}$ as the sum of the material associated with each outcome will double count the intersection. Let $U_1, U_2 \in \mathcal{S}$ not necessarily open. The same argument applies to their interiors.
+	
+	We claim that $\mathcal{S}$ is endowed with a unique Borel measure $\mu$ such that $\Lambda_U (\mathcal{c}) = \int_U \rho_{\mathcal{c}} d \mu$.  Each $\mathcal{s} \in \mathcal{S}$ is identified by a finite number of independent state variables. $\mathcal{S}$ is a manifold. $\mathcal{S}$ is locally compact. $\mathcal{C} \cong G \subseteq C(\mathcal{S})$ therefore $\Lambda_U(\mathcal{c}) \cong \Lambda_U(\rho_\mathcal{c})$. $\Lambda = \{\Lambda_U : C(\mathcal{S}) \rightarrow \mathbbm{R}\}_{U \subseteq \mathcal{S}}$ is a family of positive linear functionals such that $\forall U \subseteq \mathcal{S} \; \Lambda_U = \Lambda_{\mathrm{int}(U)}$ and $\Lambda_{U_1} + \Lambda_{U_2} = \Lambda_{U_1 \cup U_2} + \Lambda_{U_1 \cap U_2} \; \forall U_1, U_2 \subseteq \mathcal{S}$. By the extension \ref{extended_riesz_theorem} of the Riesz representation theorem for linear functionals 
+	there exists a unique Borel measure $\mu$ such that $\Lambda_U (\mathcal{c}) = \int_{U} \rho_\mathcal{c} d\mu$.
+	
+	We claim $\mathcal{C} \cong C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$. As per \ref{classical_vector space}, $\mathcal{C}$ is isomorphic to a subspace $G \subseteq C(\mathcal{S})$ as a vector space over $\mathbbm{R}$. As $|\Lambda_{U}(\mathcal{c})| < \infty \; \forall \mathcal{c} \in \mathcal{C} \; \forall U \subseteq \mathcal{S}$, then $G \subseteq \{ \rho : S \rightarrow \mathbbm{R} \; | \;\; |\int_{U} \rho d\mu| < \infty \; \forall U \subseteq S\} = L^1(\mathcal{S}, \mu)$ by \ref{everywhere_integrable_is_lebesgue_integrable}.  $G \subseteq C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$. Let $\rho_\mathcal{c}$ be the distribution associated with the state $\mathcal{c}$. Let $\rho \in C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$ be a Lebesgue integrable continuous function. If $\rho_\mathcal{c} \neq \rho$ then $\exists U \in \mathcal{S} \; | \; \int_{U} \rho_\mathcal{c} d \mu \neq \int_{U} \rho d \mu$. There exists an outcome in $\mathcal{S}$ that can physically distinguish the two distributions. There must be a state $\mathcal{c}_1 \in \mathcal{C} \; | \; \varrho(\mathcal{c}_1)=\rho$. $\varrho : \mathcal{C} \rightarrow C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$ is surjective. $\varrho$ is an isomorphism between $\mathcal{C}$ and $C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$ as vector spaces.
+\end{justification}
+
+As we identified the set of Lebesque integrable continuous functions $C(\mathcal{S}) \cap  L^1(\mathcal{S}, \mu)$ as the set of distributions that are physically meaningful, it's useful to briefly show how other commonly used function spaces do not fit the bill. The set of continuous functions $C(\mathcal{S})$ would include functions that diverge at infinity. The set of continuous functions with compact support $C_C(\mathcal{S})$ would exclude Gaussians. The set of continuous functions that vanish at infinity $C_0(\mathcal{S})$ includes functions whose integral is infinite. Schwartz space $S(\mathcal{S})$ excludes functions that are not infinitely smooth which we don't have a physical argument for. The set of Lebesgue integrable functions $L^1(\mathcal{S})$ includes discontinuous functions that for \ref{continuous_map} are unphysical.
+
+Another point is that while the norm associated to $L^1(\mathcal{S})$ is $\int_{\mathcal{S}} |\rho| d\mu$, the pseudo-norm $\int_{\mathcal{S}} \rho d\mu$ is perhaps more physically meaningful. For proper states, the two are the same and they represent the total amount of material. For state changes they differ. The second represents the amount of material added (or taken away if negative) by the state change. For example, if $\rho_{\delta \mathcal{c}}$ is the change due to deterministic and reversible evolution, the amount of material does not change and therefore $\int_{\mathcal{S}} \rho_{\delta \mathcal{c}} d\mu = 0$. The first norm would represent the total amount of material that is changing (i.e. being added and being removed), therefore $\int_{\mathcal{S}} |\rho_{\delta \mathcal{c}}| d\mu = 0$ means no material is moving, no change is occurring.
+
+We now turn our attention to the metric $d\mu$ which we need to properly identify. It turns out that before we can do so, we need to better characterize $\mathcal{S}$.
+
+On a state space with discrete topology and a single state variable we simply have $\Lambda_U (\mathcal{c}) = \sum \limits_{q=a}^b \rho_\mathcal{c}(q)$. For states identified by a single continuous state variable we would expect $\Lambda_U (\mathcal{c}) = \int_a^b \rho_\mathcal{c} (q) dq$. By a simple change of state variable, we see that this does not work in general: $\rho_\mathcal{c}(q')= \rho(q)_\mathcal{c} dq/dq'$. This would make $\rho_\mathcal{c}$ a function not just of the state $\mathcal{s}$, but also of the state variables we are using. This is inconsistent with our previous definition. Moreover if the transformation is not differential, the density is not even well-defined. This tells us that $\mathcal{S}$ cannot be any manifold: it has to be one that allows state-variable-independent densities. Under an arbitrary change of state variables, the density has to remain the same, which means that the Jacobian of the transformation must exist and must be unitary.
+
+For the Jacobian to exist the transformation between state variables has to be differentiable. Therefore a manifold that guarantees densities to be well defined is one that guarantees that state variable transformations are differentiable: a differentiable manifold. $\mathcal{S}$ has a differentiable structure in the sense that the distributions are only defined on a set of set state variables that are linked by differential transformations. In the same way that discontinuous changes of state variable can be detected because they are incompatible with the topology, non differential changes of state variable can be detected because they are incompatible with state-variable-independent densities.
+
+If $\rho_\mathcal{c}$ is to remain unchanged and the Jacobian to be unitary we cannot simply change one state variable as we please. If we change one at least another has to change in some coordinated way such that the Jacobian of the total transformation is unitary. This means that we cannot change physical units of all the variables as we please: they are part of a unit system. For example, changing units of position will also change units of momentum. Let $\mathcal{Q}$ be the manifold charted by the minimum set of state variables that define such system of units. An element of $\mathcal{S}$ will be a geometrical object in such space. For example, it will be a point, a distance, two points, the ratio between two distances, the inverse of a distance: something that is expressible in the unit defined. As particle states represent configurations of infinitesimal parts, they will be local objects, defined around a point in $\mathcal{Q}$. As we saw before, they cannot be points themselves as the density $\rho(q')_\mathcal{c}= \rho(q)_\mathcal{c} dq/dq'$ is not invariant. They cannot be a vectors $v(q) e_q$, as the density $\rho_\mathcal{c}(q', v')= \rho(q, v)_\mathcal{c} (dq/dq')^2$ is not invariant. They can, however, be covectors $k(q) dq$ as $\rho_\mathcal{c}(q', k')= \rho_\mathcal{c}(q, k) (dq/dq') (dq'/dq) = \rho_\mathcal{c}(q, k)$. In other words: a covector is the simplest local geometrical object that allows coordinate independent densities. We can identify $\mathcal{S}$ as the cotangent bundle $T^*\mathcal{Q}$, the space of all possible covectors.
+
+If $\mathcal{Q}$ is one dimensional, then the state is fully identified by a pair $(q, k)$. These variables are independent, so the total number of possibilities in a small region of $\mathcal{S}$ is proportional to $dq \wedge dk$. That is if we double the range of $dq$ or $dk$ then the number of possibilities doubles. We set $d\mu = \hbar dq \wedge dk$, where $\hbar$ is the proportionality constant that will depend on the unit chosen to count the possibilities of the pair $(q, k)$. That is, a unitary range of possibilities for $q$ and $k$ will give us $\hbar$ possibilities.\footnote{The actual value and physical dimensions of $\hbar$ are determined by the system of units, and should not be taken to describe some intrinsic physical property. Only dimensionless relationships to other physical constants, such as the fine structure constant $\alpha = e^2/\hbar c$, can possess that trait. That is why one can choose "natural units" for which $\hbar=1$. In SI units the relationship $\hbar dk = dp = m du$ between kinetic and conjugate momentum, derived later, sets the relationship between units.} The cardinality for states in a finite (i.e. compact) region $U \subseteq \mathcal{S}$ will be given by $\int_U \hbar dq \wedge dk$.
+
+If $\mathcal{Q}$ is $n$-dimensional, $d\mu$ is proportional to $dq^n \wedge dk_n$. But it's not just the volume that is preserved as we change state variables. Each pair $(q^i, k_i)$ represents an independent set of state variables, with the cardinality of possibilities given by $\hbar dq^i \wedge dk_i$. We call such a pair a degree of freedom. As they are independent the total number of states is the product of the possibilities of each d.o.f.: $\hbar^n dq^n \wedge dk_n = \prod \limits_{i=1}^n \hbar dq^i \wedge dk_i$. This is equivalent to saying that independent d.o.f. are orthogonal surfaces in $\mathcal{S}$.
+
+The cardinality of possibilities for each d.o.f. (i.e. the wedge product within a d.o.f) and the orthogonality of different d.o.f. (i.e. the scalar product across d.o.f.) must be the same regardless of the choice of state variables. We can express both requirements mathematically in a compact way. We first define conjugate momentum as $p_i=\hbar k_i$ and unified state variables as $\xi^a\equiv \{q^i, p_i\}$. Then we consider the canonical two-form $\omega$ given by the following components:
+\begin{align*}
+\omega_{ab} =  \left[
+\begin{array}{cc}
+0 & 1 \\
+-1 & 0 \\
+\end{array}
+\right] \otimes I_n =
+\left[
+\begin{array}{cc}
+0 & I_n \\
+-I_n & 0 \\
+\end{array}
+\right] \\
+\end{align*}
+It returns the wedge product within a d.o.f. and the scalar product across. Requiring the invariance of this metric under state variable changes assures us the cardinality of states and possibilities is well defined.
+
+This gives us insight on the physical meaning of the geometrical structure $T^*\mathcal{Q}$. The canonical one-form $\theta=k dq$ represents the geometrical object we associate with each particle state. The canonical two-form $\omega=\Sigma \, dq^i \wedge dp_i$ is the metric that quantifies the possibilities described by two given state variables. Note, instead, that the relationship $\omega = - \hbar d\theta$, while mathematically true, has no clear physical meaning as we have not defined what the exterior derivative on a state actually represents.
+
+We can capture the above discussion by stating that the state space $\mathcal{S}$ is the symplectic manifold $(T^*\mathcal{Q}, \omega)$. This is the simplest manifold that allows us to define state-variable-invariant densities. The metric allows us to measure the cardinality of possibilities within and across independent d.o.f. 
+
+\begin{prop}\label{classical_phase_space}
+The state space $\mathcal{S}$ for the particles of a homogeneous classical material is a symplectic manifold formed by a cotangent bundle $T^*\mathcal{Q}$ equipped with the canonical two-form $\omega$.
+\end{prop}
+
+\begin{justification}
+	We claim $\mathcal{S}$ is a differential manifold. A composite state $\mathcal{c}$ is a distribution $\rho_\mathcal{s} : \mathcal{S} \rightarrow \mathbbm{R}$. $\rho_\mathcal{c}$ is defined on any chart of $\mathcal{S}$. Given two charts, for any $\rho_\mathcal{c}(q)$ there is a corresponding $\rho_\mathcal{c}(q')=\rho_\mathcal{c}(q^i) | d q' / d q |$. The Jacobian $| d q' / d q |$ exists and is non-zero. The map between any two charts is differentiable. $\mathcal{S}$ is a differentiable manifold.
+	
+	We claim the simplest state space $\mathcal{S}$ that allows state-variable-invariant densities is the symplectic manifold $(T^*\mathcal{Q}, \omega)$ where $T^*\mathcal{Q}$ is the cotangent bundle of a one dimensional differential manifold $\mathcal{Q}$ and $\omega$ is the canonical two-form. The description of the simplest physical object on which we can  state-variable-invariant must be given by at least one state variable $q$. Let $\mathcal{Q}$ be the manifold charted by $q$. $\mathcal{Q} \subseteq \mathcal{S}$. $\mathcal{Q}$ is differentiable. Let's assume $q$ is enough to define the unit system for the description of the physical object. Then the physical object is represented by a set of geometrical objects in $\mathcal{Q}$. The physical object is infinitesimal, therefore is represented by a local geometrical object. The simplest geometrical object in $\mathcal{Q}$ is a point, charted by $q$. A density over points is not invariant: $\rho(q')_\mathcal{c}= \rho(q)_\mathcal{c} dq/dq'$. Next we consider local geometrical objects charted by 2 variables. Densities over vectors $v(q) e_q \in T\mathcal{Q}$ are not invariant: $\rho_\mathcal{c}(q', v')= \rho(q, v)_\mathcal{c} (dq/dq')^2$. Densities over covectors $k(q) dq \in T^*\mathcal{Q}$ are invariant: $\rho_\mathcal{c}(q', k')= \rho_\mathcal{c}(q, k) (dq/dq') (dq'/dq) = \rho_\mathcal{c}(q, k)$. Covectors are the simplest geometrical object to allow unit independent densities. The state space $\mathcal{S}$ for the simplest object that allows state-variable-independent densities is $T^*\mathcal{Q}$ of a one dimensional differential manifold $\mathcal{Q}$. Express integration in coordinates. $\int_{\mathcal{S}} \rho_\mathcal{c} d\mu \propto \int_{\mathcal{S}} \rho_\mathcal{c}(q, k) dq \wedge dk$. $d\mu = \hbar dq \wedge dk = dq \wedge dp = \omega$ where $\hbar$ is a constant and $\omega$ is the canonical two form. $\omega$ is invariant under state variable change. $\omega$ is a symplectic metric for $\mathcal{S}=T*\mathcal{Q}$. $\mathcal{S} \cong(T^*\mathcal{Q}, \omega)$ as a symplectic manifold.
+	
+	We claim the state space $\mathcal{S}$ for the particles of a homogeneous classical material is a symplectic manifold $(T^*\mathcal{Q}, \omega)$ where $T^*\mathcal{Q}$ is the cotangent bundle of a one dimensional differential manifold $\mathcal{Q}$ and $\omega$ is the canonical two-form. Let $q^i$ be a set of n continuous independent state-variable that define the units to describe a state in $U \subseteq \mathcal{S}$. Let $\mathcal{Q}$ be the manifold charted by $q^i$. Locally $\mathcal{Q} \cong \prod \mathcal{Q}^i \cong \mathbbm{R}^n$. Changing units of one state variable must not change the units of the other as they are independent. Each degree of freedom must define state-variable-distribution independently. For each $\mathcal{Q}^i$ we need a covector $k_i(q) dq^i \in T^*\mathcal{Q}^i$. Locally $\mathcal{S} \cong \prod T^*\mathcal{Q}^i \cong T^* \prod \mathcal{Q}^i \cong T^* \mathcal{Q}$. Integration must also be defined on an independent d.o.f. There must exist a non degenerate two-form $\omega$ such that $\int_{U \subset \mathcal{S}} \rho_\mathcal{c} \omega$ where $U$ is any two dimensional surface in $\mathcal{S}$. $\omega$ has to be form invariant under state variable change. The canonical two-form is the only such form. $\omega = \sum dq^i \wedge dp_i$. $\mathcal{S} \cong (T^*\mathcal{Q}, \omega)$ as a symplectic manifold.
+\end{justification}
+
+We should note that we are starting to be in a position similar to the one discussed in \ref{discrete_state_metric} for discrete states. We have both a topological space and a metric that allows us to count states and possibilities. We recovered the metric starting from the idea of an infinitesimally reducible system. That led to a state space $\mathcal{S}$ for the infinitesimal parts, on which we must be able to define state-variable-independent distributions, which in turn gave us degrees of freedom made by pairs of conjugate variables and the symplectic metric typical of classical phase space. In short: being able to measure the amount of material is what allows us to measure the cardinality of states.
+
+
+\subsection{Classical Hamiltonian assumption}
+
+Now that we have fully characterized what we mean by a classical system, we can stipulate the following:
+
+\begin{assump}[Classical Hamiltonian assumption]\label{classical}
+	The system under study is composed of an infinitesimally reducible homogeneous material and each part undergoes deterministic and reversible evolution.
+\end{assump}
+
+\begin{rationale}
+	The idea is that time evolution specifies a map for the state space $\mathcal{S}$ of each infinitesimal part. Knowing how the parts evolve tells us how a composite state $\mathcal{c}$ evolves as well.
+	
+	Consistently with what we said in Assumption \ref{detrevass}, if we defined a state for each particle, then a deterministic and reversible evolution on such state must exist. Yet, the idea that we can assign states to infinitesimal parts should be considered only a \emph{simplifying} assumption, and it is instructive to understand when and how it breaks down.
+	
+	The first problem is methodological. To be able to talk about the states of a part we need a physical process that is able to distinguish between them. For a pool ball we can imagine marking one spot with a different color. This allows us to track it as the ball moves or collides with other balls. For an electron, instead, we do not have a way to mark a piece. In fact when two electrons scatter we can't even tell which is which, let alone what portion went where. The classical assumption may not hold because we do not have suitable physical processes at our disposal.
+	
+    Being able to track parts at a given scale is not even enough. The parts are infinitesimal, the limit of a process of infinite recursive subdivision, so we must be able to track at any scale. Therefore the assumption can only be validated experimentally to the smallest precision available.
+	
+	The second, more conceptual, problem is that the idealizations that allow us to hold Assumption \ref{detrevass} break down as the parts get smaller. One such idealization is when the system under study is "big enough". Recall the cannonball whose motion is sufficiently unaffected by the photons that scatter off its surface. Clearly this breaks down for infinitesimal parts: as we keep dividing the material, we will find an amount that will be affected by the interaction with the environment, and therefore not sufficiently isolated. The other idealization is when the interaction between system and environment is not symmetrical. For example, suppose the electric charge of the system under study is much larger than the charges in the environment. The electromagnetic field generated can be considered determined only by our system with good approximation. But this also breaks down: if part of the environment is made of the same homogeneous material the charge density will be the same and the interaction between particles will be symmetrical.
+	
+	In other words: the definition of a state requires some kind of asymmetry between system under study and environment. If we try to assume that both the system and environment are really made of infinitesimal homogeneous parts, then the claim to that asymmetry is lost. Therefore our justification for holding the assumption has to be that the pieces are small compared to some scale but large compared to another. For example, water is a homogeneous material if we consider it made up of parts sufficiently small for the scale of the problem at hand but big enough to contain a large number of molecules.
+
+	Other conceptual problems stem from the following two competing requirements: on one side we want the system under study to be isolated so that we can define independent states; on the other side we do not want the system isolated so that we can define physical processes on it. For example, if we were to take the state of an infinitesimal part to really be its full description, with no unstated part, then each piece would evolve independently, oblivious to the other parts. Each particle would essentially reside in its own separate physical universe.
+	
+	If we just assume the whole system is deterministic and reversible, then each part can evolve depending the states of the other parts. But this does not solve the problem entirely. Let's ignore the question of how we were able to define the states of the parts. Let's also ignore that the type of forces one would typically use (i.e. ones that conserve energy or ones with scalar and vector potentials) are precisely the ones we derive by assuming the pieces are not interacting with each other. The problem is that we can always locally separate the evolution into independent degrees of freedom. For example, the position and momentum of two particles may affect each other during the evolution, but the average and difference in position and momentum may evolve independently.\footnote{Also note that any Hamiltonian is locally isomorphic to a free particle (citation needed)} We can always find such local decomposition, and the easiest way to see that is in terms of the transported variables: they retain the original value, they clearly evolve independently. And since the pieces are infinitesimal, a local decomposition is all that is needed. While such description may be cumbersome to achieve in practice, conceptually it is still possible. So, even if the particles are in principle interacting, the system is described by degrees of freedom that evolve independently, oblivious to each other.
+	
+	The same type of problem arises on the whole system when we consider its interaction with our probe or other parts of the environment. Say $a \in A$ is the state of our system and $b \in B$ the state of our probe, the future state $\hat{a}=f(a)$ because the system is deterministic, but $\hat{b}=g(a,b)$ because the probe needs to be affected by the system. This means $(a, b) \mapsto (\hat{a}, \hat{b})$ is not a reversible map. In other words: we can't expect to have deterministic and reversible evolution at all levels of decomposable systems if the parts interact in any physically meaningful way.
+	
+	One final conceptual problem is with time itself: a deterministic and reversible system cannot tell time. If it did, we would be able to find a quantity that changes through time but is invariant under state variable changes. The problem is that deterministic and reversible time evolution is equivalent to a state variable change. In fact, at a fixed time, we can choose to describe the system with the transported state variables of any past or future times. So, all quantities that are invariant under state variable changes are also invariant under time evolution.
+	
+	In the light of what we discussed, we cannot take the classical assumption to be fundamental, in the sense that we cannot take it to apply to all of physics. While ultimately flawed, the  assumption can be considered valid for a great number of macroscopic systems, and that is why it is very useful. Understanding its shortcomings will help us later to see how the quantum assumption solves, at least partially, some of these issues.
+	
+	As a final note: we caution against automatically thinking that the classical assumption is valid for all macroscopic systems. It is conceptually possible to have a macroscopic system where a clear independent state cannot be assigned to each part, in which case the assumption would not hold.
+\end{rationale}
+
+
+\subsection{Hamiltonian mechanics}
+
+We are finally ready to write the equations of motion. As per \ref{detrevmap} our evolution is at least a self-homeomorphism $f:\mathcal{S} \leftrightarrow \mathcal{S}$. But this is not enough.
+
+The evolution must map the distribution point-wise so that the value associated at the initial state is the same as the value at the final state. All of the system that starts in $\mathcal{s}$ has to end up in $\hat{\mathcal{s}}$. In math terms $\rho_{\hat{\mathcal{c}}} (\hat{\mathcal{s}}) = \rho_\mathcal{c}(\mathcal{s})$.
+
+In the same way we expect the total amount of material to be conserved. If $U \in \mathcal{S}$ is a set of initial particle states and $\Lambda_U(\mathcal{c})$ is the amount of material associated with that set, then we expect it to be equal to the amount of material $\Lambda_{\hat{U}}(\hat{\mathcal{c}})$ associated with the set of final states $\hat{U} \in \mathcal{S}$.
+
+But probably the best way to look at it is that initial and final sets of states have to possess the same cardinality of states and possibilities, which were defined by our metric $\omega$. Therefore the area within a degree of freedom, which represents the number of possibilities in said d.o.f., needs to be mapped to an equal area within the transported d.o.f. (i.e. the d.o.f. defined by the transported state variables). Independent d.o.f. must remain independent, and therefore transported orthogonal d.o.f. remain orthogonal. This means that the product of possibilities of independent d.o.f. is also conserved. These statements are the physical justification of Gromov's non-squeezing theorem and Liouville's theorem. And they give intuitive insight on the geometry of Hamiltonian systems.
+
+Mathematically, under the classical Hamiltonian assumption,  deterministic and reversible evolution is a self-symplectomorphism (or self-isometry or canonical transformation depending on your math training). That is, it does not just preserve the topology but also the symplectic metric $\omega$.
+
+\begin{prop}\label{canonical_transformation}
+	A deterministic and reversible evolution map for a homogeneous classical material is self-symplectomorphism. That is: $\mathcal{T}_{\Delta t}: T^*\mathcal{Q} \rightarrow T^*\mathcal{Q}$ and $\mathcal{T}_{\Delta t}^*\omega = \omega$ where $\mathcal{T}_{\Delta t}^*$ is the pullback of $\mathcal{T}_{\Delta t}$.
+\end{prop}
+
+\begin{justification}
+	We claim $\mathcal{T}_{\Delta t}$ is a self-homeomorphism on $T^*\mathcal{Q}$. The state space for particles of a homogeneous classical material is $T^*\mathcal{Q}$ by \ref{classical_phase_space} $\mathcal{T}_{\Delta t}$ is a deterministic and reversible evolution map and \ref{detrevmap}.
+	
+	We claim $\mathcal{T}_{\Delta t}$ is a symplectomorphism on $(T^*\mathcal{Q}, \omega)$. The distribution on final states must be defined. The Jacobian for $\mathcal{T}_{\Delta t}$ exists and is non-zero. $\mathcal{T}_{\Delta t}$ is a diffeomorphism. A deterministic and reversible process conserves the number of states and possibilities. $\omega$ is the metric for the cardinality of possibilities. $\omega$ is invariant under a deterministic and reversible evolution map. $\mathcal{T}_{\Delta t}$ is a symplectomorphism by definition.
+\end{justification}
+
+In the special case of continuous time evolution we can prove the following:
+
+\begin{prop}\label{hamiltonian}
+	A continuous deterministic and reversible process for a homogeneous classical material admits a Hamiltonian $H: T^*\mathcal{Q} \rightarrow \mathbbm{R}$ that allows to write the laws of evolution as
+\begin{align*}
+d_{t}q^i &= \partial_{p_i} H \\
+d_{t}p_i &= - \partial_{q^i} H
+\end{align*}
+\end{prop}
+
+\begin{justification}
+We claim the vector field $S \in T\mathcal{Q}$ for the infinitesimal displacement $S = d\mathcal{s}/dt$ admits a potential $H$ such that, in component notation, $S^{a} \omega_{ab} = \partial_{b}H$. Let $v, w \in T_P\mathcal{Q}$ be two vectors defined at a point $P \in \mathcal{Q}$. Let $v^a, w^b$ their components in terms of unified state variables. Let $v', w' \in T_{\hat{P}}\mathcal{Q}$ the vector transported by the evolution map. For \ref{canonical_transformation} we have $v^{a} \omega_{ab} w^{b} = v'^{a} \omega_{ab} w'^{b}$. The evolution is a diffeomorphism, so we have $\xi(t+dt)^a = \xi^a + S^a dt$. The vector components change according to $v'^a = \partial_b \xi(t+dt)^a v^b = (\delta^a_b + \partial_b S^a dt) v^b$. We have:
+\begin{align*}
+v^{a} \omega_{ab} w^{b} &= v'^{a} \omega_{ab} w'^{b}  \\
+&= (v^{a} + \partial_{c} S^{a} v^{c} dt) \omega_{ab} ( w^{b} + \partial_{d} S^{b} w^{d} dt) \\
+&= v^{a} \omega_{ab} w^{b} + (\partial_{c} S^{a} v^{c} \omega_{ab} w^{b} \\
+&+ v^{a} \omega_{ab} \partial_{d} S^{b} w^{d}) dt + O(dt^2)
+\end{align*}
+We define $S_{b} \equiv S^{a} \omega_{ab}$. The metric is invariant iff $v^{c} w^{b} \partial_{c} S_{b} - v^{a} w^{d} \partial_{d} S_{a} = 0$. The relationship must true for and pair of vector, therefore $\partial_{a} S_{b} - \partial_{b} S_{a} = curl(S_{a}) = 0$. $S$ is a curl free vector field and admits a potential $H$ such that $S_{a} = \partial_{a}H$.
+
+We claim the state variables evolve according to Hamilton's equations. $S^{a} \omega_{ab} = d_t\xi^a \omega_{ab} = \partial_{b}H$. For $b=\{1,...,n\}$ we have $d_tp_i (-1) = \partial_{q_i} H$. For $a=\{n+1,...,2n\}$ we have $d_tq^i (+1) = \partial_{p_i} H$.
+\end{justification}
+
+We recognize the familiar set of Hamilton's equations. They are the set of equation to describe the deterministic and reversible motion of the infinitesimal parts of an infinitesimally reducible homogeneous material. In other words: the forces that conserve energy (i.e. the value of a suitable Hamiltonian) are exactly the ones that provide deterministic and reversible motion. The challenge in their derivation mainly lies in the necessary use of different branches of mathematics (e.g. topology, measure theory, differential geometry, symplectic geometry). The conceptual meaning, on the other hand, is hopefully straight forward. 
+
+It's important to realize that, during the derivation, multiple mathematical features (e.g. invariant densities, cotangent bundle for phase space, symplectomorphism) where justified by the same physical assumption. As such, the math itself does not give us a conceptually unified picture, it gets lost. This is one of the reason we believe that starting from the physical description is objectively better if we are to come to a better understanding of our physical theories.
+
+Note that we could have taken different approaches. For example, we could have appealed to information theory and asked our invariant distributions to preserve Shannon's information entropy, as no information should be gained or lost during a deterministic and reversible process. Or we could have appealed to statistical mechanics and required that the determinant of the covariance matrix be conserved, as deterministic and reversible process should be defined at the same level of precision. With suitable treatment of independent d.o.f. both these approaches recover Hamiltonian mechanics as well. While the full treatment goes outside the scope of this work, we want to underline that the definitions used in this work go a long way to building bridges at the core of different mathematical and scientific disciplines.
+
+\section{Time dependent evolution}
+
+We now generalize our discussion to include time dependent dynamics. This is needed when the evolution map itself changes in time or when a change of state variable is time dependent (e.g. changing to a moving frame).
+
+To do this we will extend phase space to include the temporal degree of freedom. We'll find that the dynamics is described by the relativistic Hamiltonian mechanics. We'll also find that particle states divide into standard and anti-states depending whether time is aligned or anti-aligned with the affine parameter.
+
+\subsection{Time changes}
+
+The discussion so far has been limited to the case where both the set of states and the evolution map are defined at equal time and never change throughout the evolution. This is too restrictive as there are very reasonable situation in which this does not hold.
+
+The first obvious case is that is that the map may be time dependent. Note that this does not affect our definition of determinism and reversibility: we still can tell final state from initial state and vice-versa. We just need to specify the time as well. At this point we have no way to do that. For example, the Hamiltonian $H: T^*\mathcal{Q} \rightarrow \mathbbm{R}$ is just a function of the state.
+
+The second case is when we perform a transformation for the time parameter $t'=t'(t)$. The equations of motion transform and we have $d_{t}t' d_{t'}q^i = \partial_{p_i} H$. As both $q^i$ and $H$ are independent of time, they cannot be redefined to include $d_{t}t'$. Physically the transformation is introducing fictitious forces that are not conservative, so they cannot be expressed by a Hamiltonian. But this means that we have an ill defined mathematical framework as the notion of deterministic and reversibility is not defined in a way that is independent of time transformations. We need a framework that is capable of handling the fictitious forces as well.
+
+The third case is when we perform a state variable transformation $q'=q'(q,t)$ that is time dependent (e.g. $x'=x+vt$). Our composite state distribution $\rho(q)$ becomes $\rho(q',t)$: it is no longer defined at equal time. This means that both our measure $\mu$ and our metric $d\mu$ need to be modified.
+
+The point is that we can't simply stick time in the Hamiltonian and expect everything to works out. But we can't ignore the problem either as the three cases outlined are pretty useful situation to study. So we need to go back to our definitions and amend them properly.
+
+\subsection{Extended phase space}
+
+TODO
+
+% Extend Q to include time -> M. Extended phase space is a hypersurface T*M.
+
+% Call s (affine parameter) the parameter of the evolution. Distribution defined on a n-dimensional surface in T*M. Density does not change under time transformation. Use t'=t + \Delta t(q^i, p_i) so that t' is constant. Now we are at equal t': the metric is \Sigma dq^i \wedge dp_i. Metric is the projection on the space orthogonal to t and E. That is \Sigma dq^i \wedge dp_i - dt \wege dE.
+
+
+% definition, simplectic metric on phase space
+
+% justification. Need to be able to define integration for everywhere and space and on compact time. Metric exists. Must be a two-form. Two-form is skewsymmetric. All skew symmetric forms are decomposable in hyperplanes. T*Q is a subspace of T*M. Only one hyperplane left. Metric must be \Sigma dq^i \wedge dp_i \pm dt \wedge dE. Can't be positive, as ()t, E) is not an independent d.o.f.
+
+\subsection{Relativistic Hamiltonian mechanics}
+
+TODO
+
+% find equation of motion
+
+% find constraint
+
+\subsection{anti-states}
+
+% relationship between s and t must be monotonic. Hamiltonian partitions extended phase space. Distribution must be always zero at the boundary.
+
+\section{Kinematic equivalence}
+TODO
+
+\section{Quantum systems}
+
+TODO
+
+%Note on composite systems and distinguishability. When putting together two classical system, just sum distributions. When putting together quantum system we have to clarify: combine to create one quantum system (sum in vector space) or two separate quantum system (symmetrized tensor product). In classical mechanics, 2a + 2b = (a+b) + (a+b). In quantum note |a> x |b> = |a>|b> + |b>|a> but (|a> + |b>) x (|a> + |b>) = |a>|a> + ... That is two quantum states in two different states is not the same as two quantum states spread equally over those two states. In classical they are.)
+
+% Muon example. Consider a muon and its decay into an electron and two neutrinos: it is clear that the three outgoing particles have a state and trajectory of their own, it is clear that the resulting total mass and energy came from the muon. Yet, before the decay, we cannot ascribe an internal independent state and evolution to each part. The state of a muon is not some combination of the state of an electron and two neutrinos. That is: the unstated part is not just microstates.
+
+
+%TODO: moved from classical
+%This intuitive picture is unfortunately not suitable to be generalized to different contexts, so we develop another.
+
+%Consider the following expression:
+%\begin{align*}
+%\mathcal{c} = \sum\limits_{i \in \mathbbm{I}} a_i %\mathcal{e}(i)
+%\end{align*}
+%$\mathbbm{I}$ represents all the possible values of a state variable representing the best description of an infinitesimal part that a composite system can give. $\mathcal{e}(i)$ represents a composite system made of a unit amount of particles, all prepared in the state determined by $i$. $a_i$ represents a transformation that changes the whole state, without affecting the value $i$ for any infinitesimal part. For a classical system, $i$ represents the full information about the infinitesimal part, and therefore includes the value of all state variables (i.e. the state vector); the only transformation left is increasing/decreasing the amount of particles by a scalar multiple. For a different system, where $i$ does not represent the full state of the parts, $\mathcal{e}(i)$ will be an ensemble and $a_i$ also represents an internal transformation of such ensemble. This is intuitively how we decouple the composite state into the part $i$ that describes the infinitesimal parts, and the part $a_i$ that describes how the parts are composed. Giving a full description of the state space of a decomposable system means fully characterizing these components: the state variable $\mathbbm{I}$ and the set of transformations $A$. In the classical case $\mathcal{e}(i)$ form a basis of a real vector space, where $i$ is the state vector for an infinitesimal part, and $a_i$ a real valued coefficient that represents the amount of particles in each state, which describes how the parts are combined.
+
+\section{Appendix: mathematical proofs}
+
+In this section we include mathematical demonstration in support of the physical arguments of the paper.
+
+\begin{thrm}[Extended Riesz theorem]\label{extended_riesz_theorem}
+	Let $(S, \tau)$ a locally compact Hausdorff space. Let $\Lambda = \{\Lambda_U : C(S) \rightarrow \mathbbm{R}\}_{U \subseteq S}$ a family of positive linear functionals such that $\forall U \subseteq S \; \Lambda_U = \Lambda_{\mathrm{int}(U)}$ and $\Lambda_{U_1} + \Lambda_{U_2} = \Lambda_{U_1 \cup U_2} + \Lambda_{U_1 \cap U_2} \; \forall U_1, U_2 \subseteq S$. Then there exists a unique Borel measure $\mu$ such that $\Lambda_U (\rho) = \int_{U} \rho d\mu \; \forall \rho \in C(S)$.
+\end{thrm}
+
+\begin{proof}
+	We claim that at each $s \in S$ there exists a compact neighborhood $U \subseteq S$ endowed with a Borel measure $\mu_U$ such that $\Lambda_U (\rho) = \int_U \rho d \mu_U \; \forall \rho \in C(S)$. $S$ is locally compact. $\forall s \in S \; \exists U \subseteq S$ such that $U$ is compact. $U$ with the subspace topology is a compact Hausdorff topological space on which is defined a positive linear functional $\Lambda_U : C(S) \rightarrow \mathbbm{R}$. For the Riesz representation theorem for linear functionals, there exists a unique Borel measure $\mu_U$ such that $\Lambda_U (\mathcal{c}) = \int_U \rho d \mu_U \; \forall \rho \in C(S)$.
+	
+	We claim that $S$ is endowed with a unique Borel measure $\mu$ such that $\Lambda_U (\rho) = \int_U \rho d \mu$. Let $U \subseteq V \subseteq \mathcal{S}$ two compact subsets. Let $\rho \in C(S)$. $\Lambda_V (\rho) = \int_V \rho d \mu_V = \int_U \rho d \mu_V + \int_{V\backslash U} \rho d \mu_V$. Also $\Lambda_V (\rho) = \Lambda_U (\rho) + \Lambda_{V\backslash U} (\rho) = \int_U \rho d \mu_U + \int_{V \backslash U} \rho d \mu_{\overline{V \backslash U}} $. Therefore $\int_{U} \rho_{\mathcal{c}} d \mu_U = \int_{U} \rho_{\mathcal{c}} d \mu_V$. $d\mu$ is unique and does not depend on the choice of neighborhood. $S$ is locally compact. It admits a cover $\{U_\alpha\}_{\alpha \in A}$ where each $U_\alpha$ is compact.
+	\begin{align*}
+	\Lambda_{\mathcal{S}}(\mathcal{c}) &= \sum \limits_{\alpha \in A} \Lambda_{U_\alpha}(\mathcal{c}) - \sum \limits_{\alpha \in A} \sum \limits_{\beta \in A}^{\beta \neq\alpha} \Lambda_{U_\alpha \cap U_\beta}(\mathcal{c}) \\
+	&= \sum \limits_{\alpha \in A} \int_{U_\alpha} \rho_{\mathcal{c}} d\mu - \sum \limits_{\alpha \in A} \sum \limits_{\beta \in A}^{\beta \neq\alpha} \int_{U_\alpha \cap U_\beta}(\mathcal{c}) \rho_{\mathcal{c}} d\mu \\
+	&= \int_{\mathcal{S}} \rho_{\mathcal{c}} d\mu
+	\end{align*}
+	The measure is unique on the whole space.
+\end{proof}
+
+\begin{thrm}\label{everywhere_integrable_is_lebesgue_integrable}
+	Let $\mathcal{L}(S,\mu) \equiv \{ \rho : S \rightarrow \mathbbm{R} \; | \;\; |\int_{U} \rho d\mu| < \infty \; \forall U \subseteq S\}$. $\mathcal{L}(S,\mu)=L^1(S,\mu)$ where $L^1(S,\mu) = \{ \rho : S \rightarrow \mathbbm{R} \; | \;\; \int_{S} |\rho| d\mu < \infty \}$
+\end{thrm}
+
+\begin{proof}
+	We claim $\mathcal{L}(S,\mu) \supseteq L^1(S,\mu)$. Let $\rho \in L^1(S,\mu)$. Let $U \subseteq S$. $\lVert \rho \rVert_U \equiv \int_{U} |\rho| d\mu < \int_{\mathcal{S}} |\rho| d\mu < \infty$. $\lVert \rho \rVert_U = \lVert \rho^+ \rVert_U + \lVert \rho^- \rVert_U$. $\lVert \rho^+ \rVert_U < \infty$ and $\lVert \rho^- \rVert_U < \infty$. $|\int_{U} \rho d\mu| = |\int_{U} \rho^+ d\mu - \int_{U} \rho^- d\mu| = |\int_{U} \rho^+ d\mu| - |\int_{U} \rho^- d\mu| = \lVert \rho^+ \rVert_U - \lVert \rho^- \rVert_U < \infty$. $\rho \in\mathcal{L}(S,\mu)$.
+	
+	We claim $L^1(S,\mu) \supseteq \mathcal{L}(S,\mu)$.  Let $\rho \in \mathcal{L}(S,\mu)$. Let $S^+ \equiv  \{ s \in S \; | \; \rho(s) > 0\}$. Let $S^- \equiv  \{ s \in S \; | \; \rho(s) < 0\}$. $|\int_{S^+} \rho d\mu| = |\int_{S} \rho^+ d\mu| = \lVert \rho^+ \rVert < \infty$ and $|\int_{S^-} \rho d\mu| = |\int_{S} \rho^- d\mu| = \lVert \rho^- \rVert < \infty$. $\lVert \rho \rVert = \lVert \rho^+ \rVert_U + \lVert \rho^- \rVert_U < \infty$. $\rho \in L^1(S,\mu)$.
+	
+	We claim $L^1(S,\mu) = \mathcal{L}(S,\mu)$. $\mathcal{L}(S,\mu) \supseteq L^1(S,\mu)$ and $L^1(S,\mu) \supseteq \mathcal{L}(S,\mu)$.	
+\end{proof}
+
+\begin{thebibliography}{0}
+
+\bibitem{Shannon} Shannon, C. E., ``A mathematical theory of communication'', The Bell System Technical Journal, Vol. 27, pp. 379--423, 623--656, (1948).
+\bibitem{Jaynes} Jaynes, E. T., ``Information theory and statistical mechanics'', Statistical Physics 3, pp. 181--218, (1963).
+\bibitem{classical_dynamics} J. V. Jos\'{e}, E. J. Saletan, ``Classical Dynamics'', Cambridge University Press, (1998).
+\bibitem{Gromov} Gromov, M. L., ``Pseudo holomorphic curves in symplectic manifolds'', Inventiones Mathematicae 82, pp. 307--347, (1985).
+\bibitem{deGosson} de Gosson, M. A., ``The symplectic camel and the uncertainty principle: the tip of an iceberg?'', Foundations of Physics 39, pp. 194--214, (2009).
+\bibitem{Stewart} Stewart, I., ``The symplectic camel'', Nature 329, pp. 17--18, (1987).
+\bibitem{Lanczos} Lanczos, C., ``The variational principles of mechanics'', University of Toronto Press, (1949).
+\bibitem{Synge} Synge, J. L., ``Classical dynamics'', Encyclopedia of Physics Vol 3/1, Springer (1960).
+\bibitem{Struckmeier} Struckmeier, J., ``Hamiltonian dynamics on the symplectic extended phase space for autonomous and non-autonomous systems'', J. Phys. A: Math. Gen. 38, pp. 1257--1278, (2005).
+
+\end{thebibliography}
+
+\end{document}
