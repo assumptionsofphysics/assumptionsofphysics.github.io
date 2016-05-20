@@ -8,5 +8,6 @@ git clone https://github.com/gcarcassi/physics.git
 cd physics/2015CompleteDerivation/
 pdflatex completeDerivation.tex
 cp completeDerivation.tex ../../../../draft.pdf
+cd ../../../..
 git commit -am "Updating draft"
 git push
