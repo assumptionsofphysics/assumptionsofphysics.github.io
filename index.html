@@ -1,196 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Assumptions of Physics</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
 
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <title>Assumptions of Physics - Home</title>
 
+        <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+
+        <!-- Bootstrap -->
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
     </head>
-    <body style="padding-top: 50px">
-        <!-- Navigation bar -->
-        <!-- ============== -->
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="index.html" class="navbar-brand"><!--<img class="pull-left" src="favicon.png">-->&nbsp;<b>Assumptions of Physics</b></a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="https://github.com/assumptionsofphysics"><i class="fa fa-github fa-fw"></i>&nbsp;GitHub</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+    <body class="home">
+
+        <header id="header">
+            <div id="head" class="parallax" parallax-speed="2">
+                <h1 id="logo" class="text-center">
+                    <!--			<img class="img-circle" src="assets/images/guy.jpg" alt="">-->
+                    <span class="title">Assumptions of physics</span>
+                    <span class="tagline">A research project led by <a href="https://lsa.umich.edu/physics/people/faculty/caidala.html">Christine Aidala</a>
+                        and <a href="https://lsa.umich.edu/physics/people/staff/carcassi.html">Gabriele Carcassi</a>
+                        at the <a href="https://lsa.umich.edu/physics">University of Michigan</a></span>
+                </h1>
             </div>
-        </div>
 
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Assumptions of Physics</h1>
-                <p>Putting physics first by deriving the existing mathematical frameworks from simple physical assumptions</p>
-            </div>
-        </div>
+            <nav class="navbar navbar-default navbar-sticky">
+                <div class="container-fluid">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 style="text-align: center">The fundamental questions</h1>
-                    <p style="font-style: italic; font-size: 18px">While some branches of fundamental physics (such as Newtonian mechanics, thermodynamics and special relativity)
-                        are founded on physical laws or principles, others (such as Hamiltonian, Lagrangian and Quantum mechanics) 
-                        are founded on their respective mathematical frameworks. If one is to ask "what is a Hamiltonian system?" the
-                        only answer is "one that is described by Hamilton's equations".</p>
-                    <p style="font-style: italic; font-size: 18px">The aim of this work is to re-found the well established mathematical frameworks starting from physical assumptions
-                        that characterize the system under study. This provides a more physically meaningful approach to the theory and
-                        provides better intuitive understanding of the mathematical tools.</p>
-                    <h1 style="text-align: center">Assumptions and consequences</h1>
-                    <p>From each physical assumption we can derive a set of physical and mathematical consequences.
-                        This allows us to better understand what Hamiltonian/Lagrangian Classical/Quantum systems are.</p>
-                    <div class="panel panel-default">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Assumption</th>
-                                    <th>Consequence</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="right">I</td>
-                                    <td><b>Determinism and reversibility.</b> Given the present state of the system under study, all future and past states are uniquely identified.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Dynamical_system">Dynamical system.</a></b> State space is a Hausdorff, second countable topological space. Deterministic and reversible
-                                        evolution is a self-homeomorphism. Trajectories in state space are continuous.</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">II.a</td>
-                                    <td><b>Classical assumption of infinitesimal reducibility.</b> The system under study is made of a
-                                        homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
-                                        is equivalent to giving the state of each infinitesimal part. The evolution of each part is deterministic
-                                        and reversible.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Hamiltonian_mechanics">Classical Hamiltonian particle mechanics.</a></b> The state space of the homogeneous material is isomorphic to the set of 
-                                        Lebesgue integrable continuous real functions that describe the distribution of the material of the states of the infinitesimal
-                                        parts. The state space of the infinitesimal parts (i.e. phase space) is the cotangent bundle of the manifold that determines the system of units.
-                                        On phase space the canonical two-form is a metric that returns the number of possibilities for each degree of freedom.
-                                        Each infinitesimal part evolves according to Hamilton's equations.</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">II.b</td>
-                                    <td><b>Quantum assumption of irreducibility.</b>The system under study is made of a
-                                        homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
-                                        does not provide any description for the infinitesimal parts. The evolution of the system as a whole is deterministic and reversible
-                                        but not at the level of each infinitesimal part.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum Hamiltonian particle mechanics.</a></b> The state space of the homogeneous material is isomorphic to the set of 
-                                        Lebesgue square-integrable continuous complex functions that describe the distribution of material in terms of two
-                                        independent stochastic variables. The whole system evolves according to the Schroedinger equation.</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">III</td>
-                                    <td><b>Kinematic equivalence.</b> For the system under study, the kinematics (i.e. trajectories in physical space-time) 
-                                        and the dynamics (i.e. trajectories in state space) are equivalent. Giving a set of initial conditions, such as position
-                                        and velocity, is equivalent to giving the initial state.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrangian particle mechanics</a> with
-                                            <a href="https://en.wikipedia.org/wiki/Scalar_potential">scalar</a>/<a href="https://en.wikipedia.org/wiki/Scalar_potential">vector</a>
-                                            potential forces.</b> The Hamiltonian is limited to the class for
-                                        massive particles moving under forces described by scalar or vector potentials. We can define a Legendre transformation
-                                        for the Hamiltonian.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h1 class="panel-title">Videos</h1></div>
-                        <div class="panel-body">
-                            <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                                <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDd9Qj4VxNL8dijiWZCAzanl" frameborder="0" allowfullscreen></iframe>
+                    <div class="navbar-collapse collapse">
+
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/overview.html">Overview</a></li>
+                            <li><a href="/resources.html">Resources</a></li>
+                            <li><a href="/book">Book</a></li>
+                        </ul>
+
+                    </div><!--/.nav-collapse -->			
+                </div>	
+            </nav>
+        </header>
+
+        <main id="main">
+
+            <div class="container">
+
+                <div class="row section topspace">
+                    <div class="col-md-12">
+                        <p class="lead text-center">The goal of this project is to unearth the fundamental assumptions
+                            of science in general and physics in particular. </p>
+                    </div>
+                </div> <!-- / section -->
+
+                <div class="row section topspace">
+                    <div class="panel panel-cta"><div class="panel-body">
+                            <div class="col-lg-8">
+                                <p>Learn more about the overall project: its motivation, its goals and its overall framework. </p>
                             </div>
-                            <br>
-                            <p>A series of videos introducing the relationship between Hamiltonian mechanics and determinism/reversibility.</p>
-                            <br>
-                            <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                                <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDev5YhUto7YL4XIcBb-bXm8" frameborder="0" allowfullscreen></iframe>
+                            <div class="col-lg-4 text-right">
+                                <a href="overview.html" class="btn btn-primary btn-lg"><i class="fas fa-binoculars fa-fw"></i> Overview</a>
                             </div>
-                            <br>
-                            <p>A series of videos on the geometrical meaning of Lagrangian mechanics and its relations to determinism/reversibility.</p>
-                            <br>
-                            <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                                <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDdCM_6wCJGx_YaJDeAhy_yX" frameborder="0" allowfullscreen></iframe>
+                        </div></div>
+                </div> <!-- /section -->
+
+                <div class="row section topspace">
+                    <div class="panel panel-cta"><div class="panel-body">
+                            <div class="col-lg-4">
+                                <a href="resources.html" class="btn btn-primary btn-lg"><i class="fas fa-file-image fa-fw"></i> Resources</a>
                             </div>
-                            <br>
-                            <p>A series of videos that aim to give an intuitive of vector calculus.</p>
+                            <div class="col-lg-8 text-right">
+                                <p>Papers, presentations, videos and all the other material that aim to disseminate the
+                                ideas and results of the project.</p>
+                            </div>
+                        </div></div>
+                </div> <!-- /section -->
+
+                <div class="row section topspace">
+                    <div class="panel panel-cta"><div class="panel-body">
+                            <div class="col-lg-8">
+                                <p>Our work-in-progress open access book, which explores all the ideas in depth from 
+                                all different angles: math, physics and philosophy.</p>
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <a href="book" class="btn btn-primary btn-lg"><i class="fas fa-book fa-fw"></i> Book</a>
+                            </div>
+                        </div></div>
+                </div> <!-- /section -->
+
+
+            </div>	<!-- /container -->
+
+        </main>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 widget">
+                        <div class="widget-body">
+                            <p style="font-size: 1rem">
+                                <b>Assumptions of physics</b>
+                            </p>	
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h1 class="panel-title">Blog</h1></div>
-                        <div class="panel-body">
-                            <p><b><a href="http://sufficientlywise.org">Gabriele Carcassi's blog on foundations of physics</a></b>.
-                                In the blog the project lead tries to make some the concepts accessible
-                                to a broader audience. See the <a href="http://sufficientlywise.org/index/">index of all posts</a>.
+                    <div class="col-md-4 widget">
+                        <div class="widget-body">
+                            <p class="text-center" style="font-size: 1rem">
+                                <a href="mailto:info@assumptionsofphysics.org">info@assumptionsofphysics.org</a>
+                            </p>	
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 widget">
+                        <div class="widget-body">
+                            <p class="text-right" style="font-size: 1rem">
+                                <a href="https://www.youtube.com/user/gcarcassi"><i class="fa fa-youtube"></i></a> <a href="https://github.com/assumptionsofphysics"><i class="fa fa-github fa-lg"></i></a><br>
+                                
                             </p>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h1 class="panel-title">Presentations</h1></div>
-                        <div class="panel-body">
-                            <p><b><a href="20180718-33rdTopology-Slides.pdf">2018/07/18 - The Logic and Topology of Experimentally Verifiable Statements</a></b>.
-                                Presentation given by Gabriele Carcassi at the 33rd Summer Conference on Topology and its Applications,
-                                University of Dayton. (<a href="20180718-33rdTopology-Slides.pdf">pdf</a> - <a href="20180718-33rdTopology-Slides.pptx">pptx</a>)</p>
-                            <p><b><a href="20170627-32ndTopology-Slides.pdf">2017/06/27 - Topology and Physical Distinguishability</a></b>.
-                                Presentation given by Gabriele Carcassi at the 32nd Summer Conference on Topology and its Applications,
-                                University of Dayton. (<a href="20170627-32ndTopology-Slides.pdf">pdf</a> - <a href="20170627-32ndTopology-Slides.pptx">pptx</a>)</p>
-                            <p><b><a href="20160716-Foundations2016-Slides.pdf">2016/07/16 - From Physical Assumptions To Classical Hamiltonian And Lagrangian Particle Mechanics</a></b>.
-                                Presentation given by Gabriele Carcassi at Foundations2016: the 18th UK and European Conference on Foundations of Physics,
-                                London School of Economics. (<a href="20160716-Foundations2016-Slides.pdf">pdf</a> - <a href="20160716-Foundations2016-Slides.pptx">pptx</a>)</p>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h1 class="panel-title">Papers</h1></div>
-                        <div class="panel-body">
-                            <p><b><a href="https://arxiv.org/abs/1807.07896">Towards a general mathematical theory of experimental science (2018)</a></b>: summarizes
-                                the logic of verifiable statements.</p>
-                            <p><b><a href="https://arxiv.org/abs/1708.05492">Topology and experimental distinguishability (2017)</a></b>: first attempt to formalize the first
-                                part of the derivation up to topological spaces.</p>
-                            <p><b><a href="http://iopscience.iop.org/article/10.1088/2399-6528/aaba25">From physical assumptions to classical and quantum Hamiltonian and Lagrangian particle mechanics (2017)</a></b>:
-                                the full derivation from the discussion of the basic assumptions to
-                                the details of the mathematical frameworks. It serves as a proof of concept and blueprint for the whole project.</p>
-                        </div>
-                    </div>
-                </div>
+
+                </div> <!-- /row of widgets -->
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h1 class="panel-title">Work in progress</h1></div>
-                        <div class="panel-body">
-                            <p><b><a href="book/">Assumptions of physics (book)</a>
-                                </b>: the current <b><a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fbook&target=book.tex&command=pdflatex&trackId=1505754735843">development draft</a></b> of the book
-                                in which we plan to develop the whole derivation.</p>
+        </footer>
+
+        <footer id="underfooter">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 widget">
+                        <div class="widget-body">
                         </div>
                     </div>
-                </div>
+
+                    <div class="col-md-6 widget">
+                        <div class="widget-body">
+                            <p class="text-right">
+                                Icons:  <a href="https://icons8.com" >Icons8</a>  <br> 
+                                Design: <a href="http://www.gettemplate.com" >Initio by GetTemplate</a> </p>
+                        </div>
+                    </div>
+
+                </div> <!-- /row of widgets -->
             </div>
-        </div>
+        </footer>
+
+
+
+        <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="assets/js/template.js"></script>
     </body>
 </html>
