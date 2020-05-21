@@ -1,268 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45849881-3"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-45849881-3');
-        </script>
-        <meta charset="utf-8">
-        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-
-        <title>Assumptions of Physics - Overview</title>
-
-        <link rel="shortcut icon" href="assets/images/gt_favicon.png">
-
-        <!-- Bootstrap -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-        <!-- Icons -->
-        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <!-- Fonts -->
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-        <!-- Custom styles -->
-        <link rel="stylesheet" href="assets/css/styles.css">
-
-        <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
-    </head>
-<body>
-
-<header id="header">
-	<div id="head" class="parallax" parallax-speed="1">
-		<h1 id="logo" class="text-center">
-			<span class="title">Assumptions of Physics</span>
-		</h1>
-	</div>
-
-            <nav class="navbar navbar-default navbar-sticky">
-                <div class="container-fluid">
-
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    </div>
-
-                    <div class="navbar-collapse collapse">
-
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="/overview.html">Overview</a></li>
-                            <li><a href="/resources.html">Resources</a></li>
-                            <li><a href="/book">Book</a></li>
-                        </ul>
-
-                    </div><!--/.nav-collapse -->			
-                </div>	
-            </nav>
-</header>
-
-        <main id="main">
-
-            <div class="container">
-
-
-                <div class="row section featured topspace">
-                    <h2 class="section-title"><span>Introduction by field of study</span></h2>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <h3 class="text-center"><img src="assets/images/physics.svg" alt="" style="height: 2em" /> Physics</h3>
-                            <p>There has always been an effort to formalize a physical theory from a small set
-                                of well defined physics principles or laws. Newtonian mechanics, special relativity and thermodynamics,
-                                for example, follow that pattern. Unfortunately, this practice has stopped in modern times.
-                                Lagrangian mechanics and Quantum mechanics, for example, simply
-                                posit the mathematical structure without a clear justification as to what is physically described
-                                and why those rules exist. Physics is recovered at a later stage, by "interpreting" the results
-                                of the mathematical theory.</p>
-                            <p>In this project we want to revert back to that original spirit and put the physics at the center of our physical theories.
-                                We want to identify those physical starting points, our physical assumptions, and then derive
-                                the mathematical framework as a necessary consequence. By proceeding in this fashion, it is
-                                always clear under what conditions a particular theory can be assumed to be valid, it is clear
-                                what mathematical structure are physically meaningful and what are just artifacts introduced
-                                by mathematicians to make calculations or proofs easier to develop. It also allows us to think
-                                more deeply about our starting points, leading to new insights and possible new approaches.</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <h3 class="text-center"><img src="assets/images/math.svg" alt="" style="height: 2em" /> Math</h3>
-                            <p>The foundations of mathematics settled during the beginning of the 20th century. Work by
-                                Cantor, Russel, Zermelo, Fraenkel, Godel and many others re-organized the whole discipline
-                                on top of logic and set theory. During that period physics was tackling new ideas in
-                                both theory and experiment, which lead to general relativity and quantum mechanics, and 
-                                never really took that step at fully identifying the formal foundations of its discipline.</p>
-                            <p> In this project we establish a general mathematical theory for experimental science,
-                                which aims to axiomatize the underpinning of all scientific disciplines in the same way
-                                that logic and axiomatic set theory establishes the underpinning of all modern math.
-                                The core concept is the idea of an experimentally verifiable statement: an assertion that,
-                                if true, can be verified to be so in a finite amount of time. We establish the logic of
-                                these objects and we see how they lead to topologies and sigma-algebras. A physical theory,
-                                then, is simply a collection of verifiable statement with a well defined semantic relationship
-                                between them.</p>
-                            <p> Uncovering the assumptions of physics means understanding how a physical assumption
-                                is formally captured by the semantic relationship between statements, and how those relationships
-                                necessarily lead to a given mathematical structure.</p>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <h3 class="text-center"><img 
-                                    src="assets/images/philosophy.svg" alt="" style="height: 2em" /> Philosophy</h3>
-                            <p>Over the last century, there has been an increasing interest within philosophy of
-                                science on the foundations of the physical theories. Particularly in quantum mechanics,
-                                the effort is to better characterize the mathematical structure describing the theory
-                                in terms of "real" ontological entities. The main issue here is that the same mathematical
-                                equation can be used to describe different physical systems (e.g. linear systems are used
-                                in electronics, thermodynamics, biology, etc...) and the same physical system can be
-                                described by different mathematical structures (e.g. a massive point particle can be modeled
-                                by a point in a cotangent bundle or by a point in a tangent bundle).</p>
-                            <p>In this project we develop the mathematical structures of science starting by clearly defining the physical
-                                objects we are studying, with particular attention to the philosophical aspects that
-                                arise with those definitions. As we do this from the very beginning, we are forced
-                                to clarify many aspects that are usually "swept under the rug". As everything else is
-                                built on top these definitions, the mathematical structures have one clear meaning and 
-                                there are no issue of interpretation. This provides a better framework to understand
-                                what science is, what the laws of physics are and what they can or cannot be describing.</p>
-                        </div>
-                    </div>
-                </div> <!-- / section -->
-
-                <div class="row section recentworks topspace">
-
-                    <h2 class="section-title"><span>Overview of the framework</span></h2>
-                    
-                    <p>In this table we list the core ideas of our work and how they translate into the mathematical framework.</p>
-                    
-                    <div class="panel panel-default">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Concept</th>
-                                    <th>Consequence</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="right"></td>
-                                    <td><b>Principle of scientific objectivity.</b> Science is universal, non-contradictory and evidence based.</td>
-                                    <td><b><a href="book">Our general mathematical theory of experimental science.</a></b> A scientific theory is a collection
-                                        of statements that can be experimentally tested, which ultimately determine the possible cases that can be experimentally
-                                        distinguished. It must keep track of what can be verified (a topology), what can be predicted (a sigma-algebra) and a 
-                                        way to establish the precision of different statements (a measure).</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">I</td>
-                                    <td><b>Assumption of determinism and reversibility.</b> Given the present state of the system under study, all future and past states are uniquely identified.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Dynamical_system">Dynamical system.</a></b> The state of the system is the
-                                        finest description that can be determined experimentally. Deterministic and reversible evolution preserves what
-                                        can be tested experimentally (the topology), what can be predicted (the sigma algebra), the precision of statements (the measure)
-                                        and the nature of the system (e.g. vector space, metric, ...). That is: it is a self-homeomorphism in the category (i.e. a continuous
-                                        transformation for the topology, a measure preserving map for the measure, a linear transformation for a vector space, ...).</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">II.a</td>
-                                    <td><b>Classical assumption of infinitesimal reducibility.</b> The system under study is made of a
-                                        homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
-                                        is equivalent to giving the state of each infinitesimal part. The evolution of each part is deterministic
-                                        and reversible.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Hamiltonian_mechanics">Classical Hamiltonian particle mechanics.</a></b> The state of the
-                                        composite system is identified by a distribution of the material over the states of the infinitesimal parts. The state space of the
-                                        infinitesimal part must allow to define the distribution independently from what coordinate system is used (a symplectic manifold).
-                                        Deterministic and reversible evolution can only move the density from one state to another without changing it and must
-                                        conserve the number of states as they evolve. That is: each infinitesimal part evolves according to Hamilton's equations
-                                        (a symplectomorphism).</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">II.b</td>
-                                    <td><b>Quantum assumption of irreducibility.</b> The system under study is made of a
-                                        homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
-                                        does not provide any description for the infinitesimal parts. The evolution of the system as a whole is deterministic and reversible
-                                        but not at the level of each infinitesimal part.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum Hamiltonian particle mechanics.</a></b> The state space of the homogeneous material
-                                        is identified by a distribution within which each infinitesimal part moves chaotically. This random motion can be described in terms two
-                                        independent stochastic variables (a complex distribution). While the overall system can still be assembled/disassembled into parts (a vector space),
-                                        the correlation between the random variables will result into constructive and descructive interference. Deterministic and
-                                        reversible evolution will preserve the total amount of material (unitary evolution) and therefore evolves according to the Schroedinger equation.</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">III</td>
-                                    <td><b>Kinematic equivalence.</b> For the system under study, the kinematics (i.e. trajectories in physical space-time) 
-                                        and the dynamics (i.e. trajectories in state space) are equivalent. Giving a set of initial conditions, such as position
-                                        and velocity, is equivalent to giving the initial state.</td>
-                                    <td><b><a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrangian particle mechanics</a> with
-                                        <a href="https://en.wikipedia.org/wiki/Scalar_potential">scalar</a>/<a href="https://en.wikipedia.org/wiki/Scalar_potential">vector</a>
-                                        potential forces.</b> As we must be able to re-express the distributions defined over state variables as distributions over kinematic variables,
-                                        ranges of initial states have to map linearly to ranges of initial conditions (symplectic form induces a metric). This constrains the possible relationships between velocities and
-                                        momentum and limits the system to massive particles moving under forces described by scalar or vector potentials.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-
-
-                </div> <!-- /section -->
-
-            </div>	<!-- /container -->
-
-        </main>
-
-        <footer id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 widget">
-                        <div class="widget-body">
-                            <p style="font-size: 1rem">
-                                <b>Assumptions of physics</b>
-                            </p>	
-                        </div>
-                    </div>
-                    <div class="col-md-4 widget">
-                        <div class="widget-body">
-                            <p class="text-center" style="font-size: 1rem">
-                                <a href="mailto:info@assumptionsofphysics.org">info@assumptionsofphysics.org</a>
-                            </p>	
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 widget">
-                        <div class="widget-body">
-                            <p class="text-right" style="font-size: 1rem">
-                                <a href="https://www.youtube.com/user/gcarcassi"><i class="fab fa-youtube"></i></a> <a href="https://github.com/assumptionsofphysics"><i class="fab fa-github fa-lg"></i></a><br>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-                </div> <!-- /row of widgets -->
+---
+layout: web
+title: Overview
+---
+<div class="container">
+    <div class="row section featured topspace">
+        <h2 class="section-title"><span>Introduction by field of study</span></h2>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <h3 class="text-center"><img src="assets/images/physics.svg" alt="" style="height: 2em" /> Physics</h3>
+                <p>There has always been an effort to formalize a physical theory from a small set
+                    of well defined physics principles or laws. Newtonian mechanics, special relativity and thermodynamics,
+                    for example, follow that pattern. Unfortunately, this practice has stopped in modern times.
+                    Lagrangian mechanics and Quantum mechanics, for example, simply
+                    posit the mathematical structure without a clear justification as to what is physically described
+                    and why those rules exist. Physics is recovered at a later stage, by "interpreting" the results
+                    of the mathematical theory.</p>
+                <p>In this project we want to revert back to that original spirit and put the physics at the center of our physical theories.
+                    We want to identify those physical starting points, our physical assumptions, and then derive
+                    the mathematical framework as a necessary consequence. By proceeding in this fashion, it is
+                    always clear under what conditions a particular theory can be assumed to be valid, it is clear
+                    what mathematical structure are physically meaningful and what are just artifacts introduced
+                    by mathematicians to make calculations or proofs easier to develop. It also allows us to think
+                    more deeply about our starting points, leading to new insights and possible new approaches.</p>
             </div>
-        </footer>
-
-        <footer id="underfooter">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-6 widget">
-                        <div class="widget-body">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 widget">
-                        <div class="widget-body">
-                            <p class="text-right">
-                                Icons:  <a href="https://icons8.com" >Icons8</a>  <br> 
-                                Design: <a href="http://www.gettemplate.com" >Initio by GetTemplate</a> </p>
-                        </div>
-                    </div>
-
-                </div> <!-- /row of widgets -->
+            <div class="col-sm-6 col-md-4">
+                <h3 class="text-center"><img src="assets/images/math.svg" alt="" style="height: 2em" /> Math</h3>
+                <p>The foundations of mathematics settled during the beginning of the 20th century. Work by
+                    Cantor, Russel, Zermelo, Fraenkel, Godel and many others re-organized the whole discipline
+                    on top of logic and set theory. During that period physics was tackling new ideas in
+                    both theory and experiment, which lead to general relativity and quantum mechanics, and 
+                    never really took that step at fully identifying the formal foundations of its discipline.</p>
+                <p> In this project we establish a general mathematical theory for experimental science,
+                    which aims to axiomatize the underpinning of all scientific disciplines in the same way
+                    that logic and axiomatic set theory establishes the underpinning of all modern math.
+                    The core concept is the idea of an experimentally verifiable statement: an assertion that,
+                    if true, can be verified to be so in a finite amount of time. We establish the logic of
+                    these objects and we see how they lead to topologies and sigma-algebras. A physical theory,
+                    then, is simply a collection of verifiable statement with a well defined semantic relationship
+                    between them.</p>
+                <p> Uncovering the assumptions of physics means understanding how a physical assumption
+                    is formally captured by the semantic relationship between statements, and how those relationships
+                    necessarily lead to a given mathematical structure.</p>
             </div>
-        </footer>
+            <div class="col-sm-6 col-md-4">
+                <h3 class="text-center"><img 
+                        src="assets/images/philosophy.svg" alt="" style="height: 2em" /> Philosophy</h3>
+                <p>Over the last century, there has been an increasing interest within philosophy of
+                    science on the foundations of the physical theories. Particularly in quantum mechanics,
+                    the effort is to better characterize the mathematical structure describing the theory
+                    in terms of "real" ontological entities. The main issue here is that the same mathematical
+                    equation can be used to describe different physical systems (e.g. linear systems are used
+                    in electronics, thermodynamics, biology, etc...) and the same physical system can be
+                    described by different mathematical structures (e.g. a massive point particle can be modeled
+                    by a point in a cotangent bundle or by a point in a tangent bundle).</p>
+                <p>In this project we develop the mathematical structures of science starting by clearly defining the physical
+                    objects we are studying, with particular attention to the philosophical aspects that
+                    arise with those definitions. As we do this from the very beginning, we are forced
+                    to clarify many aspects that are usually "swept under the rug". As everything else is
+                    built on top these definitions, the mathematical structures have one clear meaning and 
+                    there are no issue of interpretation. This provides a better framework to understand
+                    what science is, what the laws of physics are and what they can or cannot be describing.</p>
+            </div>
+        </div>
+    </div> <!-- / section -->
+
+    <div class="row section recentworks topspace">
+
+        <h2 class="section-title"><span>Overview of the framework</span></h2>
+
+        <p>In this table we list the core ideas of our work and how they translate into the mathematical framework.</p>
+
+        <div class="panel panel-default">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Concept</th>
+                        <th>Consequence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="right"></td>
+                        <td><b>Principle of scientific objectivity.</b> Science is universal, non-contradictory and evidence based.</td>
+                        <td><b><a href="book">Our general mathematical theory of experimental science.</a></b> A scientific theory is a collection
+                            of statements that can be experimentally tested, which ultimately determine the possible cases that can be experimentally
+                            distinguished. It must keep track of what can be verified (a topology), what can be predicted (a sigma-algebra) and a 
+                            way to establish the precision of different statements (a measure).</td>
+                    </tr>
+                    <tr>
+                        <td align="right">I</td>
+                        <td><b>Assumption of determinism and reversibility.</b> Given the present state of the system under study, all future and past states are uniquely identified.</td>
+                        <td><b><a href="https://en.wikipedia.org/wiki/Dynamical_system">Dynamical system.</a></b> The state of the system is the
+                            finest description that can be determined experimentally. Deterministic and reversible evolution preserves what
+                            can be tested experimentally (the topology), what can be predicted (the sigma algebra), the precision of statements (the measure)
+                            and the nature of the system (e.g. vector space, metric, ...). That is: it is a self-homeomorphism in the category (i.e. a continuous
+                            transformation for the topology, a measure preserving map for the measure, a linear transformation for a vector space, ...).</td>
+                    </tr>
+                    <tr>
+                        <td align="right">II.a</td>
+                        <td><b>Classical assumption of infinitesimal reducibility.</b> The system under study is made of a
+                            homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
+                            is equivalent to giving the state of each infinitesimal part. The evolution of each part is deterministic
+                            and reversible.</td>
+                        <td><b><a href="https://en.wikipedia.org/wiki/Hamiltonian_mechanics">Classical Hamiltonian particle mechanics.</a></b> The state of the
+                            composite system is identified by a distribution of the material over the states of the infinitesimal parts. The state space of the
+                            infinitesimal part must allow to define the distribution independently from what coordinate system is used (a symplectic manifold).
+                            Deterministic and reversible evolution can only move the density from one state to another without changing it and must
+                            conserve the number of states as they evolve. That is: each infinitesimal part evolves according to Hamilton's equations
+                            (a symplectomorphism).</td>
+                    </tr>
+                    <tr>
+                        <td align="right">II.b</td>
+                        <td><b>Quantum assumption of irreducibility.</b> The system under study is made of a
+                            homogeneous material that can be decomposed into infinitesimal parts. Giving the state of the whole system
+                            does not provide any description for the infinitesimal parts. The evolution of the system as a whole is deterministic and reversible
+                            but not at the level of each infinitesimal part.</td>
+                        <td><b><a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum Hamiltonian particle mechanics.</a></b> The state space of the homogeneous material
+                            is identified by a distribution within which each infinitesimal part moves chaotically. This random motion can be described in terms two
+                            independent stochastic variables (a complex distribution). While the overall system can still be assembled/disassembled into parts (a vector space),
+                            the correlation between the random variables will result into constructive and descructive interference. Deterministic and
+                            reversible evolution will preserve the total amount of material (unitary evolution) and therefore evolves according to the Schroedinger equation.</td>
+                    </tr>
+                    <tr>
+                        <td align="right">III</td>
+                        <td><b>Kinematic equivalence.</b> For the system under study, the kinematics (i.e. trajectories in physical space-time) 
+                            and the dynamics (i.e. trajectories in state space) are equivalent. Giving a set of initial conditions, such as position
+                            and velocity, is equivalent to giving the initial state.</td>
+                        <td><b><a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrangian particle mechanics</a> with
+                                <a href="https://en.wikipedia.org/wiki/Scalar_potential">scalar</a>/<a href="https://en.wikipedia.org/wiki/Scalar_potential">vector</a>
+                                potential forces.</b> As we must be able to re-express the distributions defined over state variables as distributions over kinematic variables,
+                            ranges of initial states have to map linearly to ranges of initial conditions (symplectic form induces a metric). This constrains the possible relationships between velocities and
+                            momentum and limits the system to massive particles moving under forces described by scalar or vector potentials.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
 
 
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="assets/js/template.js"></script>
-</body>
-</html>
+    </div> <!-- /section -->
+
+</div>	<!-- /container -->
+
