@@ -10,7 +10,7 @@ title: Book
   {% assign pageurl = page.url | replace: 'index.html', '' %}
   {% if file.path contains pageurl %}
     {% if file.extname == '.svg' %}
-    <p><a href="word-target?wordtarget={{ file.name }}">Word target {{ file.basename }}</a></p>
+    <p style="margin-bottom: 0"><a href="word-target?wordtarget={{ file.name }}">Word target {{ file.basename }}</a></p>
     {% endif %}
   {% endif %}
 {% endfor %}
