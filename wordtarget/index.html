@@ -3,14 +3,14 @@ layout: web
 title: Book
 ---
 <div class="container">
-
-    <div class="row">
+    <div class="row section topspace">
+        <h1 style="text-align: center; margin-bottom: 30px; margin-top: -30px">Word targets</h1>
         <div class="col-md-12">
             {% for file in site.static_files %}
   {% assign pageurl = page.url | replace: 'index.html', '' %}
   {% if file.path contains pageurl %}
     {% if file.extname == '.svg' %}
-    <p>File {{ file.path }} </p>
+    <p><a href="word-target?wordtarget={{ file.name }}">Word target {{ file.basename }}</a></p>
     {% endif %}
   {% endif %}
 {% endfor %}

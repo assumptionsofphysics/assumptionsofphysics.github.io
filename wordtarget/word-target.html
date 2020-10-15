@@ -4,11 +4,17 @@ title: Papers and presentations
 ---
 <div class="container">
     <div class="row section topspace">
-        <h1 style="text-align: center; margin-bottom: 30px">Word target 20201015</h1>
+        <h1 id="wordTargetTitle" style="text-align: center; margin-bottom: 30px; margin-top: -30px">Word target 20201015</h1>
         <div class="col-md-6">
-            <img src="20201015.svg" style="width: 100%" alt="Word target">
+            <img id="wordTargetImage" src="20201015.svg" style="width: 100%" alt="Word target">
             <p/>
         </div>
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            console.log(urlParams.get('wordtarget'));
+            document.getElementById("wordTargetImage").src = urlParams.get('wordtarget');
+            document.getElementById("wordTargetTitle").textContent = "Word target " + urlParams.get('wordtarget').substring(0, urlParams.get('wordtarget').length - 4);
+        </script>
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading"><h1 class="panel-title"><i class="fas fa-copy"></i>&nbsp; Rules</h1></div>
