@@ -13,7 +13,8 @@ title: Papers and presentations
             var urlParams = new URLSearchParams(window.location.search);
             console.log(urlParams.get('wordtarget'));
             document.getElementById("wordTargetImage").src = urlParams.get('wordtarget');
-            document.getElementById("wordTargetTitle").textContent = "Word target " + urlParams.get('wordtarget').substring(0, urlParams.get('wordtarget').length - 4);
+            var wordTargetName = urlParams.get('wordtarget').substring(0, urlParams.get('wordtarget').length - 4);
+            document.getElementById("wordTargetTitle").textContent = "Word target " + wordTargetName;
         </script>
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -27,6 +28,24 @@ title: Papers and presentations
                         <li style="margin-bottom: 10px">The next word can be connected to the previous by association of ideas</li>
                     </ol>
                 </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><h1 class="panel-title"><i class="far fa-lightbulb"></i>&nbsp; Solution</h1></div>
+                <div class="panel-body" id="solution">
+                    <a onclick="loadSolution()">Show solution</a>
+<script>
+function loadSolution() {
+    var solution = document.getElementById("solution");
+    while (solution.firstChild) {
+        solution.removeChild(solution.firstChild);
+    }
+    fetch(wordTargetName + ".txt")
+    .then(response => response.text())
+    .then((data) => {
+      solution.textContent = data;
+    });
+}
+</script>                </div>
             </div>
         </div>
     </div>
