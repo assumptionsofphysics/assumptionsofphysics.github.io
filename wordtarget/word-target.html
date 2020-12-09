@@ -8,15 +8,6 @@ title: Papers and presentations
         <div class="col-md-6">
             <img id="wordTargetImage" src="20201015.svg" style="width: 100%" alt="Word target">
             <p/>
-        </div>
-        <script>
-            var urlParams = new URLSearchParams(window.location.search);
-            console.log(urlParams.get('wordtarget'));
-            document.getElementById("wordTargetImage").src = urlParams.get('wordtarget');
-            var wordTargetName = urlParams.get('wordtarget').substring(0, urlParams.get('wordtarget').length - 4);
-            document.getElementById("wordTargetTitle").textContent = "Word target " + wordTargetName;
-        </script>
-        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading"><h1 class="panel-title"><i class="fas fa-copy"></i>&nbsp; Rules</h1></div>
                 <div class="panel-body">
@@ -29,11 +20,42 @@ title: Papers and presentations
                     </ol>
                 </div>
             </div>
+        </div>
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            document.getElementById("wordTargetImage").src = urlParams.get('wordtarget');
+            var wordTargetName = urlParams.get('wordtarget').substring(0, urlParams.get('wordtarget').length - 4);
+            document.getElementById("wordTargetTitle").textContent = "Word target " + wordTargetName;
+        </script>
+        <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading"><h1 class="panel-title"><i class="far fa-lightbulb"></i>&nbsp; Solution</h1></div>
+                <div class="panel-heading"><h1 class="panel-title"><i class="far fa-lightbulb"></i>&nbsp; Solution <a onclick="loadSolution()" style="color: #bd1550">(Show)</a></h1></div>
                 <div class="panel-body" id="solution">
-                    <a onclick="loadSolution()">Show solution</a>
 <script>
+    
+    prepareBlank();
+    
+function prepareBlank() {
+    var solution = document.getElementById("solution");
+    while (solution.firstChild) {
+        solution.removeChild(solution.firstChild);
+    }
+    fetch(wordTargetName + ".txt")
+    .then(response => response.text())
+    .then((data) => {
+        var lines = data.split('\n');
+        var htmlSolution = "";
+        for (var i = 0; i < lines.length; i++){
+            if (i === 0 || i === lines.length - 1) {
+                htmlSolution += "<p style=\"margin-bottom: 10px\">" + (i + 1) + ".&nbsp;&nbsp;&nbsp;"  + lines[i] + "</p>";
+            } else {
+                htmlSolution += "<p style=\"margin-bottom: 10px\">" + (i + 1) + ".&nbsp;&nbsp;&nbsp;</p>";
+            }
+        }
+        solution.innerHTML = htmlSolution;
+    });
+}
+
 function loadSolution() {
     var solution = document.getElementById("solution");
     while (solution.firstChild) {
@@ -42,7 +64,12 @@ function loadSolution() {
     fetch(wordTargetName + ".txt")
     .then(response => response.text())
     .then((data) => {
-      solution.textContent = data;
+        var lines = data.split('\n');
+        var htmlSolution = "";
+        for (var i = 0; i < lines.length; i++){
+            htmlSolution += "<p style=\"margin-bottom: 10px\">" + (i + 1) + ".&nbsp;&nbsp;&nbsp;" + lines[i] + "</p>";
+        }
+        solution.innerHTML = htmlSolution;
     });
 }
 </script>                </div>
