@@ -1,3 +1,6 @@
 nbproject/private
 scripts/build
 *~
+/_site
+/.jekyll-cache
+Gemfile.lock
