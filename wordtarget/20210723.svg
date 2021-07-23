@@ -1,0 +1,121 @@
+  <svg width="500" height="500" viewBox="-550 -550 1100 1100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text1 { fill: black; font: 50px sans-serif; }
+    .text2 { fill: white; font: 50px sans-serif; }
+    .line2 { stroke: white; stroke-width:5; }
+    .text3 { fill: black; font: 50px sans-serif; }
+    .line3 { stroke: black; stroke-width:5; }
+    .text4 { fill: white; font: 50px sans-serif; }
+    .line4 { stroke: white; stroke-width:5; }
+    .text5 { fill: black; font: 50px sans-serif; }
+    .line5 { stroke: black; stroke-width:5; }
+  </style>
+
+  <circle cx="0" cy="0" r="505" fill="black" />
+  <circle cx="0" cy="0" r="500" fill="white" />
+  <circle cx="0" cy="0" r="400" fill="black" />
+  <circle cx="0" cy="0" r="300" fill="white" />
+  <circle cx="0" cy="0" r="200" fill="black" />
+  <circle cx="0" cy="0" r="100" fill="white" />
+  <line x1="-415" y1="-415" x2="-390" y2="-390" stroke="black" stroke-width="20"/>
+  <polygon points="-375 -415, -415 -375, -360 -360" />
+
+  <path id="circle2" fill="transparent"
+      d="
+      M 0 0
+      m -130, 0
+      a 130,130 0 1,1 260,0
+      a 130,130 0 1,1 -260,0
+      "
+  />
+  <path id="circle3" fill="transparent"
+      d="
+      M 0 0
+      m -230, 0
+      a 230,230 0 1,1 460,0
+      a 230,230 0 1,1 -460,0
+      "
+  />
+  <path id="circle4" fill="transparent"
+      d="
+      M 0 0
+      m -330, 0
+      a 330,330 0 1,1 660,0
+      a 330,330 0 1,1 -660,0
+      "
+  />
+  <path id="circle5" fill="transparent"
+      d="
+      M 0 0
+      m -430, 0
+      a 430,430 0 1,1 860,0
+      a 430,430 0 1,1 -860,0
+      "
+  />
+
+  <!-- First circle -->
+  <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" class="text1">PHONE</text>
+
+  <!-- Second circle -->
+  <line transform="rotate(-11 0,0)" x1="-200" x2="-100" y1="0" y2="0" class="line2"/>
+  <text transform="rotate(4 0,0)" class="text2"><textPath href="#circle2">NOBLE</textPath></text>
+  <line transform="rotate(96 0,0)" x1="-200" x2="-100" y1="0" y2="0" class="line2"/>
+  <text transform="rotate(111 0,0)" class="text2"><textPath href="#circle2">ATTACK</textPath></text>
+  <line transform="rotate(216 0,0)" x1="-200" x2="-100" y1="0" y2="0" class="line2"/>
+  <text transform="rotate(231 0,0)" class="text2"><textPath href="#circle2">GRAMMA</textPath></text>
+
+  <!-- Third circle -->
+  <line transform="rotate(-22 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(-16 0,0)" class="text3"><textPath href="#circle3">SKUNK</textPath></text>
+  <line transform="rotate(33 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(40 0,0)" class="text3"><textPath href="#circle3">PANIC</textPath></text>
+  <line transform="rotate(84 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(90 0,0)" class="text3"><textPath href="#circle3">RADIOACTIVE</textPath></text>
+  <line transform="rotate(180 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(186 0,0)" class="text3"><textPath href="#circle3">MAGIC</textPath></text>
+  <line transform="rotate(233 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(240 0,0)" class="text3"><textPath href="#circle3">DEALT</textPath></text>
+  <line transform="rotate(286 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(293 0,0)" class="text3"><textPath href="#circle3">SPELL</textPath></text>
+
+  <!-- Fourth circle -->
+  <line transform="rotate(6 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(12 0,0)" class="text4"><textPath href="#circle4">SKULL</textPath></text>
+  <line transform="rotate(46 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(52 0,0)" class="text4"><textPath href="#circle4">MOBILE</textPath></text>
+  <line transform="rotate(91 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(97 0,0)" class="text4"><textPath href="#circle4">GAMMA</textPath></text>
+  <line transform="rotate(137 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(143 0,0)" class="text4"><textPath href="#circle4">TRIVIUM</textPath></text>
+  <line transform="rotate(185 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(191 0,0)" class="text4"><textPath href="#circle4">GRAMMAR</textPath></text>
+  <line transform="rotate(243 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(250 0,0)" class="text4"><textPath href="#circle4">IDEAL</textPath></text>
+  <line transform="rotate(281 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(287 0,0)" class="text4"><textPath href="#circle4">SMELL</textPath></text>
+  <line transform="rotate(322 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(329 0,0)" class="text4"><textPath href="#circle4">MOBLE</textPath></text>
+
+  <!-- Fifth circle -->
+  <line transform="rotate(21 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(26 0,0)" class="text5"><textPath href="#circle5">OFFENSIVE</textPath></text>
+  <line transform="rotate(69 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(74 0,0)" class="text5"><textPath href="#circle5">SKULK</textPath></text>
+  <line transform="rotate(102 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(107 0,0)" class="text5"><textPath href="#circle5">ISOTOPE</textPath></text>
+  <line transform="rotate(142 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(147 0,0)" class="text5"><textPath href="#circle5">TRITIUM</textPath></text>
+  <line transform="rotate(180 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(185 0,0)" class="text5"><textPath href="#circle5">GAS</textPath></text>
+  <line transform="rotate(204 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(210 0,0)" class="text5"><textPath href="#circle5">DEAL</textPath></text>
+  <line transform="rotate(233 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(238 0,0)" class="text5"><textPath href="#circle5">DELTA</textPath></text>
+  <line transform="rotate(265 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(271 0,0)" class="text5"><textPath href="#circle5">URANIUM</textPath></text>
+  <line transform="rotate(307 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(312 0,0)" class="text5"><textPath href="#circle5">MANIC</textPath></text>
+  <line transform="rotate(339 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(344 0,0)" class="text5"><textPath href="#circle5">CRANIUM</textPath></text>
+
+</svg>
