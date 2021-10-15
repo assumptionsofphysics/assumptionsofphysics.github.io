@@ -1,0 +1,123 @@
+  <svg width="500" height="500" viewBox="-550 -550 1100 1100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text1 { fill: black; font: 50px sans-serif; }
+    .text2 { fill: white; font: 50px sans-serif; }
+    .line2 { stroke: white; stroke-width:5; }
+    .text3 { fill: black; font: 50px sans-serif; }
+    .line3 { stroke: black; stroke-width:5; }
+    .text4 { fill: white; font: 50px sans-serif; }
+    .line4 { stroke: white; stroke-width:5; }
+    .text5 { fill: black; font: 50px sans-serif; }
+    .line5 { stroke: black; stroke-width:5; }
+  </style>
+
+  <circle cx="0" cy="0" r="505" fill="black" />
+  <circle cx="0" cy="0" r="500" fill="white" />
+  <circle cx="0" cy="0" r="400" fill="black" />
+  <circle cx="0" cy="0" r="300" fill="white" />
+  <circle cx="0" cy="0" r="200" fill="black" />
+  <circle cx="0" cy="0" r="100" fill="white" />
+  <line x1="-415" y1="-415" x2="-390" y2="-390" stroke="black" stroke-width="20"/>
+  <polygon points="-375 -415, -415 -375, -360 -360" />
+
+  <path id="circle2" fill="transparent"
+      d="
+      M 0 0
+      m -130, 0
+      a 130,130 0 1,1 260,0
+      a 130,130 0 1,1 -260,0
+      "
+  />
+  <path id="circle3" fill="transparent"
+      d="
+      M 0 0
+      m -230, 0
+      a 230,230 0 1,1 460,0
+      a 230,230 0 1,1 -460,0
+      "
+  />
+  <path id="circle4" fill="transparent"
+      d="
+      M 0 0
+      m -330, 0
+      a 330,330 0 1,1 660,0
+      a 330,330 0 1,1 -660,0
+      "
+  />
+  <path id="circle5" fill="transparent"
+      d="
+      M 0 0
+      m -430, 0
+      a 430,430 0 1,1 860,0
+      a 430,430 0 1,1 -860,0
+      "
+  />
+
+  <!-- First circle -->
+  <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" class="text1">ROCK</text>
+
+  <!-- Second circle -->
+  <line transform="rotate(1 0,0)" x1="-200" x2="-100" y1="0" y2="0" class="line2"/>
+  <text transform="rotate(15 0,0)" class="text2"><textPath href="#circle2">AWAKE</textPath></text>
+  <line transform="rotate(111 0,0)" x1="-200" x2="-100" y1="0" y2="0" class="line2"/>
+  <text transform="rotate(126 0,0)" class="text2"><textPath href="#circle2">BRAN</textPath></text>
+  <line transform="rotate(203 0,0)" x1="-200" x2="-100" y1="0" y2="0" class="line2"/>
+  <text transform="rotate(218 0,0)" class="text2"><textPath href="#circle2">NORTHERN</textPath></text>
+
+  <!-- Third circle -->
+  <line transform="rotate(-6 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(1 0,0)" class="text3"><textPath href="#circle3">PEARL</textPath></text>
+  <line transform="rotate(49 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(56 0,0)" class="text3"><textPath href="#circle3">PEAL</textPath></text>
+  <line transform="rotate(95 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(103 0,0)" class="text3"><textPath href="#circle3">AWARE</textPath></text>
+  <line transform="rotate(155 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(163 0,0)" class="text3"><textPath href="#circle3">SHELL</textPath></text>
+  <line transform="rotate(209 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(217 0,0)" class="text3"><textPath href="#circle3">HEMISPHERE</textPath></text>
+  <line transform="rotate(305 0,0)" x1="-300" x2="-200" y1="0" y2="0" class="line3"/>
+  <text transform="rotate(313 0,0)" class="text3"><textPath href="#circle3">YEAR</textPath></text>
+
+  <!-- Fourth circle -->
+  <line transform="rotate(83 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(90 0,0)" class="text4"><textPath href="#circle4">BRAIN</textPath></text>
+  <line transform="rotate(123 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(130 0,0)" class="text4"><textPath href="#circle4">NORTHER</textPath></text>
+  <line transform="rotate(181 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(188 0,0)" class="text4"><textPath href="#circle4">LINEAR</textPath></text>
+  <line transform="rotate(226 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(233 0,0)" class="text4"><textPath href="#circle4">YEARN</textPath></text>
+  <line transform="rotate(270 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(277 0,0)" class="text4"><textPath href="#circle4">FUNCTION</textPath></text>
+  <line transform="rotate(329 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(336 0,0)" class="text4"><textPath href="#circle4">YARN</textPath></text>
+  <line transform="rotate(8 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(15 0,0)" class="text4"><textPath href="#circle4">LEAP</textPath></text>
+  <line transform="rotate(44 0,0)" x1="-400" x2="-300" y1="0" y2="0" class="line4"/>
+  <text transform="rotate(51 0,0)" class="text4"><textPath href="#circle4">BARN</textPath></text>
+
+  <!-- Fifth circle -->
+  <line transform="rotate(25 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(28 0,0)" class="text5"><textPath href="#circle5">TORTOISE</textPath></text>
+  <line transform="rotate(65 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(68 0,0)" class="text5"><textPath href="#circle5">EMMY</textPath></text>
+  <line transform="rotate(92 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(95 0,0)" class="text5"><textPath href="#circle5">WAVE</textPath></text>
+  <line transform="rotate(118 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(121 0,0)" class="text5"><textPath href="#circle5">AWARD</textPath></text>
+  <line transform="rotate(149 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(152 0,0)" class="text5"><textPath href="#circle5">MINERAL</textPath></text>
+  <line transform="rotate(186 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(189 0,0)" class="text5"><textPath href="#circle5">WAKE</textPath></text>
+  <line transform="rotate(212 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(215 0,0)" class="text5"><textPath href="#circle5">MARLINE</textPath></text>
+  <line transform="rotate(248 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(251 0,0)" class="text5"><textPath href="#circle5">OYSTER</textPath></text>
+  <line transform="rotate(282 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(285 0,0)" class="text5"><textPath href="#circle5">LARINE</textPath></text>
+  <line transform="rotate(313 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(316 0,0)" class="text5"><textPath href="#circle5">NOETHER</textPath></text>
+  <line transform="rotate(352 0,0)" x1="-500" x2="-400" y1="0" y2="0" class="line5"/>
+  <text transform="rotate(355 0,0)" class="text5"><textPath href="#circle5">MARINE</textPath></text>
+
+</svg>
