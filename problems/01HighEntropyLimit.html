@@ -1,0 +1,47 @@
+---
+layout: problem
+title: High entropy limit of quantum mechanics
+video: 
+---
+
+<p>Conjecture. Any sufficiently high entropy state can be approximated by a
+classical mixture of Gaussian wave packets.</p>
+
+<p>Mathematical problem. Denote \(|g(q,p)\rangle\) a set of Gaussian wave packets
+    centered in phase space at position \(q\) and momentum \(p\).
+    We want to show that a density matrix \(\rho\) with sufficiently high
+    Von Neumann entropy \( tr(\rho \log \rho) \), allows the approximation:
+    
+    $$\rho \approx \int \hat{\rho}(q,p) |g(q,p)\rangle \langle g(q,p)| dq dp$$
+    
+    for a suitable function \( \hat{\rho}(q,p) \) of position of momentum. The
+    approximation should also approximate the expectations:
+    
+    $$tr(\rho F(Q,P)) \approx \int \hat{\rho}(q,p) f(q,p) dq dp.$$
+</p>
+
+<p>Note that there are a number of issues that remain vague, and part of the problem
+    is exactly to find the correct specification. For example,
+    the quality of the approximation should increase with the entropy of the mixed
+    state, how this link works (at least in the limit) is part of the problem.
+</p>
+
+<p>
+    Physical significance. The idea is to show that the classical limit arises
+    without a physical mechanism, but just as an approximation. A single particle
+    in a pure state will have low entropy, and therefore the approximation will
+    fail. A gas of multiple particle at room temperature, however, will have a
+    high entropy, and therefore it can be approximated with a classical mixed state.
+    While we will commit an error in making the approximation, the idea is that
+    such error will be below the uncertainty associated with the high entropy.
+</p>
+
+<p>
+    The conjecture is motivated by observing that pure quantum states have zero entropy
+    while pure classical states (i.e. microstates) have minus infinite entropy
+    (they are a point over a continuuum, therefore a set of measure zero).
+    The lower bound for entropy is also established by the third law of thermodynamics.
+    Classical statistical states and quantum mixed states, then, must "diverge"
+    as the entropy decreases since they cannot "go to zero" in the same way.
+</p>
+
