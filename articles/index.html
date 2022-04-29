@@ -1,0 +1,24 @@
+---
+layout: web
+title: Articles
+---
+<div class="container">
+    <div class="row section topspace">
+        <h1 style="text-align: center; margin-bottom: 30px; margin-top: -30px">Articles</h1>
+        <div class="col-md-12">
+          {% for page in site.pages %}
+              {% if page.path contains '/article.md' %}
+                  <p><b>{{page.title}}</b> {% for lang in page.languages %}
+                    {% assign path = page.path | split: '/article.md' %}
+                    {% assign tokens = path[0] | split: '-' %}
+                    {% assign name = tokens[1] %}
+                    <a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics.github.io&target={{path}}/{{name}}.{{lang}}.tex&command=pdflatex">{{lang}}</a>
+                  {% endfor %}
+                </br>TL;DR: <i>{{page.summary}}</i></p>
+              {% endif %}
+          {% endfor %}
+            <p/>
+        </div>
+    </div>
+
+</div>	<!-- /container -->
