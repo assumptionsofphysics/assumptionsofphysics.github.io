@@ -19,7 +19,7 @@
 	
 	\maketitle
 	
-After taking a course in advanced mechanics, one is often left with the impression that Netwonian, Lagrangian and Hamiltonian mechanics are all equivalent. Unfortunately, while this is often what a books would say, I don't think that's the case. And you shouldn't take my word for it, or you would make the same mistake I made when I believed everything that was written in my mechanics book.
+After taking a course in advanced mechanics, one is often left with the impression that Netwonian, Lagrangian and Hamiltonian mechanics are all equivalent. Unfortunately, while this is often what books say, that's not the case. But you shouldn't simply take our word for it.
 
 Textbooks typically stress systems that can be described by all three. We'll go through two counter examples: a body affected by air friction (which is Newtonian but neither Lagrangian or Hamiltonian) and the photon as a particle (which is Hamiltonian but neither Lagrangian or Newtonian). 
 
@@ -48,7 +48,7 @@ Note that, using the chain rule, we have:
 We can then rewrite the Euler-Lagrange equations as:
 \begin{equation}
 \label{EulerLagrangeMod}
-\frac{\partial^2 L}{\partial^2 v} a + \frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x}=0
+\frac{\partial^2 L}{\partial v^2} a + \frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x}=0
 \end{equation}
 Which will make our job easier.
 
@@ -60,6 +60,7 @@ A system is Hamiltonian if there is a function $H(x,p)$ such that the system fol
 \end{aligned}
 \label{Hamilton}
 \end{equation}
+Note that, in this case, the velocity $v=\frac{dx}{dt}$ can be expressed as a function $v(x,p)$ of position and momentum.
 
 In many cases, the same system admits all three descriptions. A free particle is such a system, as
 \begin{equation}
@@ -80,7 +81,7 @@ ma+bv=0
 \end{equation}
 Is this compatible with Lagrangian and Hamiltonian mechanics?
 
-For \eqref{EulerLagrangeMod} to give us \eqref{dragEq}, we must have
+Comparing \eqref{EulerLagrangeMod} and \eqref{dragEq}, we may try
 \begin{align}
 \label{dragMass}
 &\frac{\partial^2 L}{\partial^2 v} = m \\
@@ -94,35 +95,57 @@ L = \frac{1}{2} m v^2 + f_1(x) v + f_2 (x)
 \end{equation*}
 where $f_1(x)$ and $f_2 (x)$ are arbitrary functions of position. We substitute this into \eqref{dragVelocity} and have:
 \begin{align*}
-\frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x} &= (\frac{\partial f_1}{\partial x}) v - \frac{\partial f_1}{\partial x} v -  \frac{\partial f_2}{\partial x} \\
+\frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x} &= \left(\frac{\partial f_1}{\partial x}\right) v - \frac{\partial f_1}{\partial x} v -  \frac{\partial f_2}{\partial x} \\
 &= -  \frac{\partial f_2}{\partial x} \\
 &= bv
 \end{align*}
-which is impossible as $f_2$ is only a function of position. Therefore there is no Lagrangian that would give us \eqref{dragEq} as equations of motion: a massive particle under linear drag is not a Lagrangian system.
+which is impossible as $f_2$ is only a function of position.
 
-We can intuitively understand that the system is not Hamiltonian either: it is dissipative, it does not conserve energy. As Hamiltonian mechanics can only describe systems that conserve energy (i.e. the Hamiltonian), a massive particle under linear drag is not a Hamiltonian system.
-
-Mathematically, Hamiltonian mechanics does not have attractors. That is, it cannot have regions of phase space, like equilibrium point, toward which the motions tends to go. Suppose it had an equilibrium point, then the volume around it would shrink and shrink during the evolution. This violates Louisville's theorem which states that the phase space volume of an Hamiltonian system is conserved. In this specific case, the region with zero velocity is an attractor for the system: whatever velocity you start with, you end up at rest. This means the system is not Hamiltonian.
-
-Writing down the math for the general case is a bit involved, so we just show that if we assume $p=mv$ Hamilton's equations \eqref{Hamilton} cannot give \eqref{dragEq}. We have:
+For Hamiltonian mechanics, if we assume $p=mv$ we have:
 \begin{equation*}
-\frac{p}{m}=v= \frac{dx}{dt} = \frac{\partial H}{\partial p}
+	\frac{p}{m}=v= \frac{dx}{dt} = \frac{\partial H}{\partial p}
 \end{equation*}
 Integrating, the form of the Hamiltonian must be
 \begin{equation*}
-H=\frac{1}{2}\frac{p^2}{m} + V(x)
+	H=\frac{1}{2}\frac{p^2}{m} + V(x)
 \end{equation*}
 where $V$ is an arbitrary function of position. Substitute in the second equation:
 \begin{equation*}
-\frac{dp}{dt}= ma = - \frac{\partial H}{\partial x} = - \frac{\partial V}{\partial x}
+	\frac{dp}{dt}= ma = - \frac{\partial H}{\partial x} = - \frac{\partial V}{\partial x}
 \end{equation*}
 $V$ is only a function of position, therefore we cannot obtain a force that is a function of velocity.
 
-A massive particle under drag is not a Lagrangian or a Hamiltonian system.
+Unfortunately, both of these attempts are not a general proof: it just shows that a simple direct approach that mimics the free particle case does not work. In fact, we could set our Lagrangian as:
+\begin{equation}\label{wrong_Lagrangian}
+	L=v \log v - v + \frac{b}{m} x
+\end{equation}
+which gives
+\begin{align*}
+	\frac{\partial L}{\partial x} &= \frac{b}{m}\\
+	\frac{\partial L}{\partial v} &= \log v + \frac{v}{v} - 1=\log v\\
+	\frac{\partial^2 L}{\partial v^2} &= \frac{1}{v}\\
+	\frac{\partial^2 L}{\partial x \partial v} &= 0.
+\end{align*}
+This means that \eqref{EulerLagrangeMod} becomes:
+\begin{align*}
+	\frac{1}{v} a + 0 \, v + \frac{b}{m} &= 0 \\
+	ma + bv &= 0.
+\end{align*}
+It would seem we have a suitable Lagrangian, but if we look closer at \eqref{wrong_Lagrangian}, we see that the expression is defined only for non-negative velocity. Since the Lagrangian is not defined for all possible values of position and velocity, it does not describe all possible motions of the system. So the general problem is harder, more subtle and therefore more confusing!
+
+For Hamiltonian mechanics, we could argue that drag is a dissipative force, the system does not conserve energy, and therefore it cannot be Hamiltonian since Hamiltonian systems always conserve energy. But, again, maybe there is a different expression for both conjugate momentum and energy that would give us the correct motion. So, how can we proceed?
+
+We can study the general case if we recall Louisville's theorem. This states that volumes in phase space are conserved during Hamiltonian evolution. This means that there are no attractors. That is, it cannot have regions of phase space, like equilibrium point, toward which the motions tends to go.
+
+Even if we assume that $p \neq mv$, me must have a state for all possible initial conditions, therefore momentum $p(x,v)$ must be a function of position and velocity. The line at zero velocity will correspond to a line in the $x/p$ plane, in phase space, and it will need to be an attractor, as the velocity will always tend to zero at infinite time. Since we said that Hamiltonian mechanics cannot have an attractor, we will never be able to find a Hamiltonian that works for a massive particle under linear drag.
+
+We can use this result for the Lagrangian case as well. If we look at \eqref{EulerLagrangeMod}, we note that the term $\frac{\partial^2 L}{\partial v^2}$ cannot be equal to zero. If it were, the acceleration term would disappear and we would have an expression for the force. Since $\frac{\partial^2 L}{\partial v^2}$ must also be continuous, it means that it must be either always positive or always negative. This means that $\frac{\partial L}{\partial v}$ is either a strictly increasing or decreasing function, which means it is invertible.
+
+We recognize $\frac{\partial L}{\partial v}$ as conjugate momentum, and therefore we must have a bijective map between velocity and conjugate momentum, which means the Lagrangian admits a Hamiltonian that gives equivalent equations of motions. Since we said no Hamiltonian can give us a massive particle under linear drag, this means that neither a Lagrangian can. A massive particle under drag is not a Lagrangian or a Hamiltonian system.
 
 \section{Photon as a free particle}
 
-Suppose we have a photon traveling in space. It's trajectory is a line, traveled at constant speed $c$. It's momentum $p=\frac{\hbar}{\lambda}$ is conserved, where $\lambda$ is the wavelength. The system is not Newtonian: the mass is zero therefore \eqref{Fma} does not apply. Is it Hamiltonian?
+This case will be much simpler. Suppose we have a photon traveling in space. It's trajectory is a line, traveled at constant speed $c$. It's momentum $p=\frac{\hbar}{\lambda}$ is conserved, where $\lambda$ is the wavelength. The system is not Newtonian: the mass is zero therefore \eqref{Fma} does not apply. Is it Hamiltonian?
 
 The energy of the particle is $E=\hbar \nu$ where $\nu$ is the frequency. The product of the magnitude of the frequency and wavelength is euqal to the speed: $|\nu \lambda| = c$. Therefore we have:
 \begin{equation*}
@@ -142,7 +165,7 @@ Since we have the Hamiltonian, we would be tempted to write:
 \label{Legendre}
 L = pv - H
 \end{equation}
-Unfortunately, this does not work because $L$ cannot be expressed as a function of $x$ and $v$ ($H$ is not hyperregular). Because the velocity is always constant and is only a function of the direction of $p$, the change from momentum to velocity loses information. In other words: position and velocity are not enough to describe the state of the system.
+But for this to be a valid Lagrangian, we must be able to express it as a function of $x$ and $v$, and this is what we cannot do. Since the velocity is always constant and is only a function of the direction of $p$, the change from momentum to velocity loses information. Therefore while we can write $v(x,p)$, we cannot write $p(x,v)$. In other words: position and velocity are not enough to describe the state of the system. This is why we cannot write a Lagrangian for this case.
 
 The photon treated as a particles is not a Lagrangian or Newtonian system.
 

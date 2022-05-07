@@ -19,7 +19,7 @@
 
 \maketitle
 
-Dopo aver concluso un corso di meccanica razionale si ha l'impressione che le meccaniche Newtoniana, Lagrangiana e Hamiltoniana siano equivalente. Sfortunatamente, anche se questo \`e spesso quello che i libri dicono, non credo che sia cos\`i. Ma non credermi sulla parola, altrimenti faresti lo stesso errore che feci nel credere a tutto quello che era scritto sul mio libro di meccanica classica.
+Dopo aver concluso un corso di meccanica razionale si ha l'impressione che le meccaniche Newtoniana, Lagrangiana e Hamiltoniana siano equivalenti. Sfortunatamente, anche se questo \`e spesso quello che dicono i libri, non \`e cos\`i. Ma non credeteci sulla parola.
 
 I libri di testo enfatizzano la trattazione di sistemi descrivibili da tutti e tre. Qui studieremo due controesempi: un corpo soggetto all'attrito dell'aria (che \`e Newtoniano ma non Lagrangiano o Hamiltoniano) ed un fotone trattato come particella classica (che \`e Hamiltonian ma non Lagrangiano o Hamiltoniano).
 
@@ -27,7 +27,7 @@ Guarderemo solamente la dinamica per particelle (i.e. non teorie di campo) indip
 
 \section{Revisione veloce}
 
-Rivediamo prima alcune definizioni, cos\`i da avere un'idea precisa di quello dic ui parleremo.
+Rivediamo prima alcune definizioni chiave, cos\`i da avere un'idea precisa di quello di cui parleremo.
 
 Un sistema \`e Newtoniano se c'\`e una massa $m$ ed una forza $F(x,v)$ per cui si pu\`o applicare la seconda legge di Newton:
 \begin{equation}
@@ -35,24 +35,24 @@ Un sistema \`e Newtoniano se c'\`e una massa $m$ ed una forza $F(x,v)$ per cui s
 F=ma
 \end{equation}
 
-A system is Lagrangian if there is a function $L(x,v)$ such that the system obeys the Euler-Lagrange equations:
+Un sistema \`e Lagrangiano se ammette una funzione $L(x,v)$ tale che il sistema obbedisce le equazioni di Eulero-Lagrange:
 \begin{equation}
 \label{EulerLagrange}
 \frac{\partial L}{\partial x} - \frac{d}{dt} \frac{\partial L}{\partial v} = 0
 \end{equation}
-Note that, using the chain rule, we have:
+Nota che, usando la regola della catena, abbiamo:
 \begin{align*}
 \frac{d}{dt} \frac{\partial L}{\partial v} &= \frac{\partial}{\partial x} \frac{\partial L}{\partial v} \frac{dx}{dt} + \frac{\partial}{\partial v}  \frac{\partial L}{\partial v} \frac{dv}{dt} \\
 &= \frac{\partial^2 L}{\partial x \partial v} v + \frac{\partial^2 L}{\partial^2 v} a
 \end{align*}
-We can then rewrite the Euler-Lagrange equations as:
+Possiamo riscrivere le equazioni di Eulero-Lagrange come:
 \begin{equation}
 \label{EulerLagrangeMod}
-\frac{\partial^2 L}{\partial^2 v} a + \frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x}=0
+\frac{\partial^2 L}{\partial v^2} a + \frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x}=0
 \end{equation}
-Which will make our job easier.
+Questo ci semplificher\`a le cose.
 
-A system is Hamiltonian if there is a function $H(x,p)$ such that the system follows Hamilton's equations:
+Un sistema \`e Hamiltoniano se esiste una funzione $H(x,p)$ tale che il sistema obbedisce le equazioni di Hamilton:
 \begin{equation}
 \begin{aligned}
 \frac{dx}{dt} &= \frac{\partial H}{\partial p} \\
@@ -60,8 +60,9 @@ A system is Hamiltonian if there is a function $H(x,p)$ such that the system fol
 \end{aligned}
 \label{Hamilton}
 \end{equation}
+Nota che, in questo caso, la velocit\`a $v=\frac{dx}{dt}$ pu\`o essere espressa come una funzione $v(x,p)$ della posizione e del momento.
 
-In many cases, the same system admits all three descriptions. A free particle is such a system, as
+In tanti casi, lo stesso sistema ammette tutte e tre le descrizioni. Una particella libera \`e uno di questi casi, visto che
 \begin{equation}
 \begin{aligned}
 F&=0 \\
@@ -69,80 +70,102 @@ L&=\frac{1}{2}mv^2 \\
 H&=\frac{1}{2}\frac{p^2}{m}
 \end{aligned}
 \end{equation}
-yield the same trajectories. The claim is that the following two systems do not.
+danno le stesse traiettorie. La tesi \`e che ci\`o non \`e vero per i sequenti due sistemi.
 
-\section{Massive particle under linear drag}
+\section{Particella soggetto ad attrivo viscoso}
 
-Suppose we have a massive particle subject to air friction, modeled by linear drag. In this case $F=-bv$ and we have:
+Supponiamo di avere una particella soggetta all'attrito dell'aria. In questo caso $F=-bv$ e abbiamo:
 \begin{equation}
 \label{dragEq}
 ma+bv=0
 \end{equation}
-Is this compatible with Lagrangian and Hamiltonian mechanics?
+Questo \`e compatibile con la meccanica Lgrangiana o Hamiltoniana?
 
-For \eqref{EulerLagrangeMod} to give us \eqref{dragEq}, we must have
+Comparando \eqref{EulerLagrangeMod} con \eqref{dragEq}, potremmo provare
 \begin{align}
-\label{dragMass}
-&\frac{\partial^2 L}{\partial^2 v} = m \\
-\label{dragVelocity}
-&\frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x} = bv
+	\label{dragMass}
+	&\frac{\partial^2 L}{\partial^2 v} = m \\
+	\label{dragVelocity}
+	&\frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x} = bv
 \end{align}
 
-Integrating \eqref{dragMass}, the form of the Lagrangian is restricted to:
+Integrando \eqref{dragMass}, la forma della Lagrangiana viene ristretta a:
 \begin{equation*}
-L = \frac{1}{2} m v^2 + f_1(x) v + f_2 (x)
+	L = \frac{1}{2} m v^2 + f_1(x) v + f_2 (x)
 \end{equation*}
-where $f_1(x)$ and $f_2 (x)$ are arbitrary functions of position. We substitute this into \eqref{dragVelocity} and have:
+dove $f_1(x)$ e $f_2 (x)$ sono funzioni arbitrarie della posizione. Sostituendo le espression dentro \eqref{dragVelocity} abbiamo:
 \begin{align*}
-\frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x} &= (\frac{\partial f_1}{\partial x}) v - \frac{\partial f_1}{\partial x} v -  \frac{\partial f_2}{\partial x} \\
-&= -  \frac{\partial f_2}{\partial x} \\
-&= bv
+	\frac{\partial^2 L}{\partial x \partial v} v - \frac{\partial L}{\partial x} &= \left(\frac{\partial f_1}{\partial x}\right) v - \frac{\partial f_1}{\partial x} v -  \frac{\partial f_2}{\partial x} \\
+	&= -  \frac{\partial f_2}{\partial x} \\
+	&= bv
 \end{align*}
-which is impossible as $f_2$ is only a function of position. Therefore there is no Lagrangian that would give us \eqref{dragEq} as equations of motion: a massive particle under linear drag is not a Lagrangian system.
+che \`e impossibile visto che $f_2$ \`e solo funzione della posizione.
 
-We can intuitively understand that the system is not Hamiltonian either: it is dissipative, it does not conserve energy. As Hamiltonian mechanics can only describe systems that conserve energy (i.e. the Hamiltonian), a massive particle under linear drag is not a Hamiltonian system.
-
-Mathematically, Hamiltonian mechanics does not have attractors. That is, it cannot have regions of phase space, like equilibrium point, toward which the motions tends to go. Suppose it had an equilibrium point, then the volume around it would shrink and shrink during the evolution. This violates Louisville's theorem which states that the phase space volume of an Hamiltonian system is conserved. In this specific case, the region with zero velocity is an attractor for the system: whatever velocity you start with, you end up at rest. This means the system is not Hamiltonian.
-
-Writing down the math for the general case is a bit involved, so we just show that if we assume $p=mv$ Hamilton's equations \eqref{Hamilton} cannot give \eqref{dragEq}. We have:
+Per la meccanica Hamiltoniana, se assumiamo $p=mv$ abbiamo:
 \begin{equation*}
-\frac{p}{m}=v= \frac{dx}{dt} = \frac{\partial H}{\partial p}
+	\frac{p}{m}=v= \frac{dx}{dt} = \frac{\partial H}{\partial p}
 \end{equation*}
-Integrating, the form of the Hamiltonian must be
+Integrando, la forma dell'Hamiltoniana deve essere
 \begin{equation*}
-H=\frac{1}{2}\frac{p^2}{m} + V(x)
+	H=\frac{1}{2}\frac{p^2}{m} + V(x)
 \end{equation*}
-where $V$ is an arbitrary function of position. Substitute in the second equation:
+dove $V$ \`e una funzione arbitraria della posizione. Sostituendo nella seconda equazione:
 \begin{equation*}
-\frac{dp}{dt}= ma = - \frac{\partial H}{\partial x} = - \frac{\partial V}{\partial x}
+	\frac{dp}{dt}= ma = - \frac{\partial H}{\partial x} = - \frac{\partial V}{\partial x}
 \end{equation*}
-$V$ is only a function of position, therefore we cannot obtain a force that is a function of velocity.
+$V$ \`e funzione solo della posizione, perci\`o non possiamo ottenere una forza funzione della velocit\`a.
 
-A massive particle under drag is not a Lagrangian or a Hamiltonian system.
+Unfortunately, both of these attempts are not a general proof: it just shows that a simple direct approach that mimics the free particle case does not work. In fact, we could set our Lagrangian as:
+\begin{equation}\label{wrong_Lagrangian}
+	L=v \log v - v + \frac{b}{m} x
+\end{equation}
+which gives
+\begin{align*}
+	\frac{\partial L}{\partial x} &= \frac{b}{m}\\
+	\frac{\partial L}{\partial v} &= \log v + \frac{v}{v} - 1=\log v\\
+	\frac{\partial^2 L}{\partial v^2} &= \frac{1}{v}\\
+	\frac{\partial^2 L}{\partial x \partial v} &= 0.
+\end{align*}
+This means that \eqref{EulerLagrangeMod} becomes:
+\begin{align*}
+	\frac{1}{v} a + 0 \, v + \frac{b}{m} &= 0 \\
+	ma + bv &= 0.
+\end{align*}
+It would seem we have a suitable Lagrangian, but if we look closer at \eqref{wrong_Lagrangian}, we see that the expression is defined only for non-negative velocity. Since the Lagrangian is not defined for all possible values of position and velocity, it does not describe all possible motions of the system. So the general problem is harder, more subtle and therefore more confusing!
+
+For Hamiltonian mechanics, we could argue that drag is a dissipative force, the system does not conserve energy, and therefore it cannot be Hamiltonian since Hamiltonian systems always conserve energy. But, again, maybe there is a different expression for both conjugate momentum and energy that would give us the correct motion. So, how can we proceed?
+
+We can study the general case if we recall Louisville's theorem. This states that volumes in phase space are conserved during Hamiltonian evolution. This means that there are no attractors. That is, it cannot have regions of phase space, like equilibrium point, toward which the motions tends to go.
+
+Even if we assume that $p \neq mv$, me must have a state for all possible initial conditions, therefore momentum $p(x,v)$ must be a function of position and velocity. The line at zero velocity will correspond to a line in the $x/p$ plane, in phase space, and it will need to be an attractor, as the velocity will always tend to zero at infinite time. Since we said that Hamiltonian mechanics cannot have an attractor, we will never be able to find a Hamiltonian that works for a massive particle under linear drag.
+
+We can use this result for the Lagrangian case as well. If we look at \eqref{EulerLagrangeMod}, we note that the term $\frac{\partial^2 L}{\partial v^2}$ cannot be equal to zero. If it were, the acceleration term would disappear and we would have an expression for the force. Since $\frac{\partial^2 L}{\partial v^2}$ must also be continuous, it means that it must be either always positive or always negative. This means that $\frac{\partial L}{\partial v}$ is either a strictly increasing or decreasing function, which means it is invertible.
+
+We recognize $\frac{\partial L}{\partial v}$ as conjugate momentum, and therefore we must have a bijective map between velocity and conjugate momentum, which means the Lagrangian admits a Hamiltonian that gives equivalent equations of motions. Since we said no Hamiltonian can give us a massive particle under linear drag, this means that neither a Lagrangian can. A massive particle under drag is not a Lagrangian or a Hamiltonian system.
 
 \section{Photon as a free particle}
 
-Suppose we have a photon traveling in space. It's trajectory is a line, traveled at constant speed $c$. It's momentum $p=\frac{\hbar}{\lambda}$ is conserved, where $\lambda$ is the wavelength. The system is not Newtonian: the mass is zero therefore \eqref{Fma} does not apply. Is it Hamiltonian?
+This case will be much simpler. Suppose we have a photon traveling in space. It's trajectory is a line, traveled at constant speed $c$. It's momentum $p=\frac{\hbar}{\lambda}$ is conserved, where $\lambda$ is the wavelength. The system is not Newtonian: the mass is zero therefore \eqref{Fma} does not apply. Is it Hamiltonian?
 
 The energy of the particle is $E=\hbar \nu$ where $\nu$ is the frequency. The product of the magnitude of the frequency and wavelength is euqal to the speed: $|\nu \lambda| = c$. Therefore we have:
 \begin{equation*}
-E=\hbar \nu = c \frac{\hbar}{|\lambda|} = c|p| \end{equation*}
+	E=\hbar \nu = c \frac{\hbar}{|\lambda|} = c|p| \end{equation*}
 This is the energy as a function of position and momentum: it's the Hamiltonian of the system.
 
 Let's verify that Hamilton's equations \eqref{Hamilton} give us the correct equations.
 \begin{align*}
-H &= c|p| \\
-\frac{dx}{dt} &= \frac{\partial H}{\partial p} = c \frac{\partial |p|}{\partial p} = c \frac{|p|}{p} \\
-\frac{dp}{dt} &= - \frac{\partial H}{\partial x} = 0
+	H &= c|p| \\
+	\frac{dx}{dt} &= \frac{\partial H}{\partial p} = c \frac{\partial |p|}{\partial p} = c \frac{|p|}{p} \\
+	\frac{dp}{dt} &= - \frac{\partial H}{\partial x} = 0
 \end{align*}
 The momentum cannot be zero, since $H$ is discontinuous there. The velocity is $c$ in the direction of momentum. The momentum is conserved. The system is correctly described by Hamiltonian mechanics.
 
 Since we have the Hamiltonian, we would be tempted to write:
 \begin{equation}
-\label{Legendre}
-L = pv - H
+	\label{Legendre}
+	L = pv - H
 \end{equation}
-Unfortunately, this does not work because $L$ cannot be expressed as a function of $x$ and $v$ ($H$ is not hyperregular). Because the velocity is always constant and is only a function of the direction of $p$, the change from momentum to velocity loses information. In other words: position and velocity are not enough to describe the state of the system.
+But for this to be a valid Lagrangian, we must be able to express it as a function of $x$ and $v$, and this is what we cannot do. Since the velocity is always constant and is only a function of the direction of $p$, the change from momentum to velocity loses information. Therefore while we can write $v(x,p)$, we cannot write $p(x,v)$. In other words: position and velocity are not enough to describe the state of the system. This is why we cannot write a Lagrangian for this case.
 
 The photon treated as a particles is not a Lagrangian or Newtonian system.
 
