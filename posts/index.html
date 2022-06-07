@@ -13,7 +13,7 @@ title: Articles
                 <p>TL;DR: <i>{{page.summary}}</i>
                 <br/>Post:
                 {% for lang in page.languages %}
-                  {% assign path = page.path | split: '/article.md' %}
+                  {% assign path = page.path | split: '/post.md' %}
                   {% assign tokens = path[0] | split: '-' %}
                   {% assign name = tokens[1] %}
                   <a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics.github.io&target={{path}}/{{name}}.{{lang}}.tex&command=pdflatex">{{lang}}</a>
