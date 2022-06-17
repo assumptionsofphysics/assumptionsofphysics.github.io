@@ -1,72 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45849881-3"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+  <head>
+    {% include common-header.html %}
 
-            gtag('config', 'UA-45849881-3');
-        </script>
-        <meta charset="utf-8">
-        <meta name="viewport"    content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+      <title>Assumptions of Physics - {{page.title}}</title>
 
-        <title>Assumptions of Physics - {{page.title}}</title>
+  </head>
+  <body>
 
-        <link rel="shortcut icon" href="/assets/images/gt_favicon.png">
+    {% include navbar.new.html %}
 
-        <!-- Bootstrap -->
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-        <!-- Icons -->
-        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <!-- Fonts -->
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-        <!-- Custom styles -->
-        <link rel="stylesheet" href="/assets/css/styles.css">
-
-        <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    </head>
-    <body>
-
-        <header id="header">
-            <div id="head">
-                <h1 id="logo" class="text-center">
-                    <img style="max-height: 90px" src="/assets/images/LogoWhite.png" alt="">
-                    <span class="title">Assumptions of Physics</span>
-                </h1>
-            </div>
-
-            {% include navbar.html %}
-        </header>
-
-        <main id="main">
-            <div class="container">
-                <div class="row section topspace">
-                    <div class="col-md-12">
-                        <h2>{{page.title}}</h2>
-                        <p>
-                        {% if page.video %}
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
+    <main id="main">
+      <div class="container">
+          <div class="row section topspace">
+              <div class="col-md-12">
+                {% assign tokens = page.path | split: '/' %}
+                {% assign tokens = tokens[1] | split: '-' %}
+                {% assign id = tokens[0] %}
+                  <h2>#{{id}}: {{page.title}}</h2>
+                  <p><i>Category: {{page.category}} - Tags: {{page.tags | join: ", "}}</i></p>
+                <hr/>
+                  <p>
+                  {% if page.video %}
+                  <center>
+                  <div class="card" style="max-width:560px;max-height:315px">
+                    <div class="card-body" >
+                      <div style="width:100%;height:0;padding-bottom:51%;position:relative">
+                          <iframe style="width:100%;height:100%;max-height:315px;position:absolute;left:0;top:0" width="560" height="315" src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
+                      </div>
                     </div>
-                        <p>
-                        {% endif %}
-            {{ content }}
-                    </div>
-                </div>
-            </div>
-        </main>
+                  </div>
+                  </center>
+                  <p>
+                  {% endif %}
+      {{ page.content }}
+              </div>
+          </div>
+      </div>
+    </main>
 
-        {% include footer.html %}
+    {% include footer.new.html %}
 
-        <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="/assets/js/template.js"></script>
-    </body>
+  </body>
+
 </html>
