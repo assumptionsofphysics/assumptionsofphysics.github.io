@@ -3,3 +3,15 @@ description: A research project led by Christine Aidala and Gabriele Carcassi at
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman
+
+collections:
+  problems:
+    output: true
+    permalink: /problems/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: "problems"
+    values:
+      layout: "problem"
