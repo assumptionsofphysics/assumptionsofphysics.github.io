@@ -1,8 +1,7 @@
 title: Assumptions of Physics
 description: A research project led by Christine Aidala and Gabriele Carcassi at the University of Michigan
-show_downloads: true
 google_analytics:
-theme: jekyll-theme-cayman
+theme: minima
 
 collections:
   problems:
