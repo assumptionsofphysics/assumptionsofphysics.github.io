@@ -1,0 +1,21 @@
+---
+layout: web
+title: Problems
+---
+
+<div class="container">
+    <div class="row section topspace">
+        <p></p>
+        <h1 style="text-align: center; margin-bottom: 30px; margin-top: -30px">Problems</h1>
+        <div class="col-md-12">
+          {% for problem in site.problems %}
+            {% assign tokens = problem.path | split: '/' %}
+            {% assign tokens = tokens[1] | split: '-' %}
+            {% assign id = tokens[0] %}
+                <h4><b><a href="{{problem.url}}">#{{id}}: {{problem.title}}</a></b></h4>
+                <p><i>Category: {{problem.category}} - Tags: {{problem.tags | join: ", "}}</i></p>
+          {% endfor %}
+            <p/>
+        </div>
+    </div>
+</div>	<!-- /container -->
