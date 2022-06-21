@@ -9,11 +9,11 @@ statistical mixture of Gaussian wave packets**.
 *Mathematical problem.* Denote $$|g(q,p)\rangle$$ a set of Gaussian wave packets
 centered in phase space at position $$q$$ and momentum $$p$$.
 We want to show that a density matrix $$\rho$$ with sufficiently high
-Von Neumann entropy $$ tr(\rho \log \rho) $$, allows the approximation:
+von Neumann entropy $$ tr(-\rho \log \rho) $$, allows the approximation:
 
 $$\rho \approx \int \hat{\rho}(q,p) |g(q,p)\rangle \langle g(q,p)| dq dp$$
 
-for a suitable function $$ \hat{\rho}(q,p) $$ of position of momentum. The
+for a suitable function $$ \hat{\rho}(q,p) $$ of position and momentum. The
 approximation should also approximate the expectations:
 
 $$tr(\rho F(Q,P)) \approx \int \hat{\rho}(q,p) f(q,p) dq dp.$$
@@ -22,12 +22,12 @@ $$tr(\rho F(Q,P)) \approx \int \hat{\rho}(q,p) f(q,p) dq dp.$$
 Note that there are a number of issues that remain vague, and part of the problem
 is exactly to find the correct specification. For example,
 the quality of the approximation should increase with the entropy of the mixed
-state, how this link works (at least in the limit) is part of the problem.
+state; how this link works (at least in the limit) is part of the problem.
 
 *Physical significance.* The idea is to show that the classical limit arises
 without a physical mechanism, but just as an approximation. A single particle
 in a pure state will have low entropy, and therefore the approximation will
-fail. A gas of multiple particle at room temperature, however, will have a
+fail. A gas of multiple particles at room temperature, however, will have a
 high entropy, and therefore it can be approximated with a classical mixed state.
 While we will commit an error in making the approximation, the idea is that
 such error will be below the uncertainty associated with the high entropy.
