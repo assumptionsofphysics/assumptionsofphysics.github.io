@@ -1,0 +1,79 @@
+- title: "Reverse Physics"
+  year: "2021"
+  url: "https://arxiv.org/abs/2111.09107"
+  description: "showcases our approach that starts from the physical laws to find physical principles that rederive them."
+  journal: "Foundations of Physics"
+  location: "https://link.springer.com/article/10.1007/s10701-022-00555-z"
+  video: "https://youtu.be/4sfRMw0DK1I"
+
+- title: "Hamiltonian mechanics is conservation of information entropy"
+  year: "2020"
+  url: "https://arxiv.org/abs/2004.11569"
+  description: "shows that Hamiltonian mechanics describes systems and only systems that conserve entropy over time."
+  journal: "Studies in History and Philosophy of Modern Physics"
+  location: "https://www.sciencedirect.com/science/article/abs/pii/S1355219819300176"
+
+- title: "Space-time structure may be topological and not geometrical"
+  year: "2020"
+  url: "https://arxiv.org/abs/2006.13830"
+  description: "Space-time structure may be topological and not geometrical (2020)</a></b>:
+      characterizes the assumptions needed for continuous quantities and how they fail for space-time."
+  journal: "Physica Scripta"
+  location: "https://iopscience.iop.org/article/10.1088/1402-4896/ab9bdb"
+
+- title: "The four postulates of quantum mechanics are three"
+  year: "2020"
+  url: "https://arxiv.org/abs/2003.11007"
+  description: "shows that the tensor product postulate for composite system can be recovered from the state and measurement postulates."
+  journal: "Physical Review Letters"
+  location: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.110402"
+  video: "https://youtu.be/wyAkT3lZqAU"
+
+- title: "The fundamental connections between classical Hamiltonian mechanics, quantum mechanics and information entropy"
+  year: "2020"
+  url: "https://arxiv.org/abs/2001.07206"
+  description: "The fundamental connections between classical Hamiltonian mechanics, quantum mechanics and information entropy (2020)</a></b>:
+      argues that the main difference between classical and quantum mechanics is the information available about the internal
+      dynamics of the system."
+  journal: "International Journal of Quantum Information"
+  location: "https://www.worldscientific.com/doi/abs/10.1142/S0219749919410259"
+
+- title: "Variability as a better characterization of Shannon entropy"
+  year: "2019"
+  url: "https://arxiv.org/abs/1912.02012"
+  description: "provides a physically more meaningful
+      way to characterize information entropy and a more precise account of its relationship to statistical mechanics."
+  journal: "European Journal of Physics"
+  location: "https://doi.org/10.1088/1361-6404/abe361"
+
+- title: "Towards a general mathematical theory of experimental science"
+  year: "2018"
+  url: "https://arxiv.org/abs/1807.07896"
+  description: "summarizes
+      the logic of verifiable statements."
+  journal:
+  location:
+
+- title: "Topology and experimental distinguishability"
+  year: "2017"
+  url: "https://arxiv.org/abs/1708.05492"
+  description: "first attempt to formalize the first
+      part of the derivation up to topological spaces."
+  journal: "Topology Proceedings"
+  location: "https://topology.nipissingu.ca/tp/restricted/v54/tp54017.pdf"
+
+- title: "From physical assumptions to classical and quantum Hamiltonian and Lagrangian particle mechanics"
+  year: "2017"
+  url: "https://arxiv.org/abs/1708.05492"
+  description: "first attempt to formalize the first
+      part of the derivation up to topological spaces."
+  journal: "Topology Proceedings"
+  location: "https://topology.nipissingu.ca/tp/restricted/v54/tp54017.pdf"
+
+- title: "From physical assumptions to classical and quantum Hamiltonian and Lagrangian particle mechanics"
+  year: "2017"
+  url: "https://arxiv.org/abs/1702.07052"
+  description: "the full derivation from the discussion of the basic assumptions to
+  the details of the mathematical frameworks. It serves as a proof of concept and blueprint for the whole project."
+  journal: "Journal of Physics Communications."
+  location: "http://iopscience.iop.org/article/10.1088/2399-6528/aaba25"
