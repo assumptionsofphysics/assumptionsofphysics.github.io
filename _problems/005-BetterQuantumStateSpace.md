@@ -10,9 +10,9 @@ quantum mechanics.
 vectors in Hilbert spaces. The requirements for a Hilbert space can be broken up
 into the following components:
 * Vector space
-* + normed (normed vector spaces)
-* + complete under the norm (Banach space)
-* + every closed linear subspace is the range of a projection (Hilbert space) (see [here](https://en.wikipedia.org/w/index.php?title=Banach_space#Characterizations_of_Hilbert_space_among_Banach_spaces))
+* \+ normed (normed vector spaces)
+* \+ complete under the norm (Banach space)
+* \+ every closed linear subspace is the range of a projection (Hilbert space) (see [here](https://en.wikipedia.org/w/index.php?title=Banach_space#Characterizations_of_Hilbert_space_among_Banach_spaces))
 The completion under the norm seems the only non-physical requirement.
 
 On the other hand, the [Schwartz_space](https://en.wikipedia.org/wiki/Schwartz_space)
