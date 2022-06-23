@@ -1,6 +1,6 @@
 ---
 title: See how much of relativity is already there in the particle equation
-category: Differential geometry
+category: Classical mechanics
 tags: [Differential geometry, Riemmanian geometry, Symplectic geometry, General relativity]
 ---
 Following the conventions set up [here](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics&target=Notes/2018-ParticleGR/ParticleGravitation.tex&command=pdflatex), apply the Hamiltonian constrain on the

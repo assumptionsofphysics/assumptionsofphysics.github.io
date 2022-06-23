@@ -1,6 +1,6 @@
 ---
 title: Characterize the expression \( G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} \)
-category: Differential geometry
+category: Classical mechanics
 tags: [Differential geometry, Riemmanian geometry, Symplectic geometry, General relativity]
 ---
 Characterize the geometry and the physics captured by the expression
