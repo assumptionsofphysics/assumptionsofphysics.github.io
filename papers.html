@@ -9,9 +9,9 @@ title: Papers and presentations
                 <h5 class="card-header"><i class="fas fa-tv"></i>&nbsp; Presentations</h5>
                 <div class="card-body">
                     {% for presentation in site.data.presentations %}
-                      <p><b><a href={{ presentation.filename }} + ".pdf">{{ presentation.date }} - {{ presentation.title }}</a></b>.
+                      <p><b><a href="{{ presentation.filename }}.pdf">{{ presentation.date }} - {{ presentation.title }}</a></b>.
                           Presentation given by {{ presentation.presenter }} at the {{ presentation.venue }}.
-                          (<a href={{ presentation.filename }} + ".pdf">pdf</a> - <a href={{ presentation.filename }} + ".pptx">pptx</a>)</p>
+                          (<a href="{{ presentation.filename }}.pdf">pdf</a> - <a href="{{ presentation.filename }}.pptx">pptx</a>)</p>
                     {% endfor %}
                 </div>
             </div>
@@ -46,17 +46,17 @@ system/state definition</a>
                 <h5 class="card-header"><i class="fas fa-copy"></i>&nbsp; Papers</h5>
                 <div class="card-body">
                     {% for paper in site.data.papers %}
-                      <p><b><a href={{ paper.url }}> {{ paper.title }} ({{ paper.year }})</a></b>:
+                      <p><b><a href="{{ paper.url }}"> {{ paper.title }} ({{ paper.year }})</a></b>:
                           {{ paper.description }}
                           {% if paper.journal != "" %}
                             {% if paper.location != "" %}
-                              Published in <a href={{ paper.location }}>{{ paper.journal }}</a>.
+                              Published in <a href="{{ paper.location }}">{{ paper.journal }}</a>.
                             {% else %}
                               Accepted for publication in {{ paper.journal }}.
                             {% endif %}
                           {% endif %}
                           {% if paper.video != "" %}
-                            <a href={{ paper.video }}>Video presentation</a>
+                            <a href="{{ paper.video }}">Video presentation</a>
                           {% endif %}
                       </p>
                     {% endfor %}
