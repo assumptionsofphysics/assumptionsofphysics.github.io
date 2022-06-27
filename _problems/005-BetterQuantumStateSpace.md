@@ -34,5 +34,5 @@ the existence of projections is the requirement of being able to identify states
 The completeness would mean that the limit of a sequence of state preparation
 always leads a state, but this is not the case: we can (in principle) prepare
 states with narrower and narrower spatial distribution, but not zero spatial
-distribution (delta dirac). The idea would be that the requirement of completeness makes the mathematical
+distribution (delta Dirac). The idea would be that the requirement of completeness makes the mathematical
 space nicer to work with, but not physically meaningful.
