@@ -36,3 +36,12 @@ always leads a state, but this is not the case: we can (in principle) prepare
 states with narrower and narrower spatial distribution, but not zero spatial
 distribution (delta Dirac). The idea would be that the requirement of completeness makes the mathematical
 space nicer to work with, but not physically meaningful.
+
+*Notes.* Even listing all problems with Hilbert spaces may be useful.
+
+For example, a related problem with Hilbert spaces ($$L^2 specifically$$ see [Adrian Heathcote - Unbounded operators and the incompleteness of quantum mechanics](https://web.maths.unsw.edu.au/~jim/UOperators.pdf))
+is that self-adjoint operators that are defined on the whole space must be bounded.
+This means that unbounded operators must not be defined on all states: there must
+be states for which the average position is not well-defined. Again, note that this
+is not true for the Schwartz space: the position is unbounded (there is no maximum
+value for position) but all states have a well defined average position.
