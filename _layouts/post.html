@@ -1,54 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {% include common-header.html %}
-  <title>Assumptions of Physics - {{page.title}}</title>
-</head>
-    <body>
-
-{% include navbar.new.html %}
-
-      <main class="container">
-<!--        <div class="bg-light p-5 rounded">
-          <h1>Navbar example</h1>
-          <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-          <a class="btn btn-lg btn-primary" href="/docs/5.1/components/navbar/" role="button">View navbar docs &raquo;</a>
-        </div>-->
+---
+layout: default
+---
+      <div class="container">
         <div class="col-md-12">
-            <h1>{{page.title}}</h1>
-            <p><i>TL;DR: {{page.summary}}</i></p>
-            <p>Category: {{page.category}}</p>
-            <p>Tags: {{page.tags | join: ", "}}</p>
-            <p>Full text (pdf):
-              {% for lang in page.languages %}
-                {% assign path = page.path | split: '/post.md' %}
-                {% assign tokens = path[0] | split: '-' %}
-                {% assign name = tokens[1] %}
-                <a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics.github.io&target={{path}}/{{name}}.{{lang}}.tex&command=pdflatex">{{lang}}</a>
-              {% endfor %}</p>
-            <p><a href="{{page.discussion}}">Discussion page</a></p>
-            {% if page.video %}
-        <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-            <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-            <p>
-            {% endif %}
+          <h1>{{page.title}}</h1>
+          <p><i>TL;DR: {{page.summary}}</i></p>
+          <p>Category: {{page.category}}</p>
+          <p>Tags: {{page.tags | join: ", "}}</p>
+          <p>Full text (pdf):
+            {% for lang in page.languages %}
+              {% assign path = page.path | split: '/post.md' %}
+              {% assign tokens = path[0] | split: '-' %}
+              {% assign name = tokens[1] %}
+              <a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics.github.io&target={{path}}/{{name}}.{{lang}}.tex&command=pdflatex">{{lang}}</a>
+            {% endfor %}</p>
+          <p><a href="{{page.discussion}}">Discussion page</a></p>
+          {% if page.video %}
+          <div style="width:100%;height:0;padding-bottom:51%;position:relative">
+              <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <p>
+          {% endif %}
 {{ content }}
         </div>
-      </main>
-              <main id="main">
-            <div class="container">
-                <div class="row section topspace">
-                </div>
-            </div>
-        </main>
-
-
-{% include footer.new.html %}
-
-        <!-- JavaScript libs are placed at the end of the document so the pages load faster
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="/assets/js/template.js"></script>-->
-    </body>
-</html>
