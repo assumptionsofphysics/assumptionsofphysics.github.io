@@ -1,5 +1,5 @@
 ---
-layout: web
+layout: default
 title: Word Target
 ---
 <div class="container">
@@ -32,9 +32,9 @@ title: Word Target
                 <div class="panel-heading"><h1 class="panel-title"><i class="far fa-lightbulb"></i>&nbsp; Solution <a onclick="loadSolution()" style="color: #bd1550">(Show)</a></h1></div>
                 <div class="panel-body" id="solution">
 <script>
-    
+
 prepareBlank();
-    
+
 function prepareBlank() {
     var solution = document.getElementById("solution");
     while (solution.firstChild) {
