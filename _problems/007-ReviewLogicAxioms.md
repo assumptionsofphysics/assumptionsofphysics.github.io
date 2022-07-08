@@ -1,7 +1,7 @@
 ---
 title: Can the current logic axioms be simplified?
-category: Mathematical logic
-tags: [Boolean algebra, Heyting algebra, sigma-algebra]
+category: Mathematical foundations
+tags: [General theory, Mathematical logic, Boolean algebra, Heyting algebra, sigma-algebra]
 ---
 See whether the axioms of logic can be reduced (and maybe put in a form more
 "palatable" to logicians?).
