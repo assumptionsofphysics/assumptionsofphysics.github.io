@@ -2,14 +2,16 @@
 layout: default
 title: People
 ---
-<div class="row section featured topspace">
-    <h2 class="section-title"><span>Founders</span></h2>
-</div>
+{% assign groups = "Founder,Collaborator" | split: ',' %}
+{% for group in groups %}
+    <div class="row section featured topspace">
+        <h2 class="section-title"><span>{{ group }}s</span></h2>
+    </div>
 
-<div class="container">
-<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
   {% for person in site.data.people %}
-    {% if person.group == "Founder" %}
+    {% if person.group == group %}
       <div class="col">
         <div class="card">
           <img src="{{ person.img }}" class="card-img-top" alt="...">
@@ -33,35 +35,4 @@ title: People
 </div>
 </br>
 </div>
-
-
-<div class="row section featured topspace">
-    <h2 class="section-title"><span>Collaborators</span></h2>
-</div>
-
-<div class="container">
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  {% for person in site.data.people %}
-    {% if person.group == "Collaborator" %}
-      <div class="col">
-        <div class="card">
-          <img src="{{ person.img }}" class="card-img-top" alt="...">
-          <div class="card-body">
-          {% if person.url != "" %}
-            <h4 class="card-title"><a href="{{ person.url }}">{{ person.name }}</a></h4>
-          {% else %}
-            <h4 class="card-title">{{ person.name }}</h4>
-          {% endif %}
-            <div class="card-text">
-            {% if person.position != "" %}
-              <h5>{{ person.position }}</h5>
-            {% endif %}
-              <p>{{ person.job }}<br/>{{ person.department }}<br/>{{ person.university }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-</div>
+{% endfor %}
