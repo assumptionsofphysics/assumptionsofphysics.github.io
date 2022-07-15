@@ -1,5 +1,5 @@
 ---
-title: Determine whether quantum predictions allows a joint distribution by solving the moment problem
+title: Determine whether quantum predictions allow a joint distribution by solving the moment problem
 category: Probability theory
 tags: [Quantum mechanics, Statistics, Measure theory]
 ---
@@ -13,7 +13,7 @@ is determining whether given all the moments of the distribution one can reconst
 the probability distribution. That is, given a sequence $$\{m_i\}_{i=0}^{\infty}$$, determine
 whether a positive Borel measure $$\mu$$ exists such that:
 $$ m_i = \int_{-\infty}^{+\infty} x^i d\mu $$.
-Note that not al sequences $$\{m_i\}$$ allow for a solution.
+Note that not all sequences $$\{m_i\}$$ allow for a solution.
 
 We are asking whether the corresponding multivariate problem is solvable when
 starting from $$m_{ij} = E[X^iP^j] = \langle \psi | (X^iP^j + P^jX^i)/2 | \psi \rangle$$.
@@ -26,5 +26,4 @@ the quantum momentum problem cannot be solved. This would give a clear answer
 that hidden variable theories are ruled out. Note that we do not need to show
 that the problem never has a solution. It suffices to show that it does not
 have a solution in one physically relevant case. For example, if one could
-show that the problem is not solvable for a Gaussian wave packet, it would
-be already an interesting result.
+show that the problem is not solvable for a Gaussian wave packet, it would already be an interesting result.

@@ -22,7 +22,7 @@ is a dense subset of $$L^2$$, which seems better suited as:
 * It is dense over $$L^2$$
 In fact, requiring the second feature means recovering the Schwartz space.
 
-Does the Shwartz space satisfy all other characteristics of a Hilbert space,
+Does the Schwartz space satisfy all other characteristics of a Hilbert space,
 except the closure under the norm? If we just drop the closure under the norm,
 what do we lose?
 
@@ -32,7 +32,7 @@ the normed vector space can be understood as coming from linearity of probabilit
 the existence of projections is the requirement of being able to identify states
 (i.e. a measurement that outputs 1 if the state matches and 0 if it doesn't).
 The completeness would mean that the limit of a sequence of state preparation
-always leads a state, but this is not the case: we can (in principle) prepare
+always leads to a state, but this is not the case: we can (in principle) prepare
 states with narrower and narrower spatial distribution, but not zero spatial
 distribution (delta Dirac). The idea would be that the requirement of completeness makes the mathematical
 space nicer to work with, but not physically meaningful.

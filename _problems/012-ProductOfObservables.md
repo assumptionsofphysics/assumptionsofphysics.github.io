@@ -15,7 +15,7 @@ the eigenvectors are the same while the eigenvalues are given by applying the fu
 to the related eigenvalues. Therefore $$A+B$$ and $$f(A)$$ are allowed.
 
 Note that $$\frac{(a+b)^2 - a^2 -b^2}{2}=a*b$$. The left side is in terms of operations
-allowed, therefore a product consistent with those rule must be in terms of the anti-commutator
+allowed, therefore a product consistent with those rules must be in terms of the anti-commutator
 $$A*B = \frac{\{A, B\}}{2}$$.
 
 The issue is that the operation is not associative: $$\{\{A, B\}, C\} - \{A, \{B, C\}\} = B [ A, C ] - [A, C] B$$.
@@ -26,4 +26,4 @@ and therefore (through Taylor expansion) generic functions. Are there any proble
 *Physical significance.* This would seem like a basic problem that should have a
 settled question in the literature, yet we were not able to find an in depth
 treatment. If the operation is well-defined, it would also be interesting to understand what symmetry it would generate
-and what would the conjugate variable be.
+and what the conjugate variable would be.

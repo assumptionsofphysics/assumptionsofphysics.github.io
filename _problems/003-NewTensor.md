@@ -1,11 +1,11 @@
 ---
 title: Characterize the expression \( G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} \)
 category: Classical mechanics
-tags: [Differential geometry, Riemmanian geometry, Symplectic geometry, General relativity]
+tags: [Differential geometry, Riemannian geometry, Symplectic geometry, General relativity]
 ---
 Characterize the geometry and the physics captured by the expression
 $$ G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} $$.
-This expression appears when expressing the sympletic in terms of position
+This expression appears when expressing the symplectic form in terms of position
 and velocity (see [here](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics&target=Notes/2018-ParticleGR/ParticleGravitation.tex&command=pdflatex) for more details).
 
 *Mathematical problem.* The expression appears with the EM tensor in the spatial-temporal
@@ -23,6 +23,6 @@ an antisymmetrized covariant derivative and an antisymmetrized partial derivativ
 what does that say geometrically?
 
 *Physical significance.* Note that the setting is not really that of space-time
-(i.e. Riemmanian manifold) but that of phase-space (i.e. symplectic manifold).
+(i.e. Riemannian manifold) but that of phase-space (i.e. symplectic manifold).
 The general idea is to reunderstand the metric tensor not as a geometrical property of
 space-time but as a geometrical property of phase-space.

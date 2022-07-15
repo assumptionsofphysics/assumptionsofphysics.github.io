@@ -7,13 +7,13 @@ Show that quantum projections are processes that maximize the entropy while keep
 just the expectation constant, but all other variables as well.
 
 *Mathematical problem.* We want to show that quantum projection can be understood
-as thermodynamic processes of entropy maximization. In a typical MaxEnt problem,
+as thermodynamic processes of entropy maximization. In a typical entropy maximization problem,
 the constraint is the expectation of a random variable. The idea here is that the
 distribution over the random variable is kept constant (this can be understood
-as a constrain on the expectation of all powers - all moments).
+as a constraint on the expectation of all powers - all moments).
 
 The problem is that this entropy maximization has to be, in a sense, minimal.
-Only the entropy relative to the conjugate of the quantity being measure has
+Only the entropy relative to the conjugate of the quantity being measured has
 to increase. Finding the right formulation is the core of the issue.
 
 *Physical significance.* The idea is that a quantum projection is essentially

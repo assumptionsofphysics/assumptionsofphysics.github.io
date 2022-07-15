@@ -3,7 +3,7 @@ title: Find correct morphisms for experimental domains
 category: Mathematical foundations
 tags: [General theory, Category theory, Mathematical logic, Order theory]
 ---
-Find the correct definition of morphism over the current definitions of experimental and theoretical domain.
+Find the correct definition of morphism over the current definitions of experimental and theoretical domains.
 
 *Mathematical problem.* Currently, the only maps we have defined over domains
 are the experimental relationships (see chapter 2 of the [book](https://assumptionsofphysics.org/book).
@@ -11,7 +11,7 @@ The idea is to find a more general definition for morphism (map preserving struc
 for example, recover the domain product as the categorical product. We suspect that
 the categorical product and coproduct will coincide.
 
-One direct constrain is that they need to preserve the logical structure, therefore
+One direct constraint is that they need to preserve the logical structure, therefore
 they will, for example, preserve narrowness. But the issue here is that the domain and
 codomain are not disconnected structures: they are embedded in a single overall structure.
 The domain product, for example, uses that overall structure when closing over conjunction
@@ -46,7 +46,7 @@ Conversely, if $$Y$$ depends on $$X$$, given a specific value of $$x$$ there wil
 be only one possible value $$y=f(x)$$.
 
 Here we are most likely trying to characterize how much information can be learned about
-one domain from the other. For example, if the horizontal and vertical position of a particle
+one domain from the other. For example, if the horizontal and vertical positions of a particle
 are independent, then a statement about the horizontal position will tell us nothing
 about the vertical position. Mathematically, any statement on the horizontal position should
 map to the certainty on the vertical position (every case is possible). Conversely,
