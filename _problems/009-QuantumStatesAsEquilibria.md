@@ -13,12 +13,12 @@ to determine whether those equilibria are stable. That is, whether small perturb
 of those vectors project to the same vector.
 
 *Physical significance.* The general approach we have to quantum states is that
-they represent an "equilibria" with both the environment and internal processes
+they represent an "equilibrium" with both the environment and internal processes
 that act at higher timescale. For example, the proton can be understood as
 a single quantum object precisely when we can neglect its internal dynamics and
 the coupling of the internal dynamics with the environment. In this sense, the
 system is at "equilibrium". A "measurement", then, is a process with equilibria,
-where each equilibria corresponds to a particular measurement value.
+where each equilibrium corresponds to a particular measurement value.
 
 A difference from the thermodynamic case, though, is that the final state is not
 fully determined by the initial state: the initial state only sets a probability
