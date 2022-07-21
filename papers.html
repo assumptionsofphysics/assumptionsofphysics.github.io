@@ -1,0 +1,31 @@
+---
+layout: default
+title: Papers
+---
+<div class="container">
+    <div class="row section topspace">
+        <div class="col-md-6">
+            <div class="card">
+                <h5 class="card-header"><i class="fas fa-copy"></i>&nbsp; Papers</h5>
+                <div class="card-body">
+                    {% for paper in site.data.papers %}
+                      <p><b><a href="{{ paper.url }}"> {{ paper.title }} ({{ paper.year }})</a></b>:
+                          {{ paper.description }}
+                          {% if paper.journal != "" %}
+                            {% if paper.location != "" %}
+                              Published in <a href="{{ paper.location }}">{{ paper.journal }}</a>.
+                            {% else %}
+                              Accepted for publication in {{ paper.journal }}.
+                            {% endif %}
+                          {% endif %}
+                          {% if paper.video != "" %}
+                            <a href="{{ paper.video }}">Video presentation</a>
+                          {% endif %}
+                      </p>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
