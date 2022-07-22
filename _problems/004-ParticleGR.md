@@ -10,7 +10,7 @@ the metric tensor.
 *Mathematical problem.* In the linked note, we find the expression of the
 symplectic form in terms of position and velocity. The expression lives on the
 eight dimensional phase space (i.e. $$ \{t, q^i, E, p_i\} $$), which is redundant
-given the Hamiltonian constraint $$ \mathcal{H} &= \frac{1}{2} m u^\alpha g_{\alpha\beta} u^\beta $$.
+given the Hamiltonian constraint $$ \mathcal{H} = \frac{1}{2} m u^\alpha g_{\alpha\beta} u^\beta $$.
 The idea is to use the constraint to lower the dimensionality of the form to a seven
 dimensional non-symplectic form, and to understand whether, on that submanifold,
 there is a relationship between the $$ A_\alpha $$ and $$ g_{\alpha\beta} $$ fields.
