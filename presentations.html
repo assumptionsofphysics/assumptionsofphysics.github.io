@@ -11,7 +11,10 @@ title: Presentations
           {% for presentation in site.data.presentations %}
             <p><b><a href="/presentations/{{ presentation.filename }}.pdf">{{ presentation.date }} - {{ presentation.title }}</a></b>.
                 Presentation given by {{ presentation.presenter }} at the {{ presentation.venue }}.
-                (<a href="/presentations/{{ presentation.filename }}.pdf">pdf</a> - <a href="/presentations/{{ presentation.filename }}.pptx">pptx</a>)</p>
+                (<a href="/presentations/{{ presentation.filename }}.pdf">pdf</a> - <a href="/presentations/{{ presentation.filename }}.pptx">pptx</a>)
+                {% if presentation.video != "" %}
+                  <a href="{{ presentation.video }}">Video presentation</a>
+                {% endif %}</p>
           {% endfor %}
         </div>
     </div>
