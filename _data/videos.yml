@@ -1,0 +1,8 @@
+- url: "https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDd9Qj4VxNL8dijiWZCAzanl"
+  description: "A series of videos introducing the relationship between Hamiltonian mechanics and determinism/reversibility."
+
+- url: "https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDev5YhUto7YL4XIcBb-bXm8"
+  description: "A series of videos on the geometrical meaning of Lagrangian mechanics and its relations to determinism/reversibility."
+
+- url: "https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDdCM_6wCJGx_YaJDeAhy_yX"
+  description: "A series of videos that aim to give an intuitive of vector calculus."

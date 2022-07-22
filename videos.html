@@ -2,32 +2,24 @@
 layout: default
 title: Videos
 ---
+<div class="row section featured topspace">
+    <h2 class="section-title"><span>Videos</span></h2>
+    <h5 style="text-align: center; margin-bottom: 30px">Gabriele Carcassi's youtube channel includes videos aimed at physics/math/engineering students at the intermediate level.</h5>
+</div>
+
 <div class="container">
-    <div class="row section topspace">
-        <div class="col-md-6">
-            <div class="card">
-                <h5 class="card-header"><i class="fas fa-film"></i>&nbsp; Videos</h5>
-                <div class="card-body">
-                    <p><b><a href="https://www.youtube.com/user/gcarcassi">Gabriele Carcassi's youtube channel</a></b> includes videos aimed at physics/math/engineering students at the intermediate level.</p>
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDd9Qj4VxNL8dijiWZCAzanl" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p>A series of videos introducing the relationship between Hamiltonian mechanics and determinism/reversibility.</p>
-                    <br>
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDev5YhUto7YL4XIcBb-bXm8" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p>A series of videos on the geometrical meaning of Lagrangian mechanics and its relations to determinism/reversibility.</p>
-                    <br>
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDdCM_6wCJGx_YaJDeAhy_yX" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p>A series of videos that aim to give an intuitive of vector calculus.</p>
-                </div>
-            </div>
-        </div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for video in site.data.videos %}
+    <div class="card-body">
+      <div style="width:100%;height:0;padding-bottom:51%;position:relative">
+          <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <br>
+      <p>{{ video.description }}</p>
+      <br>
+
     </div>
+  {% endfor %}
+</div>
+</br>
 </div>
