@@ -3,42 +3,49 @@
   filename: "20220615-TimeWorkshop"
   presenter: "Gabriele Carcassi"
   venue: "Lisbon-Lausanne Workshop “On Time in the Foundations of Physics”"
+  video: "https://www.youtube.com/watch?v=PMYdj1H5QxI"
 
 - title: "On the reality of the quantum state once again"
   date: "2022/06/03"
   filename: "20220603-CaltechHS"
   presenter: "Gabriele Carcassi"
   venue: "Caltech Philosophy of Physics Reading Group"
+  video: ""
 
 - title: "How experimental requirements shape the mathematics of the laws of physics"
   date: "2022/05/15"
   filename: "20220515-ICASU"
   presenter: "Christine Aidala"
   venue: "inaugural symposium for the Illinois Center for Advanced Studies of the Universe"
+  video: ""
 
 - title: "What we learned from proving a quantum postulate redundant"
   date: "2022/02/01"
   filename: "20220201-UmichPostulate"
   presenter: "Gabriele Carcassi"
   venue: "HEP-Astro-Nuclear Seminar at the University of Michigan"
+  video: ""
 
 - title: "What we learned from proving a quantum postulate redundant"
   date: "2021/10/01"
   filename: "20211001-CaltechPostulate"
   presenter: "Gabriele Carcassi"
   venue: "Caltech Philosophy of Physics Reading Group"
+  video: ""
 
 - title: "Assumptions of Physics: project overview"
   date: "2021/09/24"
   filename: "20210924-AppliedMathSeminar"
   presenter: "Christine Aidala and Gabriele Carcassi"
   venue: "Student AIM Seminar, University of Michigan"
+  video: ""
 
 - title: "Counting evolutions: a simple foundation for thermodynamics"
   date: "2021/02/15"
   filename: "20210215-CountingEvolutions"
   presenter: "Gabriele Carcassi"
   venue: "Caltech Philosophy of Physics Reading Group"
+  video: ""
 
 - title: "Uncovering the assumptions of physics"
   date: "2019/12/17"
@@ -46,6 +53,7 @@
   presenter: "Gabriele Carcassi"
   venue: "Munich Center for Mathematical Philosophy, LMU, Munich and on
   2019/10/08 at the Physics Department, University of Pavia"
+  video: ""
 
 - title: "Space-time structure may be topological and not geometrical"
   date: "2019/08/26"
@@ -53,6 +61,7 @@
   presenter: "Gabriele Carcassi"
   venue: "International Conference on New Frontiers in Physics 2019,
   Orthodox Academy of Creta (OAC)"
+  video: ""
 
 - title: "On the role of mathematics in physical theories"
   date: "2019/06/10"
@@ -60,6 +69,7 @@
   presenter: "Gabriele Carcassi"
   venue: "Foundations of Modern Physics 2019 Workshop,
   University of Michigan"
+  video: ""
 
 - title: "The Fundamental Connections Between Classical Hamiltonian Mechanics, Quantum Mechanics and Information Entropy"
   date: "2019/05/31"
@@ -67,12 +77,14 @@
   presenter: "Gabriele Carcassi"
   venue: "Quantum 2019,
   University of Torino"
+  video: ""
 
 - title: "Uncovering the Assumptions of Physics"
   date: "2019/02/13"
   filename: "20190213-AppliedPhysicsSeminar"
   presenter: "Christine Aidala"
   venue: "U. of Michigan Applied Physics Seminar"
+  video: ""
 
 - title: "The Logic and Topology of Experimentally Verifiable Statements"
   date: "2018/07/18"
@@ -80,6 +92,7 @@
   presenter: "Gabriele Carcassi"
   venue: "33rd Summer Conference on Topology and its Applications,
   Western Kentucky University"
+  video: ""
 
 - title: "Topology and Physical Distinguishability"
   date: "2017/06/27"
@@ -87,6 +100,7 @@
   presenter: "Gabriele Carcassi"
   venue: "32nd Summer Conference on Topology and its Applications,
   University of Dayton"
+  video: ""
 
 - title: "From Physical Assumptions To Classical Hamiltonian And Lagrangian Particle Mechanics"
   date: "2016/07/16"
@@ -94,3 +108,4 @@
   presenter: "Gabriele Carcassi"
   venue: "Foundations2016: the 18th UK and European Conference on Foundations of Physics,
   London School of Economics"
+  video: ""

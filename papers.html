@@ -1,68 +1,29 @@
 ---
 layout: default
-title: Papers and presentations
+title: Papers
 ---
 <div class="container">
     <div class="row section topspace">
-        <div class="col-md-6">
-            <div class="card">
-                <h5 class="card-header"><i class="fas fa-tv"></i>&nbsp; Presentations</h5>
-                <div class="card-body">
-                    {% for presentation in site.data.presentations %}
-                      <p><b><a href="/presentations/{{ presentation.filename }}.pdf">{{ presentation.date }} - {{ presentation.title }}</a></b>.
-                          Presentation given by {{ presentation.presenter }} at the {{ presentation.venue }}.
-                          (<a href="/presentations/{{ presentation.filename }}.pdf">pdf</a> - <a href="/presentations/{{ presentation.filename }}.pptx">pptx</a>)</p>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card">
-              <h5 class="card-header"><i class="fas fa-map"></i>&nbsp; Overview slides and papers</h5>
-                <div class="card-body">
-                    <p><a href="resources/overviews/ProjectOverview.pptx">Project-wide overview slides</a>
-                    </p>
-                    <p>Papers presenting main results by areas:
-                    <a href="https://arxiv.org/abs/2103.06053">Experimental verifiability/topology</a> -
-                    <a href="https://arxiv.org/abs/2101.02107">Classical mechanics</a> -
-                    <a href="resources/overviews/QuantumMechanicsOverview.pdf">Quantum mechanics</a>
-                    </p>
-                </div>
-              </div>
-            </br>
-              <div class="card">
-                <h5 class="card-header"><i class="fas fa-pencil-ruler"></i>&nbsp; Blueprint papers</h5>
-                <div class="card-body">
-                    <p>Papers that present preliminary ideas:
-                        <a href="resources/blueprints/InformationGranularity.pdf">Information granularity as a common foundation
-for geometry, measures and probability</a> -
-                        <a href="resources/blueprints/ProcessEntropy.pdf">Counting evolutions as a foundation for entropy and
-system/state definition</a>
-                    </p>
-                </div>
-            </div>
-            </br>
-            <div class="card">
-                <h5 class="card-header"><i class="fas fa-copy"></i>&nbsp; Papers</h5>
-                <div class="card-body">
-                    {% for paper in site.data.papers %}
-                      <p><b><a href="{{ paper.url }}"> {{ paper.title }} ({{ paper.year }})</a></b>:
-                          {{ paper.description }}
-                          {% if paper.journal != "" %}
-                            {% if paper.location != "" %}
-                              Published in <a href="{{ paper.location }}">{{ paper.journal }}</a>.
-                            {% else %}
-                              Accepted for publication in {{ paper.journal }}.
-                            {% endif %}
-                          {% endif %}
-                          {% if paper.video != "" %}
-                            <a href="{{ paper.video }}">Video presentation</a>
-                          {% endif %}
-                      </p>
-                    {% endfor %}
-
-                </div>
-            </div>
+        <p></p>
+        <h1 style="text-align: center; margin-top: -30px">Papers</h1>
+        <h5 style="text-align: center; margin-bottom: 30px">Journal articles developed as part of the project (most recent first).</h5>
+        <div class="col-md-12">
+          {% for paper in site.data.papers %}
+            <p><b><a href="{{ paper.url }}"> {{ paper.title }} ({{ paper.year }})</a></b>:
+                {{ paper.description }}
+                {% if paper.journal != "" %}
+                  {% if paper.location != "" %}
+                    Published in <a href="{{ paper.location }}">{{ paper.journal }}</a>.
+                  {% else %}
+                    Accepted for publication in {{ paper.journal }}.
+                  {% endif %}
+                {% endif %}
+                {% if paper.video != "" %}
+                  <a href="{{ paper.video }}">Video presentation</a>
+                {% endif %}
+            </p>
+          {% endfor %}
+            <p/>
         </div>
     </div>
 </div>
