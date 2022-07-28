@@ -3,7 +3,7 @@ title: Express Liouville theorem for position and velocity
 category: Classical mechanics
 tags: [Differential geometry, Riemannian geometry]
 ---
-Express Liouville theorem of Hamiltonian mechanics in terms of position and velocity
+Express the Liouville theorem of Hamiltonian mechanics in terms of position and velocity
 instead of position and momentum.
 
 *Mathematical problem.* The Liouville theorem  of Hamiltonian mechanics has
@@ -12,7 +12,7 @@ momentum). In those cases where we can express momentum as a function of positio
 and velocity (which corresponds to the existence of a Lagrangian), one should
 be able to express the same relationship in terms of position and velocity.
 
-Given that $p(x,v)$ will depend on the Hamiltonian, the expression may include
+Given that $$p(x,v)$$ will depend on the Hamiltonian, the expression may include
 a reference to the Hamiltonian (or the Lagrangian).
 
 *Physical significance.* The Liouville theorem in physical terms means conservation
