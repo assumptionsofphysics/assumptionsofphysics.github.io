@@ -8,6 +8,10 @@ title: Research
             <div class="card">
                 <h5 class="card-header"><i class="fas fa-tv"></i>&nbsp; Presentations</h5>
                 <div class="card-body">
+                  <span id="presentation-display">
+
+                  </span>
+                  <!--
                     {% for presentation in site.data.presentations %}
                       <p><b><a href="/presentations/{{ presentation.filename }}.pdf">{{ presentation.date }} - {{ presentation.title }}</a></b>.
                           Presentation given by {{ presentation.presenter }} at the {{ presentation.venue }}.
@@ -15,7 +19,8 @@ title: Research
                           {% if presentation.video != "" %}
                             <a href="{{ presentation.video }}">Video presentation</a>
                           {% endif %}</p>
-                    {% endfor %}
+                    {% endfor %}-->
+                    <div><a onclick="loadMorePresentations()" style="color: #bd1550; text-decoration: underline">Load more</a></div>
                 </div>
             </div>
         </div>
@@ -48,6 +53,10 @@ system/state definition</a>
             <div class="card">
                 <h5 class="card-header"><i class="fas fa-copy"></i>&nbsp; Papers</h5>
                 <div class="card-body">
+                  <span id="paper-display">
+
+                  </span>
+                  <!--
                     {% for paper in site.data.papers %}
                       <p><b><a href="{{ paper.url }}"> {{ paper.title }} ({{ paper.year }})</a></b>:
                           {{ paper.description }}
@@ -62,9 +71,69 @@ system/state definition</a>
                             <a href="{{ paper.video }}">Video presentation</a>
                           {% endif %}
                       </p>
-                    {% endfor %}
+                    {% endfor %} -->
+                    <div><a onclick="loadMorePapers()" style="color: #bd1550; text-decoration: underline">Load more</a></div>
 
-                </div>
+<script>
+var paperCounter = 0;
+var presentationCounter = 0;
+loadMorePapers();
+loadMorePresentations();
+function loadMorePapers(){
+  var paperDisplay = document.getElementById("paper-display");
+  fetch('/data/papers.json')
+    .then(response => response.text())
+    .then((data) => {
+      var papers = JSON.parse(data);
+      var htmlPaperDisplay = "";
+      var loops = 0;
+      for(i = 0; i < paperCounter+4 && i < papers.length; i++){
+        htmlPaperDisplay += "<p><b><a href=" + papers[i].url + "> " + papers[i].title + " (" + papers[i].year + ")</a></b>: "
+            + papers[i].description;
+        if(papers[i].journal !== ""){
+          if(papers[i].location !== ""){
+            htmlPaperDisplay += " Published in <a href=" + papers[i].location + ">" + papers[i].journal + "</a>.";
+          }
+          else{
+            htmlPaperDisplay += " Accepted for publication in " + papers[i].journal;
+          }
+        }
+        if(papers[i].video !== ""){
+          htmlPaperDisplay += " <a href=" + papers[i].video + ">Video presentation</a>";
+        }
+        htmlPaperDisplay += "</p>";
+        loops++;
+      }
+    paperCounter = loops;
+    paperDisplay.innerHTML = htmlPaperDisplay;
+  });
+}
+
+function loadMorePresentations(){
+  var presDisplay = document.getElementById("presentation-display");
+  fetch('/data/presentations.json')
+    .then(response => response.text())
+    .then((data) => {
+      var presentations = JSON.parse(data);
+      var htmlPresDisplay = "";
+      var loops = 0;
+      for(i = 0; i < presentationCounter+4 && i < presentations.length; i++){
+        htmlPresDisplay += "<p><b><a href=/presentations/" + presentations[i].filename + ".pdf>" + presentations[i].date + " - " + presentations[i].title + "</a></b>.";
+        htmlPresDisplay += " Presentation given by " + presentations[i].presenter + " at the " + presentations[i].venue + ".";
+        htmlPresDisplay += " (<a href=/presentations/" + presentations[i].filename + ".pdf>pdf</a> - <a href=/presentations/" + presentations[i].filename + ".pptx>pptx</a>)"
+            if (presentations[i].video !== ""){
+              htmlPresDisplay += " <a href=" + presentations[i].video + ">Video presentation</a>"
+            }
+        htmlPresDisplay += "</p>";
+        loops++;
+      }
+    presentationCounter = loops;
+    presDisplay.innerHTML = htmlPresDisplay;
+  });
+}
+</script>
+              </div>
+
             </div>
         </div>
     </div>
