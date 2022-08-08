@@ -12,8 +12,8 @@ by "space is locally flat". In general, the metric tensor cannot be diagonalized
 on the whole space. We can do that only if the curvature vanishes.
 
 The question is whether the spatial part of the metric tensor can be diagonalized. That is,
-$g_{\alpha\beta}$ would not be diagonalized, but the spatial part would be such
-that $g_{ij} = \delta_{ij}$.
+$$g_{\alpha\beta}$$ would not be diagonalized, but the spatial part would be such
+that $$g_{ij} = \delta_{ij}$$.
 
 If it can't be done globally, it is still interesting if it can be done on an
 open neighborhood of each point.
