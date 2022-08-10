@@ -11,7 +11,7 @@ title: Research
                   <span id="presentation-display">
 
                   </span>
-                    <div style="text-align: center; font-style: italic" id="presentation-button"><a href="javascript:loadMorePresentations()">Load more</a></div>
+                    <div style="text-align: center; font-style: italic" id="presentation-button"><a href="javascript:loadMorePresentations(4)">Load more</a></div>
                 </div>
             </div>
         </div>
@@ -47,14 +47,14 @@ system/state definition</a>
                   <span id="paper-display">
 
                   </span>
-                    <div style="text-align: center; font-style: italic" id="paper-button"><a href="javascript:loadMorePapers()">Load more</a></div>
+                    <div style="text-align: center; font-style: italic" id="paper-button"><a href="javascript:loadMorePapers(4)">Load more</a></div>
 
 <script>
 var paperCounter = 0;
 var presentationCounter = 0;
-loadMorePapers();
-loadMorePresentations();
-function loadMorePapers(){
+loadMorePapers(5);
+loadMorePresentations(5);
+function loadMorePapers(amount){
   var paperDisplay = document.getElementById("paper-display");
   fetch('/data/papers.json')
     .then(response => response.text())
@@ -62,7 +62,7 @@ function loadMorePapers(){
       var papers = JSON.parse(data);
       var htmlPaperDisplay = "";
       var loops = 0;
-      for(i = 0; i < paperCounter+4 && i < papers.length; i++){
+      for(i = 0; i < paperCounter+amount && i < papers.length; i++){
         htmlPaperDisplay += createPaper(papers[i]);
         loops++;
       }
@@ -93,7 +93,7 @@ function createPaper(paper){
   return paperHTML;
 }
 
-function loadMorePresentations(){
+function loadMorePresentations(amount){
   var presDisplay = document.getElementById("presentation-display");
   fetch('/data/presentations.json')
     .then(response => response.text())
@@ -101,7 +101,7 @@ function loadMorePresentations(){
       var presentations = JSON.parse(data);
       var htmlPresDisplay = "";
       var loops = 0;
-      for(i = 0; i < presentationCounter+4 && i < presentations.length; i++){
+      for(i = 0; i < presentationCounter+amount && i < presentations.length; i++){
         htmlPresDisplay += createPresentation(presentations[i]);
         loops++;
       }
