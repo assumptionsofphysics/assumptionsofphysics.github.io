@@ -63,20 +63,7 @@ function loadMorePapers(){
       var htmlPaperDisplay = "";
       var loops = 0;
       for(i = 0; i < paperCounter+4 && i < papers.length; i++){
-        htmlPaperDisplay += "<p><b><a href=" + papers[i].url + "> " + papers[i].title + " (" + papers[i].year + ")</a></b>: "
-            + papers[i].description;
-        if(papers[i].journal !== ""){
-          if(papers[i].location !== ""){
-            htmlPaperDisplay += " Published in <a href=" + papers[i].location + ">" + papers[i].journal + "</a>.";
-          }
-          else{
-            htmlPaperDisplay += " Accepted for publication in " + papers[i].journal;
-          }
-        }
-        if(papers[i].video !== ""){
-          htmlPaperDisplay += " <a href=" + papers[i].video + ">Video presentation</a>";
-        }
-        htmlPaperDisplay += "</p>";
+        htmlPaperDisplay += createPaper(papers[i]);
         loops++;
       }
     paperCounter = loops;
@@ -85,6 +72,25 @@ function loadMorePapers(){
     }
     paperDisplay.innerHTML = htmlPaperDisplay;
   });
+}
+
+function createPaper(paper){
+  paperHTML = "";
+  paperHTML += "<p><b><a href=" + paper.url + "> " + paper.title + " (" + paper.year + ")</a></b>: "
+      + paper.description;
+  if(paper.journal !== ""){
+    if(paper.location !== ""){
+      paperHTML += " Published in <a href=" + paper.location + ">" + paper.journal + "</a>.";
+    }
+    else{
+      paperHTML += " Accepted for publication in " + paper.journal;
+    }
+  }
+  if(paper.video !== ""){
+    paperHTML += " <a href=" + paper.video + ">Video presentation</a>";
+  }
+  paperHTML += "</p>";
+  return paperHTML;
 }
 
 function loadMorePresentations(){
@@ -96,13 +102,7 @@ function loadMorePresentations(){
       var htmlPresDisplay = "";
       var loops = 0;
       for(i = 0; i < presentationCounter+4 && i < presentations.length; i++){
-        htmlPresDisplay += "<p><b><a href=/presentations/" + presentations[i].filename + ".pdf>" + presentations[i].date + " - " + presentations[i].title + "</a></b>.";
-        htmlPresDisplay += " Presentation given by " + presentations[i].presenter + " at the " + presentations[i].venue + ".";
-        htmlPresDisplay += " (<a href=/presentations/" + presentations[i].filename + ".pdf>pdf</a> - <a href=/presentations/" + presentations[i].filename + ".pptx>pptx</a>)"
-            if (presentations[i].video !== ""){
-              htmlPresDisplay += " <a href=" + presentations[i].video + ">Video presentation</a>"
-            }
-        htmlPresDisplay += "</p>";
+        htmlPresDisplay += createPresentation(presentations[i]);
         loops++;
       }
     presentationCounter = loops;
@@ -111,6 +111,18 @@ function loadMorePresentations(){
     }
     presDisplay.innerHTML = htmlPresDisplay;
   });
+}
+
+function createPresentation(presentation){
+  presentationHTML = "";
+  presentationHTML += "<p><b><a href=/presentations/" + presentation.filename + ".pdf>" + presentation.date + " - " + presentation.title + "</a></b>.";
+  presentationHTML += " Presentation given by " + presentation.presenter + " at the " + presentation.venue + ".";
+  presentationHTML += " (<a href=/presentations/" + presentation.filename + ".pdf>pdf</a> - <a href=/presentations/" + presentation.filename + ".pptx>pptx</a>)"
+      if (presentation.video !== ""){
+        presentationHTML += " <a href=" + presentation.video + ">Video presentation</a>"
+      }
+  presentationHTML += "</p>";
+  return presentationHTML;
 }
 
 function hideButton(id){
