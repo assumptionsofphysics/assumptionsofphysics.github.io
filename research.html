@@ -11,16 +11,7 @@ title: Research
                   <span id="presentation-display">
 
                   </span>
-                  <!--
-                    {% for presentation in site.data.presentations %}
-                      <p><b><a href="/presentations/{{ presentation.filename }}.pdf">{{ presentation.date }} - {{ presentation.title }}</a></b>.
-                          Presentation given by {{ presentation.presenter }} at the {{ presentation.venue }}.
-                          (<a href="/presentations/{{ presentation.filename }}.pdf">pdf</a> - <a href="/presentations/{{ presentation.filename }}.pptx">pptx</a>)
-                          {% if presentation.video != "" %}
-                            <a href="{{ presentation.video }}">Video presentation</a>
-                          {% endif %}</p>
-                    {% endfor %}-->
-                    <div><a onclick="loadMorePresentations()" style="color: #bd1550; text-decoration: underline">Load more</a></div>
+                    <div style="text-align: center; font-style: italic" id="presentation-button"><a href="javascript:loadMorePresentations()">Load more</a></div>
                 </div>
             </div>
         </div>
@@ -56,23 +47,7 @@ system/state definition</a>
                   <span id="paper-display">
 
                   </span>
-                  <!--
-                    {% for paper in site.data.papers %}
-                      <p><b><a href="{{ paper.url }}"> {{ paper.title }} ({{ paper.year }})</a></b>:
-                          {{ paper.description }}
-                          {% if paper.journal != "" %}
-                            {% if paper.location != "" %}
-                              Published in <a href="{{ paper.location }}">{{ paper.journal }}</a>.
-                            {% else %}
-                              Accepted for publication in {{ paper.journal }}.
-                            {% endif %}
-                          {% endif %}
-                          {% if paper.video != "" %}
-                            <a href="{{ paper.video }}">Video presentation</a>
-                          {% endif %}
-                      </p>
-                    {% endfor %} -->
-                    <div><a onclick="loadMorePapers()" style="color: #bd1550; text-decoration: underline">Load more</a></div>
+                    <div style="text-align: center; font-style: italic" id="paper-button"><a href="javascript:loadMorePapers()">Load more</a></div>
 
 <script>
 var paperCounter = 0;
@@ -105,6 +80,9 @@ function loadMorePapers(){
         loops++;
       }
     paperCounter = loops;
+    if(paperCounter == papers.length){
+      hideButton("paper-button");
+    }
     paperDisplay.innerHTML = htmlPaperDisplay;
   });
 }
@@ -128,8 +106,16 @@ function loadMorePresentations(){
         loops++;
       }
     presentationCounter = loops;
+    if(presentationCounter == presentations.length){
+      hideButton("presentation-button");
+    }
     presDisplay.innerHTML = htmlPresDisplay;
   });
+}
+
+function hideButton(id){
+  var button = document.getElementById(id);
+  button.style.display = "none";
 }
 </script>
               </div>
