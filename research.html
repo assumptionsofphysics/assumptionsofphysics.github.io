@@ -11,7 +11,7 @@ title: Research
                   <span id="presentation-display">
 
                   </span>
-                    <div style="text-align: center; font-style: italic" id="presentation-button"><a href="javascript:loadMorePresentations(4)">Load more</a></div>
+                    <div style="text-align: center; font-style: italic" id="presentation-button"><a href="javascript:loadMorePresentations(4, 'presentation-display', 'presentation-button')">Load more</a></div>
                 </div>
             </div>
         </div>
@@ -47,15 +47,15 @@ system/state definition</a>
                   <span id="paper-display">
 
                   </span>
-                    <div style="text-align: center; font-style: italic" id="paper-button"><a href="javascript:loadMorePapers(4)">Load more</a></div>
+                    <div style="text-align: center; font-style: italic" id="paper-button"><a href="javascript:loadMorePapers(4, 'paper-display', 'paper-button')">Load more</a></div>
 
 <script>
 var paperCounter = 0;
 var presentationCounter = 0;
-loadMorePapers(5);
-loadMorePresentations(5);
-function loadMorePapers(amount){
-  var paperDisplay = document.getElementById("paper-display");
+loadMorePapers(5, "paper-display", "paper-button");
+loadMorePresentations(5, "presentation-display", "presentation-button");
+function loadMorePapers(amount, idText, idButton){
+  var paperDisplay = document.getElementById(idText);
   fetch('/data/papers.json')
     .then(response => response.text())
     .then((data) => {
@@ -68,7 +68,7 @@ function loadMorePapers(amount){
       }
     paperCounter = loops;
     if(paperCounter == papers.length){
-      hideButton("paper-button");
+      hideButton(idButton);
     }
     paperDisplay.innerHTML = htmlPaperDisplay;
   });
@@ -93,8 +93,8 @@ function createPaper(paper){
   return paperHTML;
 }
 
-function loadMorePresentations(amount){
-  var presDisplay = document.getElementById("presentation-display");
+function loadMorePresentations(amount, idText, idButton){
+  var presDisplay = document.getElementById(idText);
   fetch('/data/presentations.json')
     .then(response => response.text())
     .then((data) => {
@@ -107,7 +107,7 @@ function loadMorePresentations(amount){
       }
     presentationCounter = loops;
     if(presentationCounter == presentations.length){
-      hideButton("presentation-button");
+      hideButton(idButton);
     }
     presDisplay.innerHTML = htmlPresDisplay;
   });
