@@ -9,12 +9,15 @@ function loadMorePapers(amount, idText, idButton){
       var papers = JSON.parse(data);
       var htmlPaperDisplay = "";
       var loops = 0;
+      if(amount == -1){
+        amount = papers.length;
+      }
       for(i = 0; i < paperCounter+amount && i < papers.length; i++){
         htmlPaperDisplay += createPaper(papers[i]);
         loops++;
       }
     paperCounter = loops;
-    if(paperCounter == papers.length){
+    if(paperCounter == papers.length && idButton != null){
       hideButton(idButton);
     }
     paperDisplay.innerHTML = htmlPaperDisplay;
@@ -48,14 +51,17 @@ function loadMorePresentations(amount, idText, idButton){
       var presentations = JSON.parse(data);
       var htmlPresDisplay = "";
       var loops = 0;
+      if(amount == -1){
+        amount = presentations.length;
+      }
       for(i = 0; i < presentationCounter+amount && i < presentations.length; i++){
         htmlPresDisplay += createPresentation(presentations[i]);
         loops++;
       }
-    presentationCounter = loops;
-    if(presentationCounter == presentations.length){
-      hideButton(idButton);
-    }
+      presentationCounter = loops;
+      if(presentationCounter == presentations.length && idButton != null){
+        hideButton(idButton);
+      }
     presDisplay.innerHTML = htmlPresDisplay;
   });
 }
