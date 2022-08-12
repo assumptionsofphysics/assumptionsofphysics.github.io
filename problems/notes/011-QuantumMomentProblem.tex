@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+
+\begin{document}
+
+
+	\title{Notes on problem 11 - Quantum to classical moment problem}
+	\author{Assumptions of Physics Collaboration}
+
+	\date{}
+
+	\maketitle
+
+Just using expectation of $Q$ and $P$ can't work because products
+are not uniquely defined.
+
+In standard probability theory we have:
+\begin{equation}
+\begin{aligned}
+	E[2 Q^2 P^2] &= E[\frac{1}{2}(2QP)^2] = E[\frac{1}{2}((Q+P)^2 - Q^2 -P^2)^2] \\
+	&= E[(Q^2 + P^2)^2 - Q^4 - P^4]
+\end{aligned}
+\end{equation}
+We have expressions in terms of sums and powers, which in principle we know how to convert into quantum observables. We have:
+\begin{equation}
+	\begin{aligned}
+		E[\frac{1}{2}((Q+P)^2 - Q^2 -P^2)^2] &= tr\left[\frac{1}{2}((Q+P)^2 - Q^2 -P^2)^2 \rho\right] \\
+		E[(Q^2 + P^2)^2 - Q^4 - P^4] &= tr\left[((Q^2 + P^2)^2 - Q^4 - P^4)\rho\right]
+	\end{aligned}
+\end{equation}
+Expanding the first
+\begin{equation}
+	\begin{aligned}
+		\frac{1}{2}tr[((Q+P)^2 - Q^2 -P^2)^2 \rho] &= \frac{1}{2}tr[(QQ +QP + PQ + PP - QQ - PP)^2 \rho] \\
+		 &= \frac{1}{2}tr[(QP + PQ)^2 \rho] \\
+		 &= \frac{1}{2}tr[(QPQP +QPPQ + PQQP + PQPQ) \rho] \\
+	\end{aligned}
+\end{equation}
+Expanding the second
+\begin{equation}
+	\begin{aligned}
+		tr[((Q^2 + P^2)^2 - Q^4 - P^4) \rho] &= tr[(QQQQ + QQPP + PPQQ + PPPP - QQQQ - PPPP) \rho] \\
+		&= tr[(QQPP + PPQQ) \rho] \\
+	\end{aligned}
+\end{equation}
+Comparing the operators, we have
+\begin{equation}
+	\begin{aligned}
+		QPQP +QPPQ + PQQP + PQPQ &= QQPP - Q[Q,P]P + QQPP - Q[Q,P]P - QP[Q,P] \\
+		&+ PPQQ - P[P, Q] Q - PQ [P, Q] + PPQQ - P [P, Q] Q \\
+		&= 2 (QQPP + PPQQ) -3(-\imath\hbar)QP - 3(-\imath\hbar) PQ \\
+		&= 2 (QQPP + PPQQ) +3(\imath\hbar)[Q,P]\\
+		&= 2 (QQPP + PPQQ) +3(\imath\hbar)^2\\
+		&= 2 (QQPP + PPQQ) -3\hbar^2\\
+	\end{aligned}
+\end{equation}
+The two operators differ by a constant, so we do not have clear expectation for the moments on which to base the moment problem.
+
+Follow up: suppose we get a canonical product (i.e. $Q^nP^m + P^mQ^n$), can we solve the moment problem?
+
+Follow up: can we do a decomposition on position first, like one does for the Madelung equations?
+
+% Useful links?
+% https://link.springer.com/chapter/10.1007/978-3-319-64546-9_14#Sec3
+% https://reader.elsevier.com/reader/sd/pii/S0047259X11001138?token=653E5622033C9438B6C4F5A283A5FA6C0937973767901BEB239F1528B4E1975F7808014F56512DBE27591BF593E5CE15&originRegion=us-east-1&originCreation=20220812154646
+% https://www.sciencedirect.com/science/article/pii/S0047259X11001138
+
+\end{document}
