@@ -1,0 +1,15 @@
+---
+layout: null
+---
+[{% assign id = 0 %}{% for file in site.static_files %}{% assign pageurl = page.url | replace: 'index.json', '' %}{% if file.path contains pageurl %}{% if file.extname == '.svg' %}
+{% if notFirst %},{% endif %}
+{
+  "id":"{{id}}",
+  "name":"{{ file.basename }}",
+  "solution":"{{ file.basename }}.txt",
+  "png":"{{ file.basename }}.png",
+  "svg":"{{ file.basename }}.svg",
+  "weburl":"/wordtarget/word-target?wordtarget={{ file.basename }}",
+  "printurl":"/wordtarget/word-target-print?wordtarget={{ file.basename }}"
+}
+{% assign notFirst = "true" %}{% assign id = id | plus: 1 %}{% endif %}{% endif %}{% endfor %}]
