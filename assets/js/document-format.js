@@ -13,7 +13,7 @@ function loadMorePapers(amount, idText, idButton){
         amount = papers.length;
       }
       for(i = 0; i < paperCounter+amount && i < papers.length; i++){
-        htmlPaperDisplay += createPaper(papers[i]);
+        htmlPaperDisplay += formatPaper(papers[i]);
         loops++;
       }
     paperCounter = loops;
@@ -24,7 +24,7 @@ function loadMorePapers(amount, idText, idButton){
   });
 }
 
-function createPaper(paper){
+function formatPaper(paper){
   paperHTML = "";
   paperHTML += "<p><b><a href=" + paper.url + "> " + paper.title + " (" + paper.year + ")</a></b>: "
       + paper.description;
@@ -55,7 +55,7 @@ function loadMorePresentations(amount, idText, idButton){
         amount = presentations.length;
       }
       for(i = 0; i < presentationCounter+amount && i < presentations.length; i++){
-        htmlPresDisplay += createPresentation(presentations[i]);
+        htmlPresDisplay += formatPresentation(presentations[i]);
         loops++;
       }
       presentationCounter = loops;
@@ -66,7 +66,7 @@ function loadMorePresentations(amount, idText, idButton){
   });
 }
 
-function createPresentation(presentation){
+function formatPresentation(presentation){
   presentationHTML = "";
   presentationHTML += "<p><b><a href=/presentations/" + presentation.filename + ".pdf>" + presentation.date + " - " + presentation.title + "</a></b>.";
   presentationHTML += " Presentation given by " + presentation.presenter + " at the " + presentation.venue + ".";
