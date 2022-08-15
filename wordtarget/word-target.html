@@ -8,9 +8,9 @@ title: Word Target
         <div class="col-md-6">
             <img id="wordTargetImage" style="width: 100%" alt="Word target">
             <p/>
-            <div class="panel panel-default">
-                <div class="panel-heading"><h1 class="panel-title" style="font-size: 32px"><i class="fas fa-copy"></i>&nbsp; Rules</h1></div>
-                <div class="panel-body">
+            <div class="card">
+                <h4 class="card-header"><i class="fas fa-copy"></i>&nbsp; Rules</h4>
+                <div class="card-body">
                     <p>Form a chain jumping through all the words in the target, starting from the arrow and ending at the center, by following these rules:</p>
                     <ol>
                         <li style="margin-bottom: 10px">The next word can be obtained by adding, removing or changing a single letter</li>
@@ -19,8 +19,8 @@ title: Word Target
                         <li style="margin-bottom: 10px">The next word can be connected to the previous by association of ideas</li>
                     </ol>
                 </div>
+              </div>
             </div>
-        </div>
         <script>
             var urlParams = new URLSearchParams(window.location.search);
             var wordTargetName = urlParams.get('wordtarget');
@@ -28,9 +28,9 @@ title: Word Target
             document.getElementById("wordTargetTitle").textContent = "Word target " + wordTargetName;
         </script>
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h1 class="panel-title" style="font-size: 32px"><i class="far fa-lightbulb"></i>&nbsp; Solution <a onclick="loadSolution()" style="color: #bd1550">(Show)</a></h1></div>
-                <div class="panel-body" id="solution">
+            <div class="card">
+                <h4 class="card-header"><i class="far fa-lightbulb"></i>&nbsp; Solution <a onclick="loadSolution()" style="color: #bd1550">(Show)</a></h4>
+                <div class="card-body" id="solution">
 <script>
 
 prepareBlank();
@@ -72,8 +72,9 @@ function loadSolution() {
         solution.innerHTML = htmlSolution;
     });
 }
-</script>                </div>
+</script>
+               </div>
             </div>
-        </div>
-    </div>
+       </div>
+   </div>
 </div>
