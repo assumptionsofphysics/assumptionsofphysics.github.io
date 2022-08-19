@@ -18,39 +18,54 @@ title: Word Target
 
 
 <script>
-loadWordTargets();
+loadWordTargets(6);
 
-function loadWordTargets(){
+function loadWordTargets(targetsPerPage){
   var targetDisplay = document.getElementById("word-target-display");
   fetch('/wordtarget/index.json')
     .then(response => response.text())
     .then((data) => {
+      var targets = JSON.parse(data);
+      var lastPage = Math.floor(targets.length / targetsPerPage)+1;
       var urlParams = new URLSearchParams(window.location.search);
       var page = urlParams.get('p');
+      if(!page){
+        page = 1;
+      }
+      else{
+        page = parseInt(page);
+      }
+      if(isNaN(page)){
+        window.location.href = "/wordtarget/index.html";
+        return;
+      }
+      else if(page <= 0 || page > lastPage){
+        window.location.href = "/wordtarget/index.html";
+      }
+
       //setting href for buttons
       var buttonFirst = document.getElementById("btn-first");
-      buttonFirst.setAttribute("href", "/wordtarget/index?p=1");
+      buttonFirst.setAttribute("href", "/wordtarget/index.html?p=1");
 
       var buttonLast = document.getElementById("btn-last");
-      buttonLast.setAttribute("href", "/wordtarget/index?p=6");
+      buttonLast.setAttribute("href", "/wordtarget/index.html?p=" + lastPage);
 
       var buttonPrevious = document.getElementById("btn-prev");
-      var prevPage = parseInt(urlParams.get('p')) - 1;
+      var prevPage = page - 1;
       if(prevPage > 0){
-        buttonPrevious.setAttribute("href", "/wordtarget/index?p=" + prevPage);
+        buttonPrevious.setAttribute("href", "/wordtarget/index.html?p=" + prevPage);
       }
 
       var buttonNext = document.getElementById("btn-next");
-      var nextPage = parseInt(urlParams.get('p')) + 1;
-      if(nextPage < 7){
-        buttonNext.setAttribute("href", "/wordtarget/index?p=" + nextPage);
+      var nextPage = page + 1;
+      if(nextPage < lastPage+1){
+        buttonNext.setAttribute("href", "/wordtarget/index.html?p=" + nextPage);
       }
 
       //need page to be 1 less than actual in for loop
       page -= 1;
-      var targets = JSON.parse(data);
       var htmlTargetDisplay = "";
-      for(i = targets.length-1 - (page*10); i > targets.length-(page*10)-11 && i > 0; i--){
+      for(i = targets.length-1 - (page*targetsPerPage); i > targets.length-1 - (page*targetsPerPage)-targetsPerPage && i > 0; i--){
         htmlTargetDisplay += prepareWordTarget(targets[i]);
       }
     targetDisplay.innerHTML = htmlTargetDisplay;
