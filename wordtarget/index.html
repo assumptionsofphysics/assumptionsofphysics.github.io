@@ -3,22 +3,26 @@ layout: default
 title: Word Target
 ---
 <div class="container">
-    <div class="row section topspace">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
         <h1 style="text-align: center; margin-bottom: 30px;">Word targets</h1>
-        <div><a style="display:inline" id="btn-first">First</a></div>
-        <div><a style="display:inline" id="btn-prev">Previous</a></div>
-        <div><a style="display:inline" id="btn-next">Next</a></div>
-        <div><a style="display:inline" id="btn-last">Last</a></div>
-        <div class="col-md-12" id="word-target-display">
+        <div><a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-first"><i class="fas fa-angle-double-left"></i>&nbsp;First</a>
+        <a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-prev"><i class="fas fa-angle-left"></i>&nbsp;Previous</a>
+        <a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-next">Next&nbsp;<i class="fas fa-angle-right"></i></a>
+        <a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-last">Last&nbsp;<i class="fas fa-angle-double-right"></i></a></div>
+        <p></p>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="word-target-display"></div>
 
-        </div>
     </div>
 
 </div>	<!-- /container -->
 
 
 <script>
-loadWordTargets(6);
+loadWordTargets(5);
 
 function loadWordTargets(targetsPerPage){
   var targetDisplay = document.getElementById("word-target-display");
@@ -74,7 +78,7 @@ function loadWordTargets(targetsPerPage){
 
 function prepareWordTarget(wordTarget){
   targetHTML = "";
-  targetHTML += "<div class='card mb-3' style='max-width: 540px;'>" ;
+  targetHTML += "<div class='card mb-3 border-0' style='max-width: 540px;'>" ;
   targetHTML += "<div class='row g-0'>";
   targetHTML += "<div class='col-md-4'>";
   targetHTML += "<img src=" + wordTarget.png + " style='width: 100%; padding: 10px' alt='Word target'></img>";
