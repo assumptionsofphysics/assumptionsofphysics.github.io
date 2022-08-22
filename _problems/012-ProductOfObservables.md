@@ -18,7 +18,7 @@ Note that $$\frac{(a+b)^2 - a^2 -b^2}{2}=a*b$$. The left side is in terms of ope
 allowed, therefore a product consistent with those rules must be in terms of the anti-commutator
 $$A*B = \frac{\{A, B\}}{2}$$.
 
-The issue is that the operation is not associative: $$\{\{A, B\}, C\} - \{A, \{B, C\}\} = B [ A, C ] - [A, C] B$$.
+The issue is that the operation is not associative: $$\{\{A, B\}, C\} - \{A, \{B, C\}\} = A [ B, C ] - [B, A] C$$.
 However, for position and momentum we have $$[Q, P] = \imath \hbar I$$ and therefore $$Q [Q, P] - [Q, P] Q = 0$$.
 By recursively applying the product, it would seem we are able to construct all polynomials of $$Q$$ and $$P$$
 and therefore (through Taylor expansion) generic functions. Are there any problems?

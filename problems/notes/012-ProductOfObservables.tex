@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+
+\begin{document}
+	
+	
+	\title{Notes on problem 12 - Product of observables}
+	\author{Assumptions of Physics Collaboration}
+	
+	\date{}
+	
+	\maketitle
+	
+On closer look, things don't work.
+
+\begin{equation}
+	A \times B = \frac{\{A, B\}}{2}
+\end{equation}	
+
+The relationship is
+\begin{equation}
+	\begin{aligned}
+	\{\{A, B\}, C\} - \{A, \{B, C\}\} = ABC+BAC-ABC-ACB = A[B,C] - [B,A]C
+	\end{aligned}
+\end{equation}
+so the commutators are not on the same elements.
+
+If $A$ and $C$ match, things work. Not in the other case
+\begin{equation}
+\begin{aligned}
+	\{\{Q, P\}, Q\} - \{Q, \{P, Q\}\} &= Q[P,Q] - [P,Q]Q = Q (- \imath \hbar) - (-\imath \hbar)Q = 0 Q = 0 \\
+	\{\{Q, Q\}, P\} - \{Q, \{Q, P\}\} &= Q[Q,P] - [Q,Q]P = Q (\imath \hbar) - (0) P = Q \imath \hbar. \\
+\end{aligned}
+\end{equation}
+
+For products of $Q$ and $P$, the commutator transforms two variables into a constant, leading to lower order polynomial multiplied by $\hbar$. If $\hbar$ is small for the scale of the problem, then, the difference can be neglected.
+
+
+\end{document}
