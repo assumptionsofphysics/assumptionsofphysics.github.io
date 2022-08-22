@@ -3,19 +3,99 @@ layout: default
 title: Word Target
 ---
 <div class="container">
-    <div class="row section topspace">
-        <h1 style="text-align: center; margin-bottom: 30px; margin-top: -30px">Word targets</h1>
-        <div class="col-md-12">
-            {% for file in site.static_files %}
-  {% assign pageurl = page.url | replace: 'index.html', '' %}
-  {% if file.path contains pageurl %}
-    {% if file.extname == '.svg' %}
-    <p style="margin-bottom: 0"><a href="word-target?wordtarget={{ file.basename }}">Word target {{ file.basename }}</a></p>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-            <p/>
-        </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <h1 style="text-align: center; margin-bottom: 30px;">Word targets</h1>
+        <div><a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-first"><i class="fas fa-angle-double-left"></i>&nbsp;First</a>
+        <a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-prev"><i class="fas fa-angle-left"></i>&nbsp;Previous</a>
+        <a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-next">Next&nbsp;<i class="fas fa-angle-right"></i></a>
+        <a class="btn btn-primary" style="padding: 5px 10px" role="button" id="btn-last">Last&nbsp;<i class="fas fa-angle-double-right"></i></a></div>
+        <p></p>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="word-target-display"></div>
+
     </div>
 
 </div>	<!-- /container -->
+
+
+<script>
+loadWordTargets(5);
+
+function loadWordTargets(targetsPerPage){
+  var targetDisplay = document.getElementById("word-target-display");
+  fetch('/wordtarget/index.json')
+    .then(response => response.text())
+    .then((data) => {
+      var targets = JSON.parse(data);
+      var lastPage = Math.floor(targets.length / targetsPerPage)+1;
+      var urlParams = new URLSearchParams(window.location.search);
+      var page = urlParams.get('p');
+      if(!page){
+        page = 1;
+      }
+      else{
+        page = parseInt(page);
+      }
+      if(isNaN(page)){
+        window.location.href = "/wordtarget/index.html";
+        return;
+      }
+      else if(page <= 0 || page > lastPage){
+        window.location.href = "/wordtarget/index.html";
+      }
+
+      //setting href for buttons
+      var buttonFirst = document.getElementById("btn-first");
+      buttonFirst.setAttribute("href", "/wordtarget/index.html?p=1");
+
+      var buttonLast = document.getElementById("btn-last");
+      buttonLast.setAttribute("href", "/wordtarget/index.html?p=" + lastPage);
+
+      var buttonPrevious = document.getElementById("btn-prev");
+      var prevPage = page - 1;
+      if(prevPage > 0){
+        buttonPrevious.setAttribute("href", "/wordtarget/index.html?p=" + prevPage);
+      }
+
+      var buttonNext = document.getElementById("btn-next");
+      var nextPage = page + 1;
+      if(nextPage < lastPage+1){
+        buttonNext.setAttribute("href", "/wordtarget/index.html?p=" + nextPage);
+      }
+
+      //need page to be 1 less than actual in for loop
+      page -= 1;
+      var htmlTargetDisplay = "";
+      for(i = targets.length-1 - (page*targetsPerPage); i > targets.length-1 - (page*targetsPerPage)-targetsPerPage && i > 0; i--){
+        htmlTargetDisplay += prepareWordTarget(targets[i]);
+      }
+    targetDisplay.innerHTML = htmlTargetDisplay;
+  });
+}
+
+function prepareWordTarget(wordTarget){
+  targetHTML = "";
+  targetHTML += "<div class='card mb-3 border-0' style='max-width: 540px;'>" ;
+  targetHTML += "<div class='row g-0'>";
+  targetHTML += "<div class='col-md-4'>";
+  targetHTML += "<img src=" + wordTarget.png + " style='width: 100%; padding: 10px' alt='Word target'></img>";
+  targetHTML += "</div>";
+  targetHTML += "<div class='col-md-8'>";
+  targetHTML += "<div class='card-body'>";
+  targetHTML += "<p style='margin-bottom: 10px;'><a href=" + wordTarget.weburl + ">Word target " + wordTarget.name + "</a></p>";
+  targetHTML += "<p style='margin-bottom: 10px; margin-top:10px'><a href=" + wordTarget.printurl + ">(print version) </a></p>";
+  targetHTML += "</div>";
+  targetHTML += "</div>";
+  targetHTML += "</div>";
+  targetHTML += "</div>";
+
+
+
+  return targetHTML;
+}
+
+
+</script>
