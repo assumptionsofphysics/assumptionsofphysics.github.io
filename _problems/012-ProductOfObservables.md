@@ -26,4 +26,4 @@ and therefore (through Taylor expansion) generic functions. Are there any proble
 *Physical significance.* This would seem like a basic problem that should have a
 settled question in the literature, yet we were not able to find an in depth
 treatment. If the operation is well-defined, it would also be interesting to understand what symmetry it would generate
-and what the conjugate variable would be.
+and what the conjugate variable would be. If not, it would be interesting to understand exactly the root of the problem.
