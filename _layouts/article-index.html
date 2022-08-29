@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="row section topspace">
+        <p></p>
+        <h1 style="text-align: center; margin-bottom: 30px; margin-top: -30px">{{ page.title }}</h1>
+        <div class="col-md-12">
+          {% assign currentDir = page.dir | remove_first: "/" %}
+          {% for article in site.pages reversed %}
+              {% if article.path contains currentDir and article.path contains "en.md" %}
+              {% unless article.draft %}
+              {% assign articleDir = article.dir | remove_first: "/" %}
+              {% assign tokens = article.path | split: '/' %}
+              {% assign tokens = tokens[-2] | split: '-' %}
+              {% assign id = tokens[0] %}
+              {% assign shortName = tokens[1] %}
+              <h4><b><a href="{{article.url}}">{{id}} - {{article.title}}</a></b></h4>
+              <p>TL;DR: <i>{{article.summary}}</i>
+              <br/>Languages:
+              {% for translation in site.pages %}
+                  {% if translation.path contains articleDir %}
+                  {% assign tokens = translation.name | split: '.' %}
+                  {% assign lang = tokens[0] %}
+                  <a href="{{translation.url}}">{{lang}}</a>
+                  {% endif %}
+              {% endfor %}
+              </p>
+              {% endunless %}
+              {% endif %}
+          {% endfor %}
+            <p/>
+        </div>
+    </div>
+</div>

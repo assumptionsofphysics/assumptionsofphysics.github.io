@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{% assign articleDir = page.dir | remove_first: "/" %}
+      <div class="container">
+        <div class="col-md-12">
+          <h1>{{ page.title }}</h1>
+          <p>TL;DR: <i>{{page.summary}}</i>
+          <br/>Languages:
+          {% for translation in site.pages %}
+              {% if translation.path contains articleDir %}
+              {% assign tokens = translation.name | split: '.' %}
+              {% assign lang = tokens[0] %}
+              <a href="{{translation.url}}">{{ lang }}</a>
+              {% endif %}
+          {% endfor %}
+          </p>
+          {{ content }}
+        </div>
+      </div>
