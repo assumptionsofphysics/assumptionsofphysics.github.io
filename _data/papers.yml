@@ -1,9 +1,17 @@
+- title: "Geometrical and physical interpretation of the action principle"
+  year: "2022"
+  url: "https://arxiv.org/abs/2208.06428"
+  description: "shows how the variation of the action is related to the flow of evolution in the extended phase space."
+  journal: ""
+  location: ""
+  video: ""
+
 - title: "On the Common Logical Structure of Classical and Quantum Mechanics"
   year: "2022"
   url: "https://arxiv.org/abs/2206.10667"
   description: "shows that quantum mechanics follows classical logic, and that classical mechanics can be given a version of 'quantum logic'."
   journal: "Erkenntnis"
-  location: ""
+  location: "https://link.springer.com/article/10.1007/s10670-022-00593-z"
   video: ""
 
 - title: "Reverse Physics: From Laws to Physical Assumptions"
@@ -25,11 +33,10 @@
 - title: "Space-time structure may be topological and not geometrical"
   year: "2020"
   url: "https://arxiv.org/abs/2006.13830"
-  description: "Space-time structure may be topological and not geometrical (2020)</a></b>:
-      characterizes the assumptions needed for continuous quantities and how they fail for space-time."
+  description: "characterizes the assumptions needed for continuous quantities and how they fail for space-time."
   journal: "Physica Scripta"
   location: "https://iopscience.iop.org/article/10.1088/1402-4896/ab9bdb"
-  video: ""
+  video: "https://youtu.be/PMYdj1H5QxI"
 
 - title: "The four postulates of quantum mechanics are three"
   year: "2020"
