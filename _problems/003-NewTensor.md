@@ -17,6 +17,7 @@ which merit further study.
 As an example of the type of things we are looking for:
 * Is the expression a tensor? It would seem so as the spatial-temporal
 part of the symplectic form should transform like a tensor.
+* How is it related to curvature? Is it always zero on flat spaces? Can it be zero on curved spaces?
 * Can it be interpreted as a gravitational force?
 * From calculation, the tensor can be understood as the difference between taking
 an antisymmetrized covariant derivative and an antisymmetrized partial derivative:
