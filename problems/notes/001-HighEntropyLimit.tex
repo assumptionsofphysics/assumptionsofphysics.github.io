@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.25in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+\def\>{\rangle}
+\def\<{\langle}
+\DeclareMathOperator{\Tr}{Tr}
+
+\begin{document}
+
+
+	\title{Notes on problem 1 - Classical physics as high entropy limit}
+	\author{Assumptions of Physics Collaboration}
+
+	\date{}
+
+	\maketitle
+
+\section{Mathematical setting}
+
+Let $H$ be the $L^2(\mathbb{R})$ Hilbert space. Let $M(H)$ be the space of mixed states, that is the space of all positive semi-definite Hermitian operators with trace one. Let $I(\rho) = \Tr [-\rho \log \rho]$ be the entropy of the mixed state Let $M(I_0) = I^{-1}(I_0)$ be the set of mixed state with the given entropy (i.e. fiber of $I_0$).
+
+Let $\sigma_x \in \mathbb{R}$ be a fixed uncertainty (e.g. $\sigma_x = \sqrt{\hbar/2}$ expressed in meters, so that the uncertainty is balanced between $x$ and $p$). A Gaussian wave packet $|g(x,p)\>$ is a pure state of the form
+\begin{equation}
+	|g(\mu_x,\mu_p)\> = \frac{1}{(2 \pi \sigma_x^2)^{\frac{1}{4}}} e^{-\frac{1}{4} \left(\frac{x-\mu_x}{\sigma_x}\right)^2} e^{\imath \frac{px}{\hbar}} | x \>
+\end{equation}
+We note $g(x,p) \in M(H)$ the corresponding density operator.
+
+Let $G(H) \subset M(H)$ be the space of all mixed state that can be expressed as a mixture of Gaussian wave packets. That is, $\rho = \int \rho(x, p) g(x, p) dx dp$ where $\rho(x, p)$ is a distribution over phase space. We call $G(H)$ the space of Gaussian approximations. (Alternatively, we can define them with a probability measure.)
+
+\section{GOAL}
+
+Show that, as entropy increases, the space of Gaussian approximations becomes ``a good approximation'' to the space of mixed states. Also show that, as entropy increases, Hamiltonian evolution is ``a good approximation'' of unitary evolution. Part of the problem means defining what ``good approximation'' means.
+
+\section{Possible approach}
+
+Step 1. Define a distance function on $M(H)$. A possible choice is to use the Hilbert-Schmidt norm
+\begin{equation}
+	||\rho|| = \sqrt{\Tr \rho^2}
+\end{equation}
+which induces the distance
+\begin{equation}
+	D(\rho_1, \rho_2) = \sqrt{\Tr (\rho_1 - \rho_2)^2}
+\end{equation}
+
+Step 2. Define the distance of the best approximation for each mixed state. That is:
+\begin{equation}
+	BD(\rho) = \inf D(\rho, G(H))
+\end{equation}
+Then define the worst approximation at a given entropy, that is
+\begin{equation}
+	WD(I) = \sup BD(M(I)).
+\end{equation}
+
+We now have a function of entropy that describes how distant are the mixed state at that entropy to a corresponding Gaussian approximation. The first goal would be to show that it is a decreasing function and it tends to zero when entropy goes to infinity.
+
+The other goal is to show that Hamiltonian evolution over the approximation is a good approximation of unitary evolution. We say that $\hat{\rho} \in G(H)$ is a good approximation of $\rho \in M(H)$ if $D(\rho, \hat{\rho}) \leq 2 WD(I(\rho))$ (something along these lines). Let $H = H(X,P)$ be a Hamiltonian expressible in terms of position and momentum operators. Let $h(x,p)$ be the corresponding classical Hamiltonian as a function of position and momentum variables. The time evolution operator is $U(t)= e^{\imath \frac{Ht}{\hbar}}$. Let $\rho \in M(H)$ be a mixed state. Then, after a time $t$, the state will evolve into $U^\dagger(t) \rho U(t)$. We would like to show that if $\hat{\rho}$ is a good approximation of $\rho$ and $\hat{\rho}(x,p)$ is the integrable function associated with $\hat{\rho}$, then the Gaussian approximation given by the Hamiltonian evolution $\hat{\rho}(t) = \int \hat{\rho}(x,p,t) g(x,p) dx dp$ is a good approximation for $U^\dagger(t) \rho U(t)$.
+
+\section{Possible problems}
+
+The choice Hamiltonian may affect what entropy is needed. Consider classical Hamiltonian evolution. Given that a Gaussian remains a Gaussian only under linear transformation, a Gaussian will remain a Gaussian if and only if the Hamiltonian is quadratic. On the other hand, if the Lagrangian is chaotic, it will spread the initial Guassian into a wide-spread and complicated distribution. Given that entropy is strictly concave and Hamiltonian evolution conserves entropy, though we may be able to decompose the final distribution into the sum of infinitely many Gaussians, these must be Gaussians at lower entropy. Something similar may happen in the quantum case.
+
+\section{Gaussian of Gaussians}
+
+An interesting case to study could be a Gaussian distribution of Gaussian states. That is, let 
+\begin{equation}
+	n_\lambda(q,p) = \frac{1}{2 \pi \lambda \hbar} e^{-\frac{q^2 + p^2}{2 \lambda \hbar}}
+\end{equation}
+be a family of Gaussians where $\lambda$ is a parameter that controls the product of the standard deviations over $q$ and $p$. The entropy is
+\begin{equation}
+	I(n_\lambda) = \ln 2 \pi e \lambda \hbar.
+\end{equation}
+Note that $I \to - \infty$ as $\lambda \to 0$ while $I \to + \infty$ as $\lambda \to + \infty$.
+
+We can construct the mixed state
+\begin{equation}
+	N_\lambda = \int n_\lambda(q,p) g(q,p) dq dp.
+\end{equation}
+In principle, $I(N_\lambda)$ would describe the entropy of the mixed state as a function of $\lambda$. What we would like to show is that $I \to 0$ as $\lambda \to 0$. We expect the first derivative to be $0$ at that point and the second derivative to be positive. We hope to show that $I(N_\lambda)$ converges to $I(n_\lambda)$ as $\lambda \to +\infty$. Given that $I(N_\lambda)$ should be concave for small $\lambda$ and convex for large $\lambda$, we expect an inflection point for $\lambda$ a 2 or 3 times $\frac{1}{2 \pi e \hbar}$, which is where $I(n_\lambda)$ is equal to zero.
+
+\end{document}
