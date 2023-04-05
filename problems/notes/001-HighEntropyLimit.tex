@@ -26,13 +26,19 @@
 
 Let $H$ be the $L^2(\mathbb{R})$ Hilbert space. Let $M(H)$ be the space of mixed states, that is the space of all positive semi-definite Hermitian operators with trace one. Let $I(\rho) = \Tr [-\rho \log \rho]$ be the entropy of the mixed state Let $M(I_0) = I^{-1}(I_0)$ be the set of mixed state with the given entropy (i.e. fiber of $I_0$).
 
-Let $\sigma_x \in \mathbb{R}$ be a fixed uncertainty (e.g. $\sigma_x = \sqrt{\hbar/2}$ expressed in meters, so that the uncertainty is balanced between $x$ and $p$). A Gaussian wave packet $|g(x,p)\>$ is a pure state of the form
+Let $\sigma_q \in \mathbb{R}$ be a fixed uncertainty (e.g. $\sigma_q = \sqrt{\hbar/2}$ expressed in meters, so that the uncertainty is balanced between $q$ and $p$). A Gaussian wave packet $|\gamma(\mu_q,\mu_p)\>$ is a pure state of the form
 \begin{equation}
-	|g(\mu_x,\mu_p)\> = \frac{1}{(2 \pi \sigma_x^2)^{\frac{1}{4}}} e^{-\frac{1}{4} \left(\frac{x-\mu_x}{\sigma_x}\right)^2} e^{\imath \frac{px}{\hbar}} | x \>
+	|\gamma(\mu_q,\mu_p)\> = \frac{1}{(2 \pi \sigma_q^2)^{\frac{1}{4}}} e^{-\frac{1}{4} \left(\frac{q-\mu_q}{\sigma_q}\right)^2} e^{\imath \frac{\mu_p q}{\hbar}} | x \>
 \end{equation}
-We note $g(x,p) \in M(H)$ the corresponding density operator.
+or in natural units, since $\sigma_q = \sqrt{1/2}$,
+\begin{equation}
+	|\gamma(\mu_q,\mu_p)\> = \frac{1}{\pi^{\frac{1}{4}}} e^{-\frac{1}{2} \left(q-\mu_q\right)^2} e^{\imath \mu_p q} | x \>
+\end{equation}
+We note $\Gamma(\mu_q,\mu_p) = |\gamma(\mu_q,\mu_p)\> \<\gamma(\mu_q,\mu_p)| \in M(H)$ the corresponding density operator.
 
-Let $G(H) \subset M(H)$ be the space of all mixed state that can be expressed as a mixture of Gaussian wave packets. That is, $\rho = \int \rho(x, p) g(x, p) dx dp$ where $\rho(x, p)$ is a distribution over phase space. We call $G(H)$ the space of Gaussian approximations. (Alternatively, we can define them with a probability measure.)
+Note that, given that the Guassian wave packet saturates the uncertainty, we have $\sigma_p = \hbar / 2 \sigma_q$ (therefore, $\sigma_p = \sqrt{\hbar/2}$). In natural units, $\sigma_p = \sigma_q = \sqrt{1/2}$.
+
+Let $G(H) \subset M(H)$ be the space of all mixed state that can be expressed as a mixture of Gaussian wave packets. That is, $\rho = \int f_\rho(q, p) \Gamma(q, p) dq dp$ where $f(q, p)$ is a distribution over phase space. We call $G(H)$ the space of Gaussian approximations. (Alternatively, we can define them with a probability measure.)
 
 \section{GOAL}
 
@@ -60,7 +66,7 @@ Then define the worst approximation at a given entropy, that is
 
 We now have a function of entropy that describes how distant are the mixed state at that entropy to a corresponding Gaussian approximation. The first goal would be to show that it is a decreasing function and it tends to zero when entropy goes to infinity.
 
-The other goal is to show that Hamiltonian evolution over the approximation is a good approximation of unitary evolution. We say that $\hat{\rho} \in G(H)$ is a good approximation of $\rho \in M(H)$ if $D(\rho, \hat{\rho}) \leq 2 WD(I(\rho))$ (something along these lines). Let $H = H(X,P)$ be a Hamiltonian expressible in terms of position and momentum operators. Let $h(x,p)$ be the corresponding classical Hamiltonian as a function of position and momentum variables. The time evolution operator is $U(t)= e^{\imath \frac{Ht}{\hbar}}$. Let $\rho \in M(H)$ be a mixed state. Then, after a time $t$, the state will evolve into $U^\dagger(t) \rho U(t)$. We would like to show that if $\hat{\rho}$ is a good approximation of $\rho$ and $\hat{\rho}(x,p)$ is the integrable function associated with $\hat{\rho}$, then the Gaussian approximation given by the Hamiltonian evolution $\hat{\rho}(t) = \int \hat{\rho}(x,p,t) g(x,p) dx dp$ is a good approximation for $U^\dagger(t) \rho U(t)$.
+The other goal is to show that Hamiltonian evolution over the approximation is a good approximation of unitary evolution. We say that $\hat{\rho} \in G(H)$ is a good approximation of $\rho \in M(H)$ if $D(\rho, \hat{\rho}) \leq 2 WD(I(\rho))$ (something along these lines). Let $H = H(Q,P)$ be a Hamiltonian expressible in terms of position and momentum operators. Let $h(q,p)$ be the corresponding classical Hamiltonian as a function of position and momentum variables. The time evolution operator is $U(t)= e^{\imath \frac{Ht}{\hbar}}$. Let $\rho \in M(H)$ be a mixed state. Then, after a time $t$, the state will evolve into $U^\dagger(t) \rho U(t)$. We would like to show that if $\hat{\rho}$ is a good approximation of $\rho$ and $f_{\hat{\rho}}(q,p)$ is the integrable function associated with $\hat{\rho}$, then the Gaussian approximation given by the Hamiltonian evolution $\hat{\rho}(t) = \int f_{\hat{\rho}}(q,p,t) \Gamma(q,p) dq dp$ is a good approximation for $U^\dagger(t) \rho U(t)$.
 
 \section{Possible problems}
 
@@ -68,19 +74,29 @@ The choice Hamiltonian may affect what entropy is needed. Consider classical Ham
 
 \section{Gaussian of Gaussians}
 
-An interesting case to study could be a Gaussian distribution of Gaussian states. That is, let 
+An interesting case to study could be a Gaussian distribution of Gaussian states. That is, let $\lambda$ be a dimensionless parameter. Let $\sigma_q = \sqrt{\lambda\hbar /2}$ expressed in meters and $\sigma_p = \lambda \hbar / 2 \sigma_q = \sqrt{\lambda\hbar /2}$, so that $\sigma_q\sigma_p = \lambda \hbar / 2$. We define the following family of Gaussians
 \begin{equation}
-	n_\lambda(q,p) = \frac{1}{2 \pi \lambda \hbar} e^{-\frac{q^2 + p^2}{2 \lambda \hbar}}
+	n_\lambda(q,p) = \frac{1}{\pi \lambda \hbar} e^{-\frac{\sigma_p^2 q^2 + \sigma_q^2 p^2}{\lambda^2 \hbar^2}}
 \end{equation}
-be a family of Gaussians where $\lambda$ is a parameter that controls the product of the standard deviations over $q$ and $p$. The entropy is
+or, in natural units,
 \begin{equation}
-	I(n_\lambda) = \ln 2 \pi e \lambda \hbar.
+	n_\lambda(q,p) = \frac{1}{\pi \lambda} e^{-\frac{q^2 + p^2}{2 \lambda}}.
 \end{equation}
+
+The entropy is
+\begin{equation}
+	I(n_\lambda) = \ln 2 \pi e \lambda \hbar
+\end{equation}
+or
+\begin{equation}
+	I(n_\lambda) = \ln 2 \pi e \lambda
+\end{equation}
+in natural units.
 Note that $I \to - \infty$ as $\lambda \to 0$ while $I \to + \infty$ as $\lambda \to + \infty$.
 
 We can construct the mixed state
 \begin{equation}
-	N_\lambda = \int n_\lambda(q,p) g(q,p) dq dp.
+	N_\lambda = \int n_\lambda(q,p) \Gamma(q,p) dq dp.
 \end{equation}
 In principle, $I(N_\lambda)$ would describe the entropy of the mixed state as a function of $\lambda$. What we would like to show is that $I \to 0$ as $\lambda \to 0$. We expect the first derivative to be $0$ at that point and the second derivative to be positive. We hope to show that $I(N_\lambda)$ converges to $I(n_\lambda)$ as $\lambda \to +\infty$. Given that $I(N_\lambda)$ should be concave for small $\lambda$ and convex for large $\lambda$, we expect an inflection point for $\lambda$ a 2 or 3 times $\frac{1}{2 \pi e \hbar}$, which is where $I(n_\lambda)$ is equal to zero.
 
