@@ -6,6 +6,14 @@
   location: ""
   video: ""
 
+- title: "Hamiltonian Privilege"
+  year: "2023"
+  url: "http://philsci-archive.pitt.edu/22202/"
+  description: "shows how the Hamiltonian formulation of classical mechanics is more general and therefore more fundamental than Lagrangian mechanics."
+  journal: "Erkenntnis"
+  location: ""
+  video: ""
+
 - title: "On the Common Logical Structure of Classical and Quantum Mechanics"
   year: "2022"
   url: "https://arxiv.org/abs/2206.10667"
