@@ -1,6 +1,6 @@
 - title: "The unphysicality of Hilbert spaces"
   year: "2023"
-  url: "TBD"
+  url: "https://arxiv.org/abs/2308.06669"
   description: "shows how Hilbert spaces are unsuitable to model quantum state spaces as they do not handle infinity correctly."
   journal: ""
   location: ""
@@ -17,8 +17,8 @@
 - title: "Geometric and physical interpretation of the action principle"
   year: "2022"
   url: "https://arxiv.org/abs/2208.06428"
-  description: "shows how the variation of the action is related to the flow of evolution in the extended phase space."
-  journal: "Scientific Report"
+  description: "shows how the variation of the action is related to the flow of evolutions in the extended phase space."
+  journal: "Scientific Reports"
   location: "https://www.nature.com/articles/s41598-023-39145-y"
   video: "https://youtu.be/7M0BzJhw4wA"
 
