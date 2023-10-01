@@ -5,11 +5,16 @@ layout: default
       <div class="container">
         <div class="row section topspace">
           <div class="col-md-12">
-            {% assign tokens = page.path | split: '/' %}
-            {% assign tokens = tokens[1] | split: '-' %}
-            {% assign id = tokens[0] %}
+            {% assign pathTokens = page.path | split: '/' %}
+            {% assign idTokens = pathTokens[1] | split: '-' %}
+            {% assign fileTokens = pathTokens[1] | split: '.' %}
+            {% assign id = idTokens[0] %}
+            {% assign filename = fileTokens[0] %}
                 <h2>#{{id}}: {{page.title}}</h2>
-                <p><i>Category: {{page.category}} - Tags: {{page.tags | join: ", "}}</i></p>
+                <p><i>Category: {{page.category}} - Tags: {{page.tags | join: ", "}}</i>
+                {% if page.notes %}</br><i><a href="https://latexonline.cc/compile?git=https://github.com/assumptionsofphysics/assumptionsofphysics.github.io&target=problems/notes/{{filename}}.tex&command=pdflatex">Notes on current and past attempts</a>
+                </i>{% endif %}</p>
+                
               <hr/>
                 <p>
                 {% if page.video %}
