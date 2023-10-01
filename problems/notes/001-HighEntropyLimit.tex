@@ -4,6 +4,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{enumitem}
@@ -11,6 +12,8 @@
 \def\>{\rangle}
 \def\<{\langle}
 \DeclareMathOperator{\Tr}{Tr}
+
+\newtheorem{prop}{Proposition}
 
 \begin{document}
 
@@ -21,6 +24,8 @@
 	\date{}
 
 	\maketitle
+
+\emph{NB: these are rough notes on our progress towards an open problem}
 
 \section{Mathematical setting}
 
@@ -100,4 +105,27 @@ We can construct the mixed state
 \end{equation}
 In principle, $I(N_\lambda)$ would describe the entropy of the mixed state as a function of $\lambda$. What we would like to show is that $I \to 0$ as $\lambda \to 0$. We expect the first derivative to be $0$ at that point and the second derivative to be positive. We hope to show that $I(N_\lambda)$ converges to $I(n_\lambda)$ as $\lambda \to +\infty$. Given that $I(N_\lambda)$ should be concave for small $\lambda$ and convex for large $\lambda$, we expect an inflection point for $\lambda$ a 2 or 3 times $\frac{1}{2 \pi e \hbar}$, which is where $I(n_\lambda)$ is equal to zero.
 
+\section{Entropy increasing functions}
+
+We saw that families of distributions that can be written as $f\left(\frac{q}{\sqrt{\lambda}}, \frac{p}{\sqrt{\lambda}}\right)$ play an important role. We want to find a motivation in terms of entropy.
+
+
+Let $D = PD(X)$ be the set of all integrable distributions over phase space (one d.o.f.). Let $G$ be the group of canonical transformations. Therefore $g \in G$ is a function $g : D -> D$. We say a functional $b: D -> D$ is an “entropic magnifier” (name is a placeholder) if
+\begin{itemize}
+	\item it is linear - $b(a_1 f_1 + a_2 f_2) = a_1 b(f_1) + a_2 b(f_2) $
+	\item preserves entropy ordering (i.e. $I(B(f_1)) \leq I(B(f_2))$ if and only if $I(f_1) \leq I(f_2)$) and entropy is non-decreasing (i.e. $I(B(f)) >= I(f)$).
+	\item for every $g \in G$ there exists a $g’ \in G$ such that $b(g(f)) = g’(b(f))$
+\end{itemize}
+
+We can show that $b(f(q,p)) = f\left(\frac{q}{\sqrt{\lambda}}, \frac{p}{\sqrt{\lambda}}\right)$ is an entropy magnifier. In fact
+\begin{align}
+	I\left(f\left(\frac{q}{\sqrt{\lambda}}, \frac{p}{\sqrt{\lambda}}\right)\right) = I(f(q,p)) + \log(\lambda)
+\end{align}
+which means it is entropy increasing and preserves entropy ordering. A canonical transformation applied to the argument becomes a stretches canonical transformation applied to the result.
+
+Can we claim that $b$ is a change of variable? That is,
+\begin{align}
+	b(f(q,p)) = b(\int f(u,v) \delta(u-q, v-p) du dv ) = \int f(u,v) b(\delta(u-q, v-p)) du dv
+\end{align}
+Therefore we need only to understand how the deltas are mapped. Given that deltas have the same entropy, minus infinity, they must be mapped to functions of the same entropy. Note that the linear combination of two delta functions also have minus infinite entropy. Since entropy is strictly concave, the linear combination of two functions with finite and equal entropy will always have greater entropy. Therefore delta diracs must be mapped to functions with zero support (minus infinite entropy).
 \end{document}
