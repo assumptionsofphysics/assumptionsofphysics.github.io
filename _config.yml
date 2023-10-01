@@ -5,6 +5,9 @@ google_analytics:
 theme: minima
 
 collections:
+  essays:
+    output: true
+    permalink: /essays/:path
   problems:
     output: true
     permalink: /problems/:path
@@ -15,3 +18,8 @@ defaults:
       type: "problems"
     values:
       layout: "problem"
+  - scope:
+      path: ""
+      type: "essays"
+    values:
+      layout: "article"

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Short essays on physics, math and philosophy of science
+---
+
+<div class="container">
+    <div class="row section topspace">
+        <p></p>
+        <h1 style="text-align: center; margin-top: -30px">Short essays</h1>
+        <h5 style="text-align: center; margin-bottom: 30px"> on the foundations of physics, math and philosophy of science</h5>
+        <div class="col-md-12">
+          {% for essay in site.essays %}
+                <h4><b><a href="{{essay.url}}">{{essay.title}}</a></b></h4>
+                <p><i>Category: {{essay.category}} - Tags: {{essay.tags | join: ", "}}</i></p>
+          {% endfor %}
+            <p/>
+        </div>
+    </div>
+</div>	<!-- /container -->

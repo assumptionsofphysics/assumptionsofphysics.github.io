@@ -7,8 +7,10 @@ layout: default
         <h1 style="text-align: center; margin-bottom: 30px; margin-top: -30px">{{ page.title }}</h1>
         <div class="col-md-12">
           {% assign currentDir = page.dir | remove_first: "/" %}
+          <p>{{currentDir}}</p>
           {% for article in site.pages reversed %}
               {% if article.path contains currentDir and article.path contains "en.md" %}
+              <p>{{article.path}}</p>
               {% unless article.draft %}
               {% assign articleDir = article.dir | remove_first: "/" %}
               {% assign tokens = article.path | split: '/' %}
