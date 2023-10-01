@@ -2,6 +2,7 @@
 title: Classical mechanics as high entropy limit of quantum mechanics
 category: Quantum mechanics
 tags: [Quantum information, Classical limit, Entropy]
+notes: yes
 ---
 Prove or disprove the following conjecture: **any sufficiently high entropy state can be approximated by a
 statistical mixture of Gaussian wave packets**.
