@@ -6,3 +6,6 @@
 
 - url: "https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDdCM_6wCJGx_YaJDeAhy_yX"
   description: "A series of videos that aim to give an intuitive of vector calculus."
+
+- url: "https://www.youtube.com/embed/videoseries?si=mLmh-9-trcrgpaIS&amp;list=PLmNMSMaNjnDcKnXpvJy26z83OloND1ZXr"
+  description: "A series of videos on information entropy, its meaning and its connection to physics."
