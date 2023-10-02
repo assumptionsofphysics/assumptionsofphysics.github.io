@@ -1,3 +1,6 @@
+# Order in which videos are shown
+# More important/latest on top
+
 - url: "https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDd9Qj4VxNL8dijiWZCAzanl"
   description: "A series of videos introducing the relationship between Hamiltonian mechanics and determinism/reversibility."
 
