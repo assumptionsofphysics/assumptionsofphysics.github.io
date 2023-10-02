@@ -1,6 +1,7 @@
 var paperCounter = 0;
 var presentationCounter = 0;
 var essayCounter = 0;
+var videoCounter = 0;
 
 function loadMorePapers(amount, idText, idButton){
   var paperDisplay = document.getElementById(idText);
@@ -107,6 +108,40 @@ function formatEssay(essay){
   essayHTML += "<p><b><a href=" + essay.url + ">" + new Date(essay.date).toLocaleDateString() + " - " + essay.title + "</a></b>: " + essay.summary + "</br>";
   essayHTML += "<small><i>Category: " + essay.category + " - Tags:  "  + essay.tags + "</i></small></p>";
   return essayHTML;
+}
+
+function loadMoreVideos(amount, idText, idButton){
+  var presDisplay = document.getElementById(idText);
+  fetch('/data/videos.json')
+    .then(response => response.text())
+    .then((data) => {
+      var videos = JSON.parse(data);
+      var htmlPresDisplay = "";
+      var loops = 0;
+      if(amount == -1){
+        amount = videos.length;
+      }
+      for(i = 0; i < videoCounter+amount && i < videos.length; i++){
+        htmlPresDisplay += formatVideo(videos[i]);
+        loops++;
+      }
+      videoCounter = loops;
+      if(videoCounter == videos.length && idButton != null){
+        hideButton(idButton);
+      }
+    presDisplay.innerHTML = htmlPresDisplay;
+  });
+}
+
+function formatVideo(video){
+  var videoHTML = "";
+  videoHTML += "<div style=\"width:100%;height:0;padding-bottom:51%;position:relative\">";
+  videoHTML += "<iframe style=\"width:100%;height:100%;position:absolute;left:0;top:0\" width=\"560\" height=\"315\" src=\"" + video.url + "\" frameborder=\"0\" allowfullscreen></iframe>";
+  videoHTML += "</div>";
+  videoHTML += "<br>";
+  videoHTML += "<p>" + video.description + "</p>";
+  videoHTML += "<br>";
+  return videoHTML;
 }
 
 function hideButton(id){

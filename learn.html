@@ -63,23 +63,8 @@ title: Learn more
                 <h5 class="card-header"><i class="fas fa-film"></i>&nbsp; Videos</h5>
                 <div class="card-body">
                     <p><b><a href="https://www.youtube.com/user/gcarcassi">Gabriele Carcassi's youtube channel</a></b> includes videos aimed at physics/math/engineering students at the intermediate level.</p>
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDd9Qj4VxNL8dijiWZCAzanl" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p>A series of videos introducing the relationship between Hamiltonian mechanics and determinism/reversibility.</p>
-                    <br>
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDev5YhUto7YL4XIcBb-bXm8" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p>A series of videos on the geometrical meaning of Lagrangian mechanics and its relations to determinism/reversibility.</p>
-                    <br>
-                    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLmNMSMaNjnDdCM_6wCJGx_YaJDeAhy_yX" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <br>
-                    <p>A series of videos that aim to give an intuitive of vector calculus.</p>
+                    <span id="video-display"></span>
+                    <div style="text-align: center; font-style: italic" id="video-button"><a href="javascript:loadMoreVideos(2, 'video-display', 'video-button')">Load more</a></div>
                 </div>
             </div>
         </div>
@@ -87,5 +72,9 @@ title: Learn more
 </div>
 <script type="text/javascript" src="assets/js/document-format.js"></script>
 <script type="text/javascript">
-  loadMoreEssays(5, "essay-display", "essay-button");
+    loadMoreEssays(5, "essay-display", "essay-button");
 </script>
+<script type="text/javascript">
+    loadMoreVideos(3, "video-display", "video-button");
+</script>
+    
