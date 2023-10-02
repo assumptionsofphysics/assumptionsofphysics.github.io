@@ -9,7 +9,8 @@ title: Videos
 
 <div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  {% for video in site.data.videos %}
+  {% for video in site.data.videos reversed %}
+  {% assign extra = 3 | minus: forloop.length | modulo: 3 %}
     <div class="card-body">
       <div style="width:100%;height:0;padding-bottom:51%;position:relative">
           <iframe style="width:100%;height:100%;position:absolute;left:0;top:0" width="560" height="315" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
@@ -20,6 +21,16 @@ title: Videos
 
     </div>
   {% endfor %}
+  {% for i in (1..extra)%}
+  <div class="card-body">
+    <div style="width:100%;height:0;padding-bottom:51%;position:relative">
+    </div>
+    <br>
+    <p></p>
+    <br>
+
+  </div>
+{% endfor %}
 </div>
 </br>
 </div>
