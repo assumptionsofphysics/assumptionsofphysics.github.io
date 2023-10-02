@@ -30,6 +30,14 @@ title: Learn more
             </div>
            </br>
             <div class="card">
+                <h5 class="card-header"><i class="fas fa-edit"></i>&nbsp; Short Essays</h5>
+                <div class="card-body">
+                    <span id="essay-display"></span>
+                      <div style="text-align: center; font-style: italic" id="essay-button"><a href="javascript:loadMoreEssays(4, 'essay-display', 'essay-button')">Load more</a></div>
+                  </div>
+              </div>
+            </br>
+            <div class="card">
                 <h5 class="card-header"><i class="fas fa-edit"></i>&nbsp; Blog</h5>
                 <div class="card-body">
                     <p><b><a href="http://sufficientlywise.org">Gabriele Carcassi's blog on foundations of physics</a></b>.
@@ -40,7 +48,7 @@ title: Learn more
                     </p>
                 </div>
             </div>
-        </div>
+    </div>
         <div class="col-md-6">
             <div class="card">
                 <h5 class="card-header"><i class="fas fa-forward"></i>&nbsp; Bare minima</h5>
@@ -77,3 +85,7 @@ title: Learn more
         </div>
     </div>
 </div>
+<script type="text/javascript" src="assets/js/document-format.js"></script>
+<script type="text/javascript">
+  loadMoreEssays(5, "essay-display", "essay-button");
+</script>
