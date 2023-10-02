@@ -1,0 +1,8 @@
+---
+  layout: null
+---
+[
+  {% for essay in site.essays reversed %}
+  {"url": "{{essay.url}}","title": "{{essay.title}}","summary": "{{essay.summary}}","date": "{{essay.date | date_to_xmlschema}}","category": "{{essay.category}}","tags": {{essay.tags | jsonify}}}{% if forloop.last == false %} ,{% endif %}
+  {% endfor %}
+]

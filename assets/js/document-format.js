@@ -1,5 +1,6 @@
 var paperCounter = 0;
 var presentationCounter = 0;
+var essayCounter = 0;
 
 function loadMorePapers(amount, idText, idButton){
   var paperDisplay = document.getElementById(idText);
@@ -25,7 +26,7 @@ function loadMorePapers(amount, idText, idButton){
 }
 
 function formatPaper(paper){
-  paperHTML = "";
+  var paperHTML = "";
   paperHTML += "<p><b><a href=" + paper.url + "> " + paper.title + " (" + paper.year + ")</a></b>: "
       + paper.description;
   if(paper.journal !== ""){
@@ -67,7 +68,7 @@ function loadMorePresentations(amount, idText, idButton){
 }
 
 function formatPresentation(presentation){
-  presentationHTML = "";
+  var presentationHTML = "";
   presentationHTML += "<p><b><a href=/presentations/" + presentation.filename + ".pdf>" + presentation.date + " - " + presentation.title + "</a></b>.";
   presentationHTML += " Presentation given by " + presentation.presenter + " at the " + presentation.venue + ".";
   presentationHTML += " (<a href=/presentations/" + presentation.filename + ".pdf>pdf</a> - <a href=/presentations/" + presentation.filename + ".pptx>pptx</a>)"
@@ -76,6 +77,36 @@ function formatPresentation(presentation){
       }
   presentationHTML += "</p>";
   return presentationHTML;
+}
+
+function loadMoreEssays(amount, idText, idButton){
+  var presDisplay = document.getElementById(idText);
+  fetch('/data/essays-meta.json')
+    .then(response => response.text())
+    .then((data) => {
+      var essays = JSON.parse(data);
+      var htmlPresDisplay = "";
+      var loops = 0;
+      if(amount == -1){
+        amount = essays.length;
+      }
+      for(i = 0; i < essayCounter+amount && i < essays.length; i++){
+        htmlPresDisplay += formatEssay(essays[i]);
+        loops++;
+      }
+      essayCounter = loops;
+      if(essayCounter == essays.length && idButton != null){
+        hideButton(idButton);
+      }
+    presDisplay.innerHTML = htmlPresDisplay;
+  });
+}
+
+function formatEssay(essay){
+  var essayHTML = "";
+  essayHTML += "<p><b><a href=" + essay.url + ">" + new Date(essay.date).toLocaleDateString() + " - " + essay.title + "</a></b>: " + essay.summary + "</br>";
+  essayHTML += "<small><i>Category: " + essay.category + " - Tags:  "  + essay.tags + "</i></small></p>";
+  return essayHTML;
 }
 
 function hideButton(id){

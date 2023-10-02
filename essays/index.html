@@ -9,11 +9,10 @@ title: Short essays on physics, math and philosophy of science
         <h1 style="text-align: center; margin-top: -30px">Short essays</h1>
         <h5 style="text-align: center; margin-bottom: 30px"> on the foundations of physics, math and philosophy of science</h5>
         <div class="col-md-12">
-          {% for essay in site.essays %}
-                <h4><b><a href="{{essay.url}}">{{essay.title}}</a></b></h4>
-                <p><i>Category: {{essay.category}} - Tags: {{essay.tags | join: ", "}}</i></p>
-          {% endfor %}
-            <p/>
-        </div>
+        <span id="essay-display"></span>
     </div>
-</div>	<!-- /container -->
+</div>
+<script type="text/javascript" src="/assets/js/document-format.js"></script>
+<script type="text/javascript">
+loadMoreEssays(-1, "essay-display");
+</script>
