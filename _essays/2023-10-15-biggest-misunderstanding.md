@@ -1,0 +1,21 @@
+---
+title: The biggest misunderstanding on the foundations of physics
+summary: The foundations of physics are not about what the world is, they are about what physics itself is
+category: Foundations of Physics
+tags: [Foundations of Physics, Foundations of Math]
+---
+
+For most physicists, working on the foundations of physics means working on a fundamental theory: one that describes the basic constituents of the world and their laws; one that, for example, describes gravity at the smallest scale or what happens during a quantum measurement. I have come to realize this is the biggest misunderstanding on the foundations of physics.
+
+If we look at mathematics, its foundations deal with internal consistency (i.e. identify and avoid paradoxes); providing a formal model for what proofs are and what can be achieved with them; provide basic tools and definitions (e.g. sets, categories) that can be used in all other mathematical endeavors. If we look at computer science, its foundations define the basic concepts of algorithms in terms of symbol manipulation; they provide generic models of computation and study what can be achieved; provide concepts (e.g. complexity theory) of general use to all other computer scientists. If we look at many other disciplines, such as control theory, probability theory, signal processing and so on, their foundations will focus on the essential notions and the rules of the subject.
+
+The foundations of a field, then, is the systematic analysis of its most basic concepts and its methods. A mathematician will always write proofs about elements of some set. A computer scientist will always deal with some algorithm. A field will have a good foundation if these concepts and methods are well motivated, to the point of being necessary, and provide conceptual unity to the field.
+
+If we go back to physics, it should be clear that a fundamental theory will not fulfill these goals. Historically, the availability of a more comprehensive, necessarily more complicated, theory has not displaced all others. The new fundamental theory, then, will become just an additional tool available in the arsenal of a physicist, who will still use the concepts and methods provided by other theories.
+The subtle point of confusion here is between the fundamental objects in nature and the fundamental objects in physics, the craft of a physicist. If one wants to know “what the world is made of”, then, by all means, he should pursue a fundamental theory. Physics, however, is a much broader subject.
+
+To make the analogy, the equivalent in mathematics would be the pursuit of a “fundamental theorem”, which proves or disproves all other theorems; or, in computer science, of a “fundamental algorithm”, which can calculate anything with optimal speed. The foundations of the respective fields do not focus on those efforts, though they provide context to evaluate whether those efforts make sense to begin with. In both cases, development on the foundations put a more realistic spin on those lofty goals.
+
+If we want to understand what the foundations of physics should be, then, we should first determine what this thing we call “physics” is. The obvious answer is that physics is the discipline that makes empirically testable models about the physical world. Therefore, the foundations of physics should define the basic notions required by such activity, provide a formal account so that we can understand what is and what is not possible. For example, it should provide the correct logic structure for assertions that can be experimentally verified; it should tell us what requirements are implicit in the definition of a physical system, its environment and its state; it should provide formal definitions that are valid in all contexts and can be integrated well with the current mathematical and conceptual tools used by the different subfields. This is my personal interest, and it is the type of work we purse in our project, Assumptions of Physics.
+
+Note the shift: the focus is not the universe and how it works. The focus is physics, and how physics works. This is the biggest misunderstanding on the foundations of physics. They are not about the world. They are about the objective truth about the world that rational agents can acquire through experimentation. They are about us.
