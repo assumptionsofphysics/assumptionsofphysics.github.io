@@ -1,5 +1,5 @@
 ---
-title: Why quantum interpretations are not useful
+title: Why interpretations are not useful (to understand quantum mechanics)
 summary: Understanding quantum mechanics means understanding why the model applies to objects at different scale
 category: Quantum mechanics
 tags: [Quantum mechanics, Interpretations]
