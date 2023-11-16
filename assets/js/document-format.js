@@ -105,7 +105,7 @@ function loadMoreEssays(amount, idText, idButton){
 
 function formatEssay(essay){
   var essayHTML = "";
-  essayHTML += "<p><b><a href=" + essay.url + ">" + new Date(essay.date).toDateString() + " - " + essay.title + "</a></b>: " + essay.summary + "</br>";
+  essayHTML += "<p><b><a href=" + essay.url + ">" + new Date(essay.date).toLocaleDateString(undefined, {timezone: "UTC"}) + " - " + essay.title + "</a></b>: " + essay.summary + "</br>";
   essayHTML += "<small><i>Category: " + essay.category + " - Tags:  "  + essay.tags + "</i></small></p>";
   return essayHTML;
 }
