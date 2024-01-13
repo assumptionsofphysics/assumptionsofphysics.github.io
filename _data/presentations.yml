@@ -1,8 +1,15 @@
 - title: "7 misconceptions in the foundations of physics"
   date: "2023/12/10"
   filename: "20231210-SevenMisconceptions"
-  presenter: "Gabriele Carcassi"
+  presenter: "Christine Aidala and Gabriele Carcassi"
   venue: "Advanced Studies Gateway at FRIB"
+  video: ""
+
+- title: "The geometry of quantum mechanics"
+  date: "2023/11/30"
+  filename: "20231130-TheGeometryOfQuantumMechanics"
+  presenter: "Gabriele Carcassi"
+  venue: "Society of Physics Students (SPS), University of Michigan, Physics Department"
   video: ""
 
 - title: "Quantum probability and quantum information theory require a novel approach to measure theory"
@@ -31,6 +38,13 @@
   filename: "20220920-HarvardLogic"
   presenter: "Gabriele Carcassi"
   venue: "Foundations of Physics @Harvard"
+  video: ""
+
+- title: "Reverse Physics: uncovering the Assumptions of Physics from its laws"
+  date: "2022/09/08"
+  filename: "20220908-SPSSeminar-ReversePhysics"
+  presenter: "Gabriele Carcassi"
+  venue: "Society of Physics Students (SPS), University of Michigan, Physics Department"
   video: ""
 
 - title: "Time as an operational definition"
