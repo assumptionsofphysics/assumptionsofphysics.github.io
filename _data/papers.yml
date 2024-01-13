@@ -2,8 +2,8 @@
   year: "2023"
   url: "https://arxiv.org/abs/2311.01951"
   description: "shows a quantum analogue of the classical state counting Liouville measure must be non-additive."
-  journal: ""
-  location: ""
+  journal: "Entropy"
+  location: "https://www.mdpi.com/1099-4300/25/12/1670"
   video: ""
 
 - title: "The unphysicality of Hilbert spaces"
@@ -15,11 +15,11 @@
   video: ""
 
 - title: "On the reality of the quantum state once again: A no-go theorem for Ψ-ontic models "
-  year: "2022"
+  year: "2024"
   url: "https://arxiv.org/abs/2201.11842"
   description: "shows how Ψ-ontic models as defined by Harrigan and Spekkens cannot reproduce quantum information theory and quantum thermodynamics."
-  journal: ""
-  location: ""
+  journal: "Foundations of Physics"
+  location: "https://link.springer.com/article/10.1007/s10701-023-00748-0"
   video: ""
 
 - title: "Geometric and physical interpretation of the action principle"
