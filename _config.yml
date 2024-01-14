@@ -3,6 +3,7 @@ email: info@assumptionsofphysics.org
 description: A research project led by Christine Aidala and Gabriele Carcassi at the University of Michigan
 google_analytics:
 theme: minima
+future: true
 
 collections:
   essays:
