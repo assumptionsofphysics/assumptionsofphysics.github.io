@@ -2,7 +2,6 @@
 title: It’s not about mechanisms
 summary: Explanations at the fundamental level cannot be about underlying mechanisms, they must be about required definitions
 category: Foundations of Physics
-draft: true
 tags: [Foundations of Physics, Reductionism, Fundamentality]
 ---
 
