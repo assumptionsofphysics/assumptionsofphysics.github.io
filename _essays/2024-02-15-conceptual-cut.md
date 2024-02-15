@@ -3,7 +3,6 @@ title: The conceptual cut
 summary: Any physical theory requires idealizations and assumptions that are hidden in the math
 category: Foundations of Physics
 tags: [Foundations of Physics, Mathematical Modeling, Physical Mathematics]
-draft: true
 ---
 
 Since one of the goals of our project, Assumptions of Physics, is to provide a general mathematical theory for experimental science, one question we need to answer is exactly what can and cannot be formally captured, and why. There are two key problems, which I call respectively the "web of meaning" and the "conceptual cut." In this short essay I will concentrate on the latter.
