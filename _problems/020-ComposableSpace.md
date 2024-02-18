@@ -7,7 +7,7 @@ A recurrent idea in our project is that ensembles are the prime physical objects
 while pure states are the abstraction. The goal, then, is to find the minimum set of
 axioms for that area always justified for statistical ensembles. Classical mechanics
 and quantum mechanics should be the specialization of such spaces.
-Current findings are summed up [here](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics&target=Notes/2023-GeneralizedEnsembleSpaces/GeneralizedEnsembleSpaces.tex&command=pdflatex)
+Current findings are summed up [here](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fbook&target=art_pm_EnsembleSpaces.tex&command=pdflatex)
 
 *Mathematical problem.* We found appropriate axioms for convex spaces,
 which an ensemble space can be shown to satisfy. The idea is that one can
