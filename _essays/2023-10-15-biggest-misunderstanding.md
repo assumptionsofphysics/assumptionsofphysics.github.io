@@ -2,7 +2,7 @@
 title: The biggest misunderstanding on the foundations of physics
 summary: The foundations of physics are not about what the world is, they are about what physics itself is
 category: Foundations of Physics
-tags: [Foundations of Physics, Foundations of Math]
+tags: [Foundations of Physics, Foundations of Mathematics]
 ---
 
 For most physicists, working on the foundations of physics means working on a fundamental theory: one that describes the basic constituents of the world and their laws; one that, for example, describes gravity at the smallest scale or what happens during a quantum measurement. I have come to realize this is the biggest misunderstanding on the foundations of physics.
