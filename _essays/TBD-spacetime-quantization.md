@@ -18,7 +18,7 @@ Suppose we start with a finite region $$V$$ and we cut it in half. Each side wil
 
 This is the problem that quantum mechanics solves. Quantization is imposing a lower limit of one to the count of states on the continuum. You can't have less than one state. You can't have less than zero entropy.
 
-If you take a set of quantum states $$V$$, you can ask what the maximum entropy achievable with a distribution over the region $$V$$ is. What you find is that the entropy has a lower bound to zero, because the entropy of a single quantum state is zero. Using $$S = \log W$$ in reverse, each state counts as one. You will also find that the count of states $$W$$ is not additive, but it is additive for orthogonal subspaces, partially recovering classical behavior in particular circumstances.
+If you take a set of quantum states $$V$$, you can ask what the maximum entropy achievable with a distribution over the region $$V$$ is. What you find is that the entropy has a lower bound of zero, because the entropy of a single quantum state is zero. Using $$S = \log W$$ in reverse, each state counts as one. You will also find that the count of states $$W$$ is not additive, but it is additive for orthogonal subspaces, partially recovering classical behavior in particular circumstances.
 
 So quantization is really setting a lower limit of one to the count of configurations for a given degree of freedom. What about the geometry of space-time?
 
