@@ -3,7 +3,6 @@ title: Do we have the right mathematical tools to quantize space-time?
 summary: Quantum mechanics quantized the count of configurations per degree of freedom. To quantize space-time we need to quantize the number of degrees of freedom. We have no tools for that.
 category: Quantum gravity
 tags: [Space-time, quantization, non-additive measures]
-draft: true
 ---
 
 If you follow our project, you may know that, while we work on the foundations of physics, our primary goal is not to produce a theory of everything, a theory of quantum gravity, that merges quantum mechanics with general relativity. Our focus is to rederive the current theories, the ones we already have, from clear physical assumptions, while understanding exactly what each mathematical symbol represents physically. Therefore, while we do not work on quantum gravity specifically, we are qualified to answer the following question: what mathematical structures are suitable for quantum gravity? And the answer is: not the current ones.
