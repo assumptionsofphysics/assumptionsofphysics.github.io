@@ -18,7 +18,7 @@ multivariate case does not seem to have a clear solution.
 
 In quantum mechanics, there is an anologue problem, which aims to reconstruct
 a mixed state from expectation value of observables. For example, one starts from $$m_ij = E[X^iP^j]$$ and tries
-to find a suitable $$\rho$$ such that $$m_{ij} = Tr\[(X^iP^j + P^jX^i)/2 \rho]$$.
+to find a suitable $$\rho$$ such that $$m_{ij} = Tr[(X^iP^j + P^jX^i)/2 \rho]$$.
 
 Alternatively, one can formulate the problem in terms of quasi-probability distributions on phase space. Note that
 there are multiple representations, since there is no single product of observables. Therefore, depending on what
