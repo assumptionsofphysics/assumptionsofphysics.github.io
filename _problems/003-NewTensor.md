@@ -2,7 +2,7 @@
 title: Characterize the expression \( G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} \)
 category: Classical mechanics
 tags: [Differential geometry, Riemannian geometry, Symplectic geometry, General relativity]
-video: https://youtu.be/cXtFbUfn-Ws
+video: https://www.youtube.com/embed/cXtFbUfn-Ws
 ---
 Characterize the geometry and the physics captured by the expression
 $$ G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} $$.

@@ -2,7 +2,7 @@
 title: Properly extend the classical uncertainty relationship to multiple d.o.f.
 category: Classical mechanics
 tags: [Classical information, Hamiltonian mechanics, Entropy]
-video: https://youtu.be/8c0v_1j9bYg
+video: https://www.youtube.com/embed/8c0v_1j9bYg?si=1XW_ohIphW1BBMh2
 ---
 Find out how to generalize the uncertainty relationship we have found for classical
 mechanics (as it can be seen for example in [this paper](https://arxiv.org/abs/2111.09107)).
