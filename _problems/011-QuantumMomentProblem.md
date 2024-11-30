@@ -27,7 +27,8 @@ of these details. The Wigner function should correspond to a choice where the pr
 
 One can now ask whether there are moment values that can solve both problems. This essentially is asking
 whether there are quantum expectations that give a semi-positive Wigner functions. The general question
-seem to not have an answer. For pure states, it seems that [only gaussian states](https://en.wikipedia.org/wiki/Wigner_quasiprobability_distribution#Positivity_of_the_Wigner_function) have semi-positive Wigner functions.
+seem to not have an answer. For pure states, it seems that [only gaussian states](https://en.wikipedia.org/wiki/Wigner_quasiprobability_distribution#Positivity_of_the_Wigner_function) have semi-positive Wigner functions. It would be interesting to double check that the moments
+of a quantum gaussian state match those of a classical gaussian state.
 
 Another interesting aspect is that pure quantum states always solve the moment problem uniquely, as
 their topology is induced by the semi-norms defined by the expectations. Given that pure states have

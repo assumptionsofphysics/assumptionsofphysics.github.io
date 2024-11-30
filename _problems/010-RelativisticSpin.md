@@ -18,7 +18,7 @@ If we take a spatial direction as a degree of freedom, phase space is the
 two-sphere (the only sphere that is also a symplectic manifold) identified by all
 unitary vectors of components $$S_i$$. The conjugate
 quantities are given by the angle over a plane and the component perpendicular
-to the plane. For example, we have $$\{\theta^{xy}, S_z\}$$. The Hamiltonian
+to the plane. For example, we have $$\{\theta^{xy}, S_z\}=1$$. The Hamiltonian
 is given by $$H=\mu B^{k}S_k$$. See [here](https://sufficientlywise.org/2017/11/15/classical-spin/)
 for details.
 

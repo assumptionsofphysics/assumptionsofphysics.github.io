@@ -2,16 +2,18 @@
 title: Properly extend the classical uncertainty relationship to multiple d.o.f.
 category: Classical mechanics
 tags: [Classical information, Hamiltonian mechanics, Entropy]
+video: https://youtu.be/8c0v_1j9bYg
 ---
 Find out how to generalize the uncertainty relationship we have found for classical
 mechanics (as it can be seen for example in [this paper](https://arxiv.org/abs/2111.09107)).
 
 *Mathematical problem.* In a nutshell, the problem is equivalent to studying the
 evolution of the covariance matrix (a rank two tensor) over phase space (a symplectic
-manifold) under all possible linear Hamiltonian (symplectic) evolutions.
+manifold) under all possible linear Hamiltonian (symplectic) evolutions. That is, under
+the symplectic group.
 
 As an example of the type of things we are looking for:
-* If we start with a packet with no correlation across degrees of freedom and equal
+* If we start with a packet with no correlation across multiple degrees of freedom and equal
 uncertainty within each d.o.f. (a condition related to thermodynamic equilibrium),
 do we find that the uncertainty in each d.o.f. cannot become lower than the initial one?
 * Still starting from the previous case, is it true that the uncertainty within a

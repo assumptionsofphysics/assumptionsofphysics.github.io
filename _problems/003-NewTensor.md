@@ -2,6 +2,7 @@
 title: Characterize the expression \( G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} \)
 category: Classical mechanics
 tags: [Differential geometry, Riemannian geometry, Symplectic geometry, General relativity]
+video: https://youtu.be/cXtFbUfn-Ws
 ---
 Characterize the geometry and the physics captured by the expression
 $$ G_{\alpha\beta\gamma} = \partial_\alpha g_{\beta \gamma} - \partial_\beta g_{\alpha \gamma} $$.
@@ -12,13 +13,12 @@ and velocity (see [here](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub
 part of the symplectic form when it is expressed in terms of position and velocity.
 It also appears as a "correction" for the raised anti-symmetrized covariant
 derivative. This means the expression should have both geometrical and physical significance,
-which merit further study.
+which merits further study.
 
 As an example of the type of things we are looking for:
-* Is the expression a tensor? It would seem so as the spatial-temporal
-part of the symplectic form should transform like a tensor.
-* How is it related to curvature? Is it always zero on flat spaces? Can it be zero on curved spaces?
-* Can it be interpreted as a gravitational force?
+* Is it related to non-inertial frames?
+* Is it related to curvature? Is it always zero on flat spaces? Can it be zero on curved spaces?
+* Can it be interpreted as a gravitational/inertial force?
 * From calculation, the tensor can be understood as the difference between taking
 an antisymmetrized covariant derivative and an antisymmetrized partial derivative:
 what does that say geometrically?

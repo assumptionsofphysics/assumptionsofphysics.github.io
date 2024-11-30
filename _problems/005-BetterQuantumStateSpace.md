@@ -3,8 +3,8 @@ title: Find a better mathematical characterization for quantum states
 category: Quantum mechanics
 tags: [Vector spaces, Function spaces]
 ---
-Find a better physically motivated characterization for the state space of
-quantum mechanics.
+Find a better physically motivated mathematical characterization for the state space of
+quantum mechanics. See [this paper](https://arxiv.org/abs/2308.06669) for more details.
 
 *Mathematical problem.* The standard way to represent quantum states is using
 vectors in Hilbert spaces. The requirements for a Hilbert space can be broken up
@@ -20,11 +20,17 @@ is a dense subset of $$L^2$$, which seems better suited as:
 * It is closed under Fourier transform
 * It has finite expectations for all polynomials of position and momentum
 * It is dense over $$L^2$$
+* Schwartz spaces on different number of DOFs are not isomorphic
 In fact, requiring the second feature means recovering the Schwartz space.
 
 Does the Schwartz space satisfy all other characteristics of a Hilbert space,
 except the closure under the norm? If we just drop the closure under the norm,
-what do we lose?
+what do we lose? If we have a Hamiltonian that is a polynomial of position and momentum,
+does that map Schwartz functions to Schwartz functions? What is the constraint
+on the Hamiltonian such that the evolution maps Schwartz functions to Schwartz functions?
+What is the role (if any) of the dual space?
+
+Explore [this notion of quasi-completeness](https://www-users.cse.umn.edu/~garrett/m/fun/notes_2012-13/07d_quasi-completeness.pdf) as an alternative of the completeness under the norm
 
 *Physical significance.* If we look at the list of defining properties of a Hilbert space,
 completeness is the only one that does not make physical sense. The linearity of
@@ -33,8 +39,10 @@ the existence of projections is the requirement of being able to identify states
 (i.e. a measurement that outputs 1 if the state matches and 0 if it doesn't).
 The completeness would mean that the limit of a sequence of state preparation
 always leads to a state, but this is not the case: we can (in principle) prepare
-states with narrower and narrower spatial distribution, but not zero spatial
-distribution (delta Dirac). The idea would be that the requirement of completeness makes the mathematical
+states with greater and greater spread in position, but not infinite spread in position.
+In general, if the sequence of expectation values for one observable goes to infinite,
+it is clear that the limit cannot be understood as a realizable preparation.
+The idea would be that the requirement of completeness makes the mathematical
 space nicer to work with, but not physically meaningful.
 
 *Notes.* Even listing all problems with Hilbert spaces may be useful.

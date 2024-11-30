@@ -4,10 +4,14 @@ category: Quantum mechanics
 tags: [Quantum information, Classical limit, Entropy]
 notes: yes
 ---
-Prove or disprove the following conjecture: **any sufficiently high entropy state can be approximated by a
-statistical mixture of Gaussian wave packets**.
+**Problem solved**: See [pre-print](https://arxiv.org/abs/2411.00972)
 
-*Mathematical problem.* Denote $$|g(q,p)\rangle$$ a set of Gaussian wave packets
+Prove or disprove the following conjecture: **any sufficiently high entropy state can be approximated by a
+classical statistical mixture**.
+
+*Mathematical problem.* This is the old characterization of the problem.
+
+Denote $$|g(q,p)\rangle$$ a set of Gaussian wave packets
 centered in phase space at position $$q$$ and momentum $$p$$.
 We want to show that a density matrix $$\rho$$ with sufficiently high
 von Neumann entropy $$ tr(-\rho \log \rho) $$, allows the approximation:
@@ -18,7 +22,6 @@ for a suitable function $$ \hat{\rho}(q,p) $$ of position and momentum. The
 approximation should also approximate the expectations:
 
 $$tr(\rho F(Q,P)) \approx \int \hat{\rho}(q,p) f(q,p) dq dp.$$
-
 
 Note that there are a number of issues that remain vague, and part of the problem
 is exactly to find the correct specification. For example,
