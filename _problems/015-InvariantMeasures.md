@@ -12,7 +12,7 @@ of states in a region must be coordinate invariant. That is, we need to be able
 to change coordinates while keeping the measure invariant. This leads to the need
 for a conjugate quantity such that $$dq \wedge dp = dq' \wedge dp'$$. The question is whether we can formalize this requirement in a more abstract way,
 since other theories (e.g. quantum mechanics) must have a similar requirement (e.g.
-for differentiable manifolds, there is the idea of [generalized complex structure](https://en.wikipedia.org/wiki/Generalized_complex_structure)).
+both quantum mechanics have a Poisson structure that becomes the Poisson brackets in classical mechanics and the commutators in quantum mechanics. This is also probably related to the  [generalized complex structure](https://en.wikipedia.org/wiki/Generalized_complex_structure)).
 
 One way to approach the problem is to see what properties measures possess on the complex plane.
 This may be related to understanding why integration on the complex plane is

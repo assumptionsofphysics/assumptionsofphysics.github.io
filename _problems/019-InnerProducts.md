@@ -21,7 +21,8 @@ the direction "negative-definite" we have $$c^2 = a^2 - b^2$$. This is still
 the Pythagorean theorem, except that $$a$$ and $$b$$ no longer represent orthogonal
 components, but $$c$$ and $$b$$ do. The idea, then, is to re-express the law of
 cosines and find the proper connection between vectors and geometry.
-1. non-degenaret skew-symmetric bilinear form - this defines only areas of
+Do we get a hyperbolic cosine in the analogy?
+1. non-degenare skew-symmetric bilinear form - this defines only areas of
 parallelopipeds. The connection should simply be that the area is $$ab \sin \alpha$$.
 Note that the sine is an odd function, therefore if we set $$\omega(a,b) = |a||b| \sin \alpha$$
 the form must be skew-symmetric.
@@ -35,6 +36,6 @@ on the existence of a specific form with specific properties are equivalent
 to the geometrical (and therefore physical) assumptions.
 
 Another issue is that, mathematically, these are usually treated as different
-subjects. We believe is useful to see them as variation of a general theme, so
+subjects. We believe is useful to see them as variations of a general theme, so
 that one can build a more general intuition for the tools that are common (i.e.
 all of differential topology, linear algebra, ...).
