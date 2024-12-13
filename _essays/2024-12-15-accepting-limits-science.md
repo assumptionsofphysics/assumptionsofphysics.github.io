@@ -1,6 +1,6 @@
 ---
 title: Accepting the limits of science
-summary: The only things physics can tell us is that whenever we have A we also have B
+summary: If science is only about what we can test experimentally, ultimately it can only tell us that things are because they are
 category: Philosophy of science
 tags: [Philosophy of science]
 draft: true
