@@ -3,7 +3,6 @@ title: Accepting the limits of science
 summary: If science is only about what we can test experimentally, ultimately it can only tell us that things are because they are
 category: Philosophy of science
 tags: [Philosophy of science]
-draft: true
 ---
 
 I think there is somewhat of a mental disconnect between what physics, or science more generally, can tell us about the universe and what people want it to be able to tell us. From philosophers who want to reach metaphysical conclusions about the nature of reality, to physicists who want to give an account of space and time at a fundamental level. Since mere experimentation will not be able to provide those answers, some people "push the boundaries of science," meaning they try to apply it beyond its capabilities. This muddles the waters: if science can talk about infinite worlds that are not experimentally accessible, why shouldn't it talk about a creator that directs evolution? Since I don't like my peas and my carrots to touch, let's talk about what science is, and what it can and cannot do.
