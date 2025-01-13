@@ -18,8 +18,8 @@
   year: "2023"
   url: "https://arxiv.org/abs/2308.06669"
   description: "shows how Hilbert spaces are unsuitable to model quantum state spaces as they do not handle infinity correctly."
-  journal: ""
-  location: ""
+  journal: "Quantum Studies: Mathematics and Foundations"
+  location: "https://doi.org/10.1007/s40509-024-00357-0"
   video: ""
 
 - title: "On the reality of the quantum state once again: A no-go theorem for Ψ-ontic models "
