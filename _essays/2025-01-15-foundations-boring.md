@@ -3,7 +3,6 @@ title: The foundations of physics should be (are) boring
 summary: Solving exciting problems will not give us solid foundations for physics
 category: Foundations of physics
 tags: [Foundations of physics]
-draft: true
 ---
 
 We seem to be in an era where scientific results are measured by how "exciting" they are. Our paper on the [Geometric and physical interpretation of the action principle](https://arxiv.org/abs/2208.06428) was rejected from a journal without review because it didn't "excite the immediate interest" of researchers. From my point of view, most research in the foundations of physics is not going to be exciting at all to most people. After all, how many times, during the tour of a building, were you shown how well the concrete was poured or how deep the piling foundations go?
