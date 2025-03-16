@@ -3,7 +3,7 @@ title: Refactoring physics
 summary: Before looking for new theories, we need to address the "math smells" of the current ones
 category: Foundations of physics
 tags: [Foundations of physics,Software engineering, Refactoring]
-draft: true
+draft: false
 ---
 
 If you are a software engineer, you appreciate the need to [refactor](https://en.wikipedia.org/wiki/Code_refactoring) parts of your codebase. Refactoring is the art of taking a piece of software and cleaning up its internal structure while keeping the functionality intact. Over time, any codebase starts to morph under the addition of new functionality, ad-hoc fixes, and scope changes. Therefore, to move forward and make the project more sustainable, it may be useful to reorganize the code and rewrite some parts so that the overall project is more maintainable and easier to extend. I strongly believe that the mathematical foundations of physics needs a massive refactoring. And the more I work toward that goal, the more I realize how the problems people want to solve in the foundations of physics cannot be solved without it.
