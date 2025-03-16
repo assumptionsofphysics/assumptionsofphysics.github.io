@@ -1,6 +1,6 @@
 ---
 title: Refactoring physics
-summary: Before looking for new theories, we need to address the "math smells" of the current ones
+summary: Before looking for new theories, we need to address the 'math smells' of the current ones
 category: Foundations of physics
 tags: [Foundations of physics,Software engineering, Refactoring]
 draft: false
