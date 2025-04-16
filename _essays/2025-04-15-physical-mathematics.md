@@ -3,7 +3,7 @@ title: Physical mathematics vs mathematical physics
 summary: We shouldn't make physics be more like math, we should find the math that fits physics
 category: Physical mathematics
 tags: [Foundations of physics,Physical mathematics, Mathematics]
-draft: true
+draft: false
 ---
 
 Physics should be more mathematically rigorous. Yet, theoretical physics has been following a mathematization trend that ultimately obscures the physics. These statements may seem contradictory, but they are not. If we take the first to be true, we have two options. The first is to turn physics into math: you take the language and techniques from math and you reformulate physics with them. You get "mathematical physics:" physics that fits the math. The second is to turn math into physics: based on physics requirements, you design tools that model them effectively. You get "physical mathematics:" mathematics that fits the physics. We need more of the second.
