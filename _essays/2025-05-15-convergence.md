@@ -1,0 +1,40 @@
+---
+title: Something about convergence
+summary: 
+category: Physical mathematics
+tags: [Foundations of physics,Physical mathematics, Topology, Convergence]
+draft: true
+---
+
+One of the problems in the foundations of physics is that most people cannot distinguish between mathematical detail that is irrelevant and mathematical detail that actually represents a physical choice. Most mathematicians do not care enough about the physics and most physicists do not care enough about the math. Today I want to go through one of these issues, that I only finally understood a couple of weeks ago: convergence. In particular, convergence for probability measures. Suppose you have a sequence of probability distributions $$\mu_i$$: when does it converge to a final probability distribution $$\mu$$?
+
+If you are a physicists, you are probably going to say: when the sequence keeps getting closer to the final one. Done. Unfortunately, things are not that easy. First of all, what does it mean that they get closer? Topology defines both closeness and the notion of limits for a space. The space of probability measures is a subset of a topological vector space, and in the finite dimensional case there is only one possible topology, one possible criteria of convergence. In the infinite dimensional case, there are [multiple ones](https://en.wikipedia.org/wiki/Convergence_of_measures). Why? Which one should we use in physics? Does it make any difference?
+
+Let's start with weak convergence. Weak convergence says that $$\mu_i$$ converges to $$\mu$$ if and only if the expectation of all continuous random variables converges. That is, $$E [X \vert \mu_i ]$$ converges to $$E [X \vert \mu]$$ for any continuous random variable $$X$$. If there is a weak convergence, you may expect that there is a strong convergence, and indeed there is. Strong convergence means that the probability of each event converges. Weak convergence essentially requires only the probability of events defined through continuous random variables to converge. Strong convergence, then, implies weak convergence because it requires the probability of all events, including the ones required by weak convergence.
+
+For a long time, I was convinced that the notion of weak convergence was the only one we should care about. Since, in the end, we identify a state through continuous quantities, it makes sense that the limit should make all quantities converge. When we measure probability, is in terms of events over continuous quantities. Also, weak convergence plays a crucial role in a lot of mathematical literature, so that made me feel confident as well. However, there is a problem.
+
+Suppose we want to characterize the probability that an object comes at a point between two posts. If we call the first post $$0$$ and the second $$1$$, then we are looking at the space of probability measures defined within the interval $$[0,1]$$. Now, suppose that $$\mu_1$$ is a "square wave:" it is zero within $$[0,1/2]$$ and two within $$[1/2,1]$$. Suppose that $$\mu_2$$ is a square wave at double the "frequency:" it is zero within $$[0,1/4]\cup[2/4,3/4]$$ and two within $$[1/4,2/4]\cup[3/4,4/4]$$. In fact, suppose that $$\mu_i$$ is a square wave that does $$i$$ complete cycles. Does this sequence converge?
+
+The sequence will give us a probability measure that has an "infinite frequency:" the density goes up and down infinitely many times in any finite range, so it is not well defined at any point. However, all expectations of all functions of position converge. In fact, they converge to the expectations of a uniform distribution. In other words, the expectations cannot distinguish between a uniform distribution from zero to one and one that has infinite oscillations in the same interval. Because of this, the sequence converges weakly to a uniform distribution. It turns out that it also converges strongly to a uniform distributions: if you take any interval of $[0,1]$, the probability within that subset will converge to the size of that interval.
+
+But does it make sense physically to say that a distribution with infinitely many oscillations is the same as a uniform distribution? Is there something wrong with it? And, yes, there is something wrong. It does not make sense in terms of the entropy.
+
+Entropy is a continuous function, so if $$\mu_i$$ converges to $$\mu$$, then $$S(\mu_i)$$ must converge to $$S(\mu)$$. However, in the above case, this does not work. The entropy of $$\mu$$ is zero, because it is a uniform distribution over a unit. The entropy of $$\mu_1$$ is minus one because it is a uniform distribution over half a unit distance. Note that the entropy does not change under permutations of probability, and that any $$\mu_i$$ can be understood as moving parts of $$\mu_1$$ around therefore $$S(\mu_i)=-1$$ for all $$i$$. The entropy does not converge! Weak and strong convergence are not suitable criterias.
+
+The entropy can be used to define the [Jensen-Shannon divergence](LINK) and the [Fisher-Rao metric](LINK), both of which define a consistent notion of distance, from which a topology, and therefore a criteria of convergence, can be defined. That is, $$\mu_i$$ converges to $$\mu$$ if and only if the Jensens-Shanno divergence and the distance defined by the Fisher-Rao metric go to zero. This entropic convergence implies weak and strong convergence but not the other way around. Also note that the inner product in quantum mechanics is related to this structure: two states are orthogonal if and only if they maximize the Jensen-Shannon divergence. Therefore the above example, taken as a sequence of wave-functions, does not converge to a uniform distribution.
+
+It is not yet clear to me whether this type of convergence is equivalent to other types, like total variation convergence which forces the maximum difference of probability between $$\mu_i$$ $$\mu$$ over all events to go to zero (a sort of uniform convergence), or a pointwise convergence for the probability density. But the point here is not to solve the problem: it is to understand that there is a problem an what it actually is.
+
+Convergence is not just some technical mathematical detail for mathematicians to fix. It defines when two things are physically the same, and is therefore a physical assumption. If measurement outcomes is all that we care about, then weak convergence is the one, but entropy may not converge. How can we proceed in the foundations of physics if we do not cristal clear ideas on these issues?
+
+[//]: #  so fast that is at two places at once. However, consider the expectation of position. For $$\mu_1$$ it will be $$3/4$$. For $$\mu_2$$ it will be $$1/2 * 3/8 + 1/2 *7/8 = 5/8$$. For $$\mu_i$$ it will be $$\sum_{j=1}^{i} (1/i) (j-1/4)/i \to 1/2$$. 
+
+[//]: # First of all, a probability measure $$\mu$$ is a map between an event $$A \subset \Omega$$, which is a set of all possible outcomes $$\Omega$$, and it's probability $$\mu(A)$$. For example, if the only outcomes we are considering are the possible value of mass for an incoming object, $$\mu([0, 1])$$ will give us the probability that the incoming object has mass less than one. More in general, a random variable $$X : \Omega \to \mathbb{R}$$ is a 
+
+The least cumbersome criteria is called weak convergence. 
+
+Example for convergence of probability measures:
+weak convergence (the observables converge)
+strong convergence (the probability convergence)
+??? convergence (the entropy converges, the probability density converges)
