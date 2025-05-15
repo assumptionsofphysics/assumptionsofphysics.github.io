@@ -3,7 +3,6 @@ title: Physical convergence
 summary: "The notion of convergence is not merely a mathematical detail: it captures when two elements become physically indistiguishable"
 category: Physical mathematics
 tags: [Foundations of physics,Physical mathematics, Topology, Convergence]
-draft: true
 ---
 
 One of the problems in the foundations of physics is that most people cannot distinguish between mathematical detail that is irrelevant and mathematical detail that actually represents a physical choice. Most mathematicians do not care enough about the physics, and most physicists do not care enough about the math. Today I want to go through one of these issues, which I only finally understood a couple of weeks ago: convergence. In particular, convergence for probability measures. Suppose you have a sequence of probability distributions $$\mu_i$$: when does it converge to a final probability distribution $$\mu$$?
