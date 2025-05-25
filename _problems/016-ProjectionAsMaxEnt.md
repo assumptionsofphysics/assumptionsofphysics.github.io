@@ -19,7 +19,7 @@ to increase. Finding the right formulation is the core of the issue.
 *Physical significance.* The idea is that a quantum projection is essentially
 going from one equilibrium to another. As an analogy, suppose you have an
 open container of water. The number of water molecules in the container will
-fluctuate, therefore there is no single well defined. As we close the container,
-we change equilibrium (from grand canonical to canonical). Now the number of
-water molecules is well defined. The idea is to frame quantum projections in
-the same way. 
+fluctuate, therefore there is no single well defined number of water molecules.
+As we close the container, we change equilibrium (from grand canonical to canonical).
+Now the number of water molecules is well defined (but the chemical potential is not).
+The idea is to frame quantum projections in the same way. 
