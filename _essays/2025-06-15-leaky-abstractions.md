@@ -1,16 +1,21 @@
 ---
 title: Physics and the law of leaky abstractions
-summary: 
-category: Physical mathematics
-tags: [Foundations of physics,Physical mathematics, Mathematics]
+summary: There is not perfect model for a physical system, so why expect a complete physical theory?
+category: Foundations of physics
+tags: [Foundations of physics,Theory of everything]
 draft: true
 ---
 
-Against a theory of everything.
+The holy grail in the foundations of physics is to find the ultimate theory: one that gives a complete picture of the universe and all its processes. The theory of everything. I have written already as to how most physicists assume that this is possible, and how I am a bit more skeptical. Part of my skepticism comes from what Joel Spolsky called [the law of leaky abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/). If you do not know who Joel Spolsky is, he is one of the creators of Stack Overflow... which you probably know. The law states: all non-trivial abstractions, to some degree, are leaky. Let me explain what this means and how it relates to fundamental physics.
 
-Video
-https://www.youtube.com/watch?v=82JpGhctWpU
+The goal of most software development is provide some new abstract functionality on top of a lower layer of libraries that do not proive that functionality. For example, TCP is a reliable protocol to send messages over the Internet, meaning that you are guaranteed delivery, or at least an error if it the delivery can't happen. However, TCP is implemented on top of IP, which is a best effort protocol. That is, a message sent over IP may get lost and, in that case, TCP will send another copy over IP automatically. TCP abstracts this complication away, so that its user can assume the connection to be reliable. In the same way, a library that handles text is implemented over a library that handles numbers, since computers do not understand letters directly. Abstractions are what makes modern computer possible.
+
+However, there is a big problem. No abstraction is perfect. In the case of the network protocol, there is no reliable connection. If IP starts dropping messages, TCP will need to send the same message multiple time, wasting bandwidth and increasing the delay: the fact that the connection is unreliable leaks through performance degradation. The assumption sprung a leak. The difference between patching together some code and proper software engineering is, effectively, knowing how these abstractions can fail and, at the very least, fail safely.
+
+What does this have to do with the foundations of physics? Simple: a physical model is an abstraction. When we describe the state of the earth as it orbits around the sun as the pair of position and momentum, we are clearly ignoring a lot of things about the earth. We are implicitely assuming that none of those "details" are important: knowing position and momentum of the center of mass is good enough. But it is not always good enough: each model will have a realm of applicability, and if we are outside of that realm of applicability, or model leaks. In quantum mechanics, we describe the evolution of a system through the Schroedinger equation, unitary evolution. This implicitely assumes that the system is perfectly isolated: no information/energy is transferred between the system and the environment. Though, in a lab, we go out of our way to perfectly isolate our experiment from external influences, strictly speaking, nothing is every perfectly isolated. At the very least, you will have gravitational interactions since they cannot be shielded.
+
+Even the very idea that we can talk about a particular physical system depends on its  boundary conditions. Since a physical theory must be in terms of objects we can define and manipulate experimentally, their interaction with the environment will be important. For example, while it makes sense to talk about a cannonball here on earth, it will not make sense talk about one on the surface of the sun, as it will quickly disintegrate. In the same way, we can talk about a single electron if happen to have one trapped in a magnetic field. In the sun, we will have a plasma and it will be impossible to talk about individual electrons.
+
+In the same way that all abstraction in software are leaky, I posit that all models in physics are leaky. No physical model is devoid of assumptions that limit its applicability. The best we can do is tease out all those assumptions so that we can, at least, make sure they are somewhat satisfied in the case at hand.
 
 
-Joel Spolsky leaky abstractions
-https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
