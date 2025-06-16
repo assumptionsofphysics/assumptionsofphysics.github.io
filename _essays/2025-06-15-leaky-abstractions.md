@@ -3,7 +3,6 @@ title: Physics and the law of leaky abstractions
 summary: There is not perfect model for a physical system, so why expect a complete physical theory?
 category: Foundations of physics
 tags: [Foundations of physics,Theory of everything]
-draft: true
 ---
 
 The holy grail in the foundations of physics is to find the ultimate theory: one that gives a complete picture of the universe and all its processes, the theory of everything. I have written already about how most physicists assume that this is possible, and how I am a bit more skeptical. Part of my skepticism comes from what Joel Spolsky called [the law of leaky abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/). If you do not know who Joel Spolsky is, he is one of the creators of Stack Overflow... which you probably know. The law states: all non-trivial abstractions, to some degree, are leaky. Let me explain what this means and how it relates to fundamental physics.
