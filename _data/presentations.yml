@@ -19,6 +19,13 @@
   venue: "Oxford Quantum Information Society, Oxford"
   video: ""
 
+- title: "Ensemble Spaces and Minimal Interpretation"
+  date: "2025/03/26"
+  filename: "20250326-CaltechOnline"
+  presenter: "Gabriele Carcassi"
+  venue: "Caltech Philosophy of Science Reading Group"
+  video: ""
+
 - title: "Towards a consistent mathematical foundation for all physical theories"
   date: "2025/02/01"
   filename: "20250201-AIMSeminar"
@@ -31,7 +38,7 @@
   filename: "20241116-UMichRelativity"
   presenter: "Gabriele Carcassi"
   venue: "Midwest Relativity Meeting 2024, University of Michigan"
-  video: ""
+  video: "https://youtu.be/BRC6X_LiZ0w"
 
 - title: "Assumptions of Physics - Project overview"
   date: "2024/10/30"
