@@ -3,7 +3,6 @@ title: The impossibility of physical finitism
 summary: Physics requires reproducibility and reproducibility requires potential infinity, therefore physical theories requires infinity
 category: Foundations of physics
 tags: [Foundations of physics, Philosoophy of physics, Infinity]
-draft: true
 ---
 
 In philosophy of mathematics, finitism is the view that only finite objects (e.g. sets with finitely many elements) are truly valid objects. Some versions of physical finitism are very popular in the foundations of physics as well. They may justify working only on finite-dimensional quantum objects because "in the end, all measurements are finite," or that "we can only extract finite information." They may instinctively think that space-time is "discrete," and the continuum approximation is just due to the large number of elements. In my experience, most people seem to hold this view more as a preconceived belief than a well thought out stance. "What else could it be?" I am often asked. This is fairly typical for such views on the foundations of physics... and it is also typical that they do not work.
