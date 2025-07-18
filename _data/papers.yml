@@ -6,6 +6,14 @@
   location: ""
   video: ""
 
+- title: "Non-additive measures for quantum probability?"
+  year: "2024"
+  url: "https://arxiv.org/abs/2507.11735"
+  description: "shows a quantum analogue of the classical state counting Liouville measure must be non-additive."
+  journal: "Proceedings of the 20th International Conference on Information Processing and Management Uncertainty in Knowledge-Based Systems (IPMU 2024), Lisbon, Portugal, July 2024"
+  location: "https://zenodo.org/records/15149423"
+  video: ""
+
 - title: "How quantum mechanics requires non-additive measures"
   year: "2023"
   url: "https://arxiv.org/abs/2311.01951"
