@@ -1,6 +1,6 @@
 ---
 title: The impossibility of physical finitism
-summary: Physics requires reproducibility and reproducibility requires potential infinity, therefore physical theories requires infinity
+summary: Physics requires reproducibility and reproducibility requires potential infinity, therefore physical theories require infinity
 category: Foundations of physics
 tags: [Foundations of physics, Philosoophy of physics, Infinity]
 ---
