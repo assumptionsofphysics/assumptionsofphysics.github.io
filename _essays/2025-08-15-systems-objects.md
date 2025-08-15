@@ -3,7 +3,6 @@ title: Physical objects are not physical systems
 summary: What we model in science is not exactly physical objects
 category: Modeling
 tags: [Foundations of physics, Philosophy of physics]
-draft: true
 ---
 
 In the past few months, I have been clarifying the starting points I need to create a general theory of states and processes. In particular, I finally clarified for myself the difference between a physical object, something that exists in our world, like a ball attached to a piece of string, and a physical system, which is the abstract entity that ends up being modeled, like a pendulum. One big source of confusion is that the same physical object can correspond to multiple physical systems, and that the same physical system can be made of multiple objects. If one confuses objects with systems, then one opens oneself to a crucial category error.
