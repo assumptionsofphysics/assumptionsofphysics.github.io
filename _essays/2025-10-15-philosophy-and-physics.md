@@ -1,7 +1,7 @@
 ---
-title: Quantum incompleteness is a feature, not a bug
-summary: My experience with philosophy of physics
-category: Sociology of academia
+title: On the usefulness of philosophy of physics
+summary: How some physicists get the wrong impression and what I wished philosophers discussed
+category: Philosophy of Physics
 tags: [Philosophy of Physics]
 draft: true
 ---
