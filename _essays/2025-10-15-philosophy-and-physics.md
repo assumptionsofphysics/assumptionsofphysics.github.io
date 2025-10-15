@@ -20,4 +20,4 @@ The saddest thing to me is that there are indeed many philosophical issues at th
 
 It's many years now that I have been looking for philosophers that are trying to defend things that are close to what I need, so that our project has a sturdier philosophical foundation. I'd be able to give them many examples and counterexamples to broaden their arguments. Useful to each other, the whole greater than the parts. I can only hope.
 
-[^1]: Note that some theoretical physicists do like to engage in more far fetched speculations, and these are exactly the physicists that engage the most with philosophers of physics, providing the latter with a very biased sample.
+[^1]: Note that some theoretical physicists, especially those who work on foundations, do like to engage in more far-fetched speculations, and these are exactly the physicists that engage the most with philosophers of physics, providing the latter with a very biased sample.
