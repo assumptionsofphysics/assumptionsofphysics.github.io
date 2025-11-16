@@ -3,7 +3,7 @@ title: Ensembles all the way down
 summary: Experimental reproducibility requires that ensembles are the fundamental objects of our physical theories
 category: Foundations of Physics
 tags: [Philosophy of Physics]
-draft: true
+draft: false
 ---
 
 One of the reasons many people have trouble understanding quantum theory is a fundamental misunderstanding of what scientific theories describe. The typical understanding of an evolution $$s(t)$$ is that it describes the state $$s$$ at each instant of time $$t$$ for a particular system. That is, $$s$$ represents the full description of a particular system at a particular time. This understanding becomes problematic in quantum mechanics, but the problem is not quantum mechanics. It's that understanding that, on closer inspection, does not work for physics in general.
