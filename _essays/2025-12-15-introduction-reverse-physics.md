@@ -3,7 +3,7 @@ title: Introduction to Reverse Physics
 summary:  When the math is derived from the right physical assumptions, the physical assumptions can be derived from the math
 category: Reverse Physics
 tags: [Foundations of Physics, Philosophy of Physics]
-draft: true
+draft: false
 ---
 
 Understanding what premises exactly lead to what conclusions is a crucial activity into the foundations of mathematics. The goal of Reverse Physics is to bring these types of discussions in the foundations of physics, strengthening the understanding of why particular mathematical structures are used in physics and what they represent. Let's see how this works.
