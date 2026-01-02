@@ -1,8 +1,15 @@
+- title: "Reverse Physics and Physical Mathematics"
+  date: "2026/01/06"
+  filename: "20260101-JMM"
+  presenter: "Gabriele Carcassi"
+  venue: "Joint Mathematics Meeting 2026, Washington, D. C."
+  video: "https://youtu.be/gkssvT5hPGY"
+
 - title: "What is classical? What is quantum?"
   date: "2025/11/15"
   filename: "20251115-SaturdayMorningPhysics"
   presenter: "Gabriele Carcassi"
-  venue: "Saturday Morning Physics 100 Years of Quantum, Perimeter Institute, Waterloo, Canada"
+  venue: "Saturday Morning Physics 100 Years of Quantum, University of Michigan, Ann Arbor"
   video: "https://www.youtube.com/watch?v=blRyVsvoK_0"
 
 - title: "Classical mechanics as the high-entropy limit of quantum mechanics"
