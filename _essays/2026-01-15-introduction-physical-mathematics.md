@@ -3,7 +3,7 @@ title: Introduction to Physical Mathematics
 summary:  When physical objects are mapped to the right mathematical objects, the physical requirements map to the mathematical definitions
 category: Physical Mathematics
 tags: [Foundations of Physics, Philosophy of Physics]
-draft: true
+draft: false
 ---
 
 In modern physics, the mapping between physical concepts and their mathematical representation is done... in a "suboptimal" way. We start from abstract mathematical structures with no clear physical meaning, which often have ill-defined physical meaning or mathematical definitions. In our quest to make that mapping more streamlined, we noticed an interesting pattern: **when physical objects are mapped to the right mathematical objects, the physical requirements map to the mathematical definitions.** That is, the correspondence between the objects can only be established if one makes a correspondence on the respective characterizations. This key insight makes the rigorous definition of the mathematical representation of physical concepts possible, an approach we call **Physical Mathematics**. Let's see how this works.
