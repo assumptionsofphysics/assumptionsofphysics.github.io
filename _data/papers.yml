@@ -10,8 +10,8 @@
   year: "2024"
   url: "https://arxiv.org/abs/2411.00972"
   description: "shows how classical mechanics can be recovered as the high-entropy limit of quantum mechanics."
-  journal: ""
-  location: ""
+  journal: "Physica Script"
+  location: "https://iopscience.iop.org/article/10.1088/1402-4896/ae3a20"
   video: ""
 
 - title: "A No-Go Theorem for ψ-ontic Models? Yes! Response to Criticisms"
