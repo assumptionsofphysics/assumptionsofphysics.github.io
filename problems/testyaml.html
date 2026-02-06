@@ -1,0 +1,25 @@
+---
+layout: default
+title: Problems
+---
+
+<div class="container">
+    <div class="row section topspace">
+        <p></p>
+        <h1 style="text-align: center; margin-top: -30px">Problems</h1>
+        <h5 style="text-align: center; margin-bottom: 30px">This is a list of open questions we have. Any help towards their solution is welcome.</h5>
+        <div class="col-md-12">
+            <span id="location"></span>
+        </div>
+    </div>
+</div>	<!-- /container -->
+
+<script type="text/javascript">
+  var presDisplay = document.getElementById("location");
+  fetch('https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/openproblems.yaml')
+    .then(response => response.text())
+    .then((data) => {
+        presDisplay.innerHTML = data;
+
+    });
+</script>
