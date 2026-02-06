@@ -135,7 +135,7 @@ function loadMoreOpenProblems(amount, idText, idButton){
 
 function formatOpenProblem(problem){
   var problemHTML = "";
-  problemHTML += "<p><b><a href=" + "TBD" + ">" + problem.title + "</a></b>: " + problem.description + "</br>";
+  problemHTML += "<p><b><a href=\"https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/AssumptionsOfPhysicsDraft.pdf#" + problem.label + "\" >" + problem.title + "</a></b>: " + problem.description + "</br>";
   problemHTML += "<small><i>Label: " + problem.label + " - Tags:  "  + problem.tags + "</i></small></p>";
   return problemHTML;
 }
