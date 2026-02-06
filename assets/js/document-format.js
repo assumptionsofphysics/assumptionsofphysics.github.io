@@ -110,6 +110,36 @@ function formatEssay(essay){
   return essayHTML;
 }
 
+function loadMoreOpenProblems(amount, idText, idButton){
+  var presDisplay = document.getElementById(idText);
+  fetch('https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/openproblems.json')
+    .then(response => response.text())
+    .then((data) => {
+      var problems = JSON.parse(data);
+      var htmlPresDisplay = "";
+      var loops = 0;
+      if(amount == -1){
+        amount = problems.length;
+      }
+      for(i = 0; i < essayCounter+amount && i < problems.length; i++){
+        htmlPresDisplay += formatOpenProblem(problems[i]);
+        loops++;
+      }
+      essayCounter = loops;
+      if(essayCounter == problems.length && idButton != null){
+        hideButton(idButton);
+      }
+    presDisplay.innerHTML = htmlPresDisplay;
+  });
+}
+
+function formatOpenProblem(problem){
+  var problemHTML = "";
+  problemHTML += "<p><b><a href=" + "TBD" + ">" + problem.title + "</a></b>: " + problem.description + "</br>";
+  problemHTML += "<small><i>Label: " + problem.label + " - Tags:  "  + problem.tags + "</i></small></p>";
+  return problemHTML;
+}
+
 function loadMoreVideos(amount, idText, idButton){
   var presDisplay = document.getElementById(idText);
   fetch('/data/videos.json')
