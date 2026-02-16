@@ -3,7 +3,7 @@ title: How fundamental physics progresses
 summary: There is more than one way, and we are not exploring all of them
 category: Foundations of physics
 tags: []
-draft: true
+draft: false
 ---
 
 When discussing our approach to the foundations of physics, sometimes I bump into people that strongly object since "this is not how you make progress." Some of them argue that new physical theories come when we are confronted with new data. The experiments always come first. Some of them argue that new physical theories come when trying to apply mathematics to physics in novel ways. Mathematics is always there before physics. Clearly, they can't  both be right. And it is suspect that the former tend to have an experimental physics background while the latter tend to be on the theoretical and philosophical side. Quite frankly, the attitude should be: whatever works. So, it's useful to have in mind different historical examples to see how things can be different.
