@@ -1,3 +1,11 @@
+- title: "What non-additive integral for ensemble spaces?"
+  year: "2026"
+  url: "https://arxiv.org/abs/2602.01470"
+  description: "shows that the Sugeno and Choquet integrals are not suitable to generalize the notion of expectation values in a generic space of statistical ensembles."
+  journal: ""
+  location: ""
+  video: ""
+
 - title: "Response to \"Are Hilbert Spaces Unphysical? Hardly, My Dear\""
   year: "2025"
   url: "https://arxiv.org/abs/2507.09738"
@@ -10,7 +18,7 @@
   year: "2024"
   url: "https://arxiv.org/abs/2411.00972"
   description: "shows how classical mechanics can be recovered as the high-entropy limit of quantum mechanics."
-  journal: "Physica Script"
+  journal: "Physica Scripta"
   location: "https://iopscience.iop.org/article/10.1088/1402-4896/ae3a20"
   video: ""
 
