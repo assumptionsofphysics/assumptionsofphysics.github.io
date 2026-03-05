@@ -130,13 +130,26 @@ function loadMoreOpenProblems(amount, idText, idButton){
         hideButton(idButton);
       }
     presDisplay.innerHTML = htmlPresDisplay;
+    MathJax.typeset();
   });
 }
 
 function formatOpenProblem(problem){
+  var category = problem.tags[0];
+  var tags = "";
+  for(j = 1; j < 2; j++){
+    if (j != 1) {
+      tags += ", ";
+    }
+    tags += problem.tags[j];
+  }
+
+  //TODO: better handling of references
+
   var problemHTML = "";
-  problemHTML += "<p><b><a href=\"https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/AssumptionsOfPhysicsDraft.pdf#" + problem.label + "\" >" + problem.title + "</a></b>: " + problem.description + "</br>";
-  problemHTML += "<small><i>Label: " + problem.label + " - Tags:  "  + problem.tags + "</i></small></p>";
+  problemHTML += "<h4 style=\"margin-bottom:0\"><b><a href=\"https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/AssumptionsOfPhysicsDraft.pdf#" + problem.label + "\" >" + problem.title + "</a></b></h4>"
+  problemHTML += "<p><small>" + problem.description.replaceAll("\\ref", "ref") + "</small></br>";
+  problemHTML += "<i>Category: " + category + " - Tags:  "  + tags + " - ID: " + problem.label + "</i></p>";
   return problemHTML;
 }
 
