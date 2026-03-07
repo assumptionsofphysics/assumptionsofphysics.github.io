@@ -135,13 +135,17 @@ function loadMoreOpenProblems(amount, idText, idButton){
 }
 
 function formatOpenProblem(problem){
-  var category = problem.tags[0];
   var tags = "";
-  for(j = 1; j < 2; j++){
-    if (j != 1) {
+  for(j = 0; j < 2; j++){
+    if (j != 0) {
       tags += ", ";
     }
     tags += problem.tags[j];
+  }
+
+  var video = ""
+  if (problem.video) {
+    video += " - <a href=\"" + problem.video + "\">Video</a>"
   }
 
   //TODO: better handling of references
@@ -149,7 +153,7 @@ function formatOpenProblem(problem){
   var problemHTML = "";
   problemHTML += "<h4 style=\"margin-bottom:0\"><b><a href=\"https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/AssumptionsOfPhysicsDraft.pdf#" + problem.label + "\" >" + problem.title + "</a></b></h4>"
   problemHTML += "<p><small>" + problem.description.replaceAll("\\ref", "ref") + "</small></br>";
-  problemHTML += "<i>Category: " + category + " - Tags:  "  + tags + " - ID: " + problem.label + "</i></p>";
+  problemHTML += "<i>Category: " + problem.category + " - Tags:  "  + tags + " - ID: " + problem.label + video + "</i></p>";
   return problemHTML;
 }
 
