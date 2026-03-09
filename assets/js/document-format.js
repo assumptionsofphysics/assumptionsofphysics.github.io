@@ -112,7 +112,7 @@ function formatEssay(essay){
 
 function loadMoreOpenProblems(amount, idText, idButton){
   var presDisplay = document.getElementById(idText);
-  fetch('https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/openproblems.json')
+  fetch('https://assumptionsofphysics.org/autogen/openproblems.json')
     .then(response => response.text())
     .then((data) => {
       var problems = JSON.parse(data);
@@ -151,7 +151,7 @@ function formatOpenProblem(problem){
   //TODO: better handling of references
 
   var problemHTML = "";
-  problemHTML += "<h4 style=\"margin-bottom:0\"><b><a href=\"https://raw.githubusercontent.com/assumptionsofphysics/autogen/refs/heads/master/AssumptionsOfPhysicsDraft.pdf#" + problem.label + "\" >" + problem.title + "</a></b></h4>"
+  problemHTML += "<h4 style=\"margin-bottom:0\"><b><a href=\"https://assumptionsofphysics.org/autogen/AssumptionsOfPhysicsDraft.pdf#" + problem.label + "\" >" + problem.title + "</a></b></h4>"
   problemHTML += "<p><small>" + problem.description.replaceAll("\\ref", "ref") + "</small></br>";
   problemHTML += "<i>Category: " + problem.category + " - Tags:  "  + tags + " - ID: " + problem.label + video + "</i></p>";
   return problemHTML;
