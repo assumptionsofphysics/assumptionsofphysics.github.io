@@ -48,6 +48,10 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Add autogen files
+        run: git clone https://github.com/assumptionsofphysics/autogen ./_site/autogen
+      - name: Remove git history from autogen
+        run: rm -rf ./_site/autogen/.git
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
