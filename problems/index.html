@@ -6,17 +6,14 @@ title: Problems
 <div class="container">
     <div class="row section topspace">
         <p></p>
-        <h1 style="text-align: center; margin-top: -30px">Problems</h1>
-        <h5 style="text-align: center; margin-bottom: 30px">This is a list of open questions we have. Any help towards their solution is welcome.</h5>
+        <h1 style="text-align: center; margin-top: -30px">Open problems and conjectures</h1>
+        <h5 style="text-align: center; margin-bottom: 30px">Links point for the latest book draft for details. left open in our book. Any help towards their solution is welcome.</br> Older list available <a href="oldindex.html">here</a></h5>
         <div class="col-md-12">
-          {% for problem in site.problems %}
-            {% assign tokens = problem.path | split: '/' %}
-            {% assign tokens = tokens[1] | split: '-' %}
-            {% assign id = tokens[0] %}
-                <h4><b><a href="{{problem.url}}">#{{id}}: {{problem.title}}</a></b></h4>
-                <p><i>Category: {{problem.category}} - Tags: {{problem.tags | join: ", "}}</i></p>
-          {% endfor %}
-            <p/>
+            <span id="problem-display"></span>
         </div>
     </div>
 </div>	<!-- /container -->
+<script type="text/javascript" src="/assets/js/document-format.js"></script>
+<script type="text/javascript">
+loadMoreOpenProblems(-1, "problem-display");
+</script>
