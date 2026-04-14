@@ -1,4 +1,4 @@
-var briefCounter = 0;
+var bareMinimaCounter = 0;
 
 function loadMoreBriefs(amount, idText, idButton){
   var presDisplay = document.getElementById(idText);
@@ -11,12 +11,12 @@ function loadMoreBriefs(amount, idText, idButton){
       if(amount == -1){
         amount = briefs.length;
       }
-      for(i = 0; i < briefCounter+amount && i < briefs.length; i++){
+      for(i = 0; i < bareMinimaCounter+amount && i < briefs.length; i++){
         htmlPresDisplay += formatBrief(briefs[i]);
         loops++;
       }
-      briefCounter = loops;
-      if(briefCounter == briefs.length && idButton != null){
+      bareMinimaCounter = loops;
+      if(bareMinimaCounter == briefs.length && idButton != null){
         hideButton(idButton);
       }
     presDisplay.innerHTML = htmlPresDisplay;
