@@ -1,6 +1,6 @@
 var paperCounter = 0;
 var presentationCounter = 0;
-var essayCounter = 0;
+var openProblemCounter = 0;
 var videoCounter = 0;
 
 function loadMorePapers(amount, idText, idButton){
@@ -91,12 +91,12 @@ function loadMoreEssays(amount, idText, idButton){
       if(amount == -1){
         amount = essays.length;
       }
-      for(i = 0; i < essayCounter+amount && i < essays.length; i++){
+      for(i = 0; i < openProblemCounter+amount && i < essays.length; i++){
         htmlPresDisplay += formatEssay(essays[i]);
         loops++;
       }
-      essayCounter = loops;
-      if(essayCounter == essays.length && idButton != null){
+      openProblemCounter = loops;
+      if(openProblemCounter == essays.length && idButton != null){
         hideButton(idButton);
       }
     presDisplay.innerHTML = htmlPresDisplay;
@@ -121,12 +121,12 @@ function loadMoreOpenProblems(amount, idText, idButton){
       if(amount == -1){
         amount = problems.length;
       }
-      for(i = 0; i < essayCounter+amount && i < problems.length; i++){
+      for(i = 0; i < openProblemCounter+amount && i < problems.length; i++){
         htmlPresDisplay += formatOpenProblem(problems[i]);
         loops++;
       }
-      essayCounter = loops;
-      if(essayCounter == problems.length && idButton != null){
+      openProblemCounter = loops;
+      if(openProblemCounter == problems.length && idButton != null){
         hideButton(idButton);
       }
     presDisplay.innerHTML = htmlPresDisplay;
