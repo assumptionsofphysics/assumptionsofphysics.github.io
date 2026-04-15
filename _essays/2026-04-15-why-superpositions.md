@@ -3,7 +3,7 @@ title: Why do quantum superpositions exist?
 summary: Quantum mechanics allows superpositions because it allows ensembles to be decomposed into different pure states
 category: Quantum mechanics
 tags: [Projective spaces]
-draft: true
+draft: false
 ---
 
 Quantum mechanics allows superpositions (i.e. linear combination) of states in a way that classical mechanics doesn't, though it is not as easy as one may think to characterize the difference. One can, for example, take linear combinations of position and momentum. Why exactly are they different from quantum superpositions? What is that quantum superpositions do that is allowed by quantum mechanics and not by classical mechanics?
