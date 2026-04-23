@@ -1,8 +1,9 @@
-var bareMinimaCounter = 0;
+var bareMinimumCounter = 0;
+var bareMinimumLocation = 'https://assumptionsofphysics.org/autogen/bareminima/bareminima.json';
 
 function loadMoreBareMinima(amount, idText, idButton){
   var presDisplay = document.getElementById(idText);
-  fetch('https://assumptionsofphysics.org/autogen/bareminima/bareminima.json')
+  fetch(bareMinimumLocation)
     .then(response => response.text())
     .then((data) => {
       var bareminima = JSON.parse(data);
@@ -11,12 +12,12 @@ function loadMoreBareMinima(amount, idText, idButton){
       if(amount == -1){
         amount = bareminima.length;
       }
-      for(i = 0; i < bareMinimaCounter+amount && i < bareminima.length; i++){
+      for(i = 0; i < bareMinimumCounter+amount && i < bareminima.length; i++){
         htmlPresDisplay += formatBareMinima(bareminima[i]);
         loops++;
       }
-      bareMinimaCounter = loops;
-      if(bareMinimaCounter == bareminima.length && idButton != null){
+      bareMinimumCounter = loops;
+      if(bareMinimumCounter == bareminima.length && idButton != null){
         hideButton(idButton);
       }
     presDisplay.innerHTML = htmlPresDisplay;

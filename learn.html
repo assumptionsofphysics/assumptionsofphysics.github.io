@@ -14,6 +14,14 @@ title: Learn more
               </div>
             </br>
             <div class="card">
+                <h5 class="card-header"><i class="fas fa-edit"></i>&nbsp; <a href="resources/briefs/">Technical Briefs</a></h5>
+                <div class="card-body">
+                    <span id="brief-display"></span>
+                      <div style="text-align: center; font-style: italic" id="brief-button"><a href="javascript:loadMoreBriefs(4, 'brief-display', 'brief-button', formatBriefShort)">Load more</a></div>
+                  </div>
+              </div>
+            </br>
+            <div class="card">
                 <h5 class="card-header"><i class="fas fa-comments"></i>&nbsp; Comedy lecture</h5>
                 <div class="card-body">
                     <p>A light way to learn about core ideas and results of the project.</p>
@@ -70,11 +78,12 @@ title: Learn more
             </div>
           </br>
             <div class="card">
-                <h5 class="card-header"><i class="fas fa-forward"></i>&nbsp; Bare minima</h5>
+                <h5 class="card-header"><i class="fas fa-forward"></i>&nbsp; <a href="resources/bareminima/">Bare minima</a></h5>
                 <div class="card-body">
                     <p>Presents the essentials of a discipline:
-                        <a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics&target=BareMinima/SetTheory/BareMinimumSetTheory.tex&command=pdflatex">Set theory</a> - 
-                        <a href="https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fassumptionsofphysics%2Fassumptionsofphysics&target=BareMinima/OrderTheory/BareMinimumOrderTheory.tex&command=pdflatex">Order theory</a>
+                        <a href="https://assumptionsofphysics.org/autogen/bareminima/SetTheory.pdf">Set theory</a> - 
+                        <a href="https://assumptionsofphysics.org/autogen/bareminima/OrderTheory.pdf">Order theory</a>
+                        <a href="https://assumptionsofphysics.org/autogen/bareminima/LinearAlgebra.pdf">Linear algebra</a>
                     </p>
                 </div>
             </div>
@@ -82,10 +91,10 @@ title: Learn more
     </div>
 </div>
 <script type="text/javascript" src="assets/js/document-format.js"></script>
+<script type="text/javascript" src="resources/briefs/brief-format.js"></script>
 <script type="text/javascript">
-    loadMoreEssays(5, "essay-display", "essay-button");
-</script>
-<script type="text/javascript">
+    loadMoreEssays(4, "essay-display", "essay-button");
+    loadMoreBriefs(4, 'brief-display', 'brief-button', formatBriefShort)
     loadMoreVideos(3, "video-display", "video-button");
 </script>
     
