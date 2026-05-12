@@ -7,6 +7,7 @@ function loadMoreBriefs(amount, idText, idButton, formatBrief = formatBriefFull)
     .then(response => response.text())
     .then((data) => {
       var briefs = JSON.parse(data);
+      briefs.sort((a, b) => b.filename.localeCompare(a.filename));
       var htmlPresDisplay = "";
       var loops = 0;
       if(amount == -1){
