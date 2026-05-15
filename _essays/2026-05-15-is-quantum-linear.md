@@ -3,7 +3,7 @@ title: Is quantum mechanics inherently linear?
 summary: We can break linearity without breaking the physics
 category: Quantum mechanics
 tags: [Projective spaces]
-draft: true
+draft: false
 ---
 
 In the quantum foundation literature, linearity is presented as an intrinsic feature of the theory that distinguishes it from classical mechanics. This is a misleading claim for a few reasons, which would take several short essays (or one very long one) to explore. For example, as we saw [before](https://assumptionsofphysics.org/essays/2026-04-15-why-superpositions), the linearity is connected to the linearity of ensembles, which are linear in any physical theory. Moreover, quantum mechanics can be reformulated in terms of [probability distributions and an action](https://en.wikipedia.org/wiki/Madelung_equations), which gives non-linear equations. Here we will narrow the question to the standard vector space representation: does it have to be linear? No, it doesn't.
