@@ -1,6 +1,6 @@
 var openProblemCounter = 0;
 var problems;
-var openProblemFilter;
+var openProblemFilter = "";
 
 function loadMoreOpenProblems(amount, idText, idButton){
   var presDisplay = document.getElementById(idText);
@@ -51,7 +51,7 @@ function matchObject(obj, str) {
 }
 
 function formatOpenProblem(problem){
-  if (openProblemFilter && !matchObject(problem, openProblemFilter))
+  if (!matchObject(problem, openProblemFilter))
     return "";
 
   var tags = "";
