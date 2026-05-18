@@ -1,6 +1,6 @@
 var openProblemCounter = 0;
 var problems;
-var openProblemFilter = "Classical";
+var openProblemFilter = "";
 
 function loadMoreOpenProblems(amount, idText, idButton){
   var presDisplay = document.getElementById(idText);
