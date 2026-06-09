@@ -1,0 +1,19 @@
+---
+title: The Born rule is entropy
+summary: Defining the Born rule over pure states is equivalent to defining the von Neumann entropy over mixed states
+category: Quantum mechanics
+tags: [Born rule, entropy, inner product]
+draft: true
+---
+
+The Born rule is a fundamental aspect of quantum mechanics as it defines the probability of finding a state $$\psi$$ given that another state $$\phi$$ was prepared. Reverse Physics tells us that the Born rule is also equivalent to the definition of entropy: from the Born rule we can define the entropy, and from the entropy we can define the Born rule. As it is often the case in Reverse Physics, this type of equivalences allows us to better understand the nature of quantum theory.
+
+First, let's summarize the result. If you want more details, you can find them in this [technical brief](https://assumptionsofphysics.org/autogen/briefs/003-BornRuleEntropy.pdf). Suppose we have two states, $$\psi$$ and $$\phi$$. The Born rules tells us that $$p(\psi\mid\phi) = \frac{\langle \psi \mid \phi \rangle\langle \phi \mid \psi \rangle}{\langle \psi \mid \psi \rangle\langle \phi \mid \phi \rangle}$$. Now, consider the statistical mixture $$\rho = \frac{1}{2} \psi + \frac{1}{2} \phi$$, which represents the equal mixture of the two states. The entropy of the mixture is $$S(\rho) = - \frac{1+\sqrt{p(\psi\mid\phi)}}{2} \log \frac{1+\sqrt{p(\psi\mid\phi)}}{2} - \frac{1-\sqrt{p(\psi\mid\phi)}}{2} \log \frac{1-\sqrt{p(\psi\mid\phi)}}{2}$$. This function is invertible. Therefore, knowing the entropy of an equal mixture of two states is exactly knowing the conditional probability.
+
+What does this equivalence tell us? It tells us that the notion of orthogonality in quantum mechanics represents mutual exclusivity: two states are orthogonal if the conditional probability is zero (i.e. preparing one state never prepares the other) or, equivalentely, that the entropy of their mixture goes up by one full bit (i.e. we can tell the states apart with a single shot measurement). In classical mechanics, and in classical probability more in general, all states are mutually exclusive. No state can be confused with another.
+
+There is also a mathematical and conceptual benefit. The conditional probability is technically a relationship between a preparation and a measurement. Therefore, technically, it is not a relationship between two states at the same time, but between a state at preparation and a state after the measurement. If I prepared an electron with spin up, there is 50% chance that it will have spin left after the measurement. It is not a relationship between two elements of the same space at the same time, but rather two spaces. This may seem nitpicking, but it is important in cases where measurements are destructive. Consider, for example, a photon. If it goes through an horizontally oriented polarizer, there is no actual outstate for the vertically polarized photon. It will be absorbed. The Born rule will predict the chance that it will be absorbed, not the probability of finding the photon vertically polarized after the polarizer, which will always be zero.
+
+The entropy, instead, can be understand as a relationship at equal time. The mixture and their components are all defined at preparation. Therefore, it is really a relationship on a single space. The Born rule, then, is better understood not as describing measurements but as describing relationships between different preparations. Given the complete confusion surrounding quantum measurements, this removes an element of complexity.
+
+This result goes into the larger idea that comes from Reverse Physics that, in physical theory, geometry is entropy. Having multiple equivalent ways to explore the same physics allows us to get better insights than what a single approach can offer.
