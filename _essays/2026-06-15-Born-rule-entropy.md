@@ -3,7 +3,7 @@ title: The Born rule is entropy
 summary: Defining the Born rule over pure states is equivalent to defining the von Neumann entropy over mixed states
 category: Quantum mechanics
 tags: [Born rule, entropy, inner product]
-draft: true
+draft: false
 ---
 
 The Born rule is a fundamental aspect of quantum mechanics as it defines the probability of finding a state $$\psi$$ given that another state $$\phi$$ was prepared. Reverse Physics tells us that the Born rule is also equivalent to the definition of entropy: from the Born rule we can define the entropy, and from the entropy we can define the Born rule. As it is often the case in Reverse Physics, this type of equivalences allows us to better understand the nature of quantum theory.
