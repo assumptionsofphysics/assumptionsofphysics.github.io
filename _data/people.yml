@@ -43,6 +43,15 @@
   url: "https://lsa.umich.edu/physics/people/graduate-students/thrien.html"
   img: "resources/people/thrien.jpg"
 
+- name: "Demitri Lawrence"
+  group: "Student"
+  position: ""
+  job: "Undergraduate Student"
+  department: ""
+  university: "University of Michigan"
+  url: ""
+  img: "resources/people/lawrence.jpg"
+
 - name: "Saja Gherri"
   group: "Student"
   position: ""
