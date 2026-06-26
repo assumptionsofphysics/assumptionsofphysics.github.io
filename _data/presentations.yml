@@ -9,7 +9,14 @@
   date: "2026/06/17"
   filename: "20260617-Foundations2026"
   presenter: "Gabriele Carcassi"
-  venue: "Foundations2026,  University of California, Irvine"
+  venue: "Foundations of Physics 2026,  University of California, Irvine"
+  video: ""
+
+- title: "Assumptions of Physics: A new principled approach to the foundations of physics"
+  date: "2026/04/14"
+  filename: "20260414-UMAppliedPhysicsSeminar"
+  presenter: "Christine Aidala"
+  venue: "Applied Physics Seminar, University of Michigan"
   video: ""
 
 - title: "Classical mechanics as the high-entropy limit of quantum mechanics"
@@ -58,21 +65,21 @@
   date: "2025/06/30"
   filename: "20250630-Foundations2025"
   presenter: "Christine Aidala"
-  venue: "Foundations 2025, Gdansk"
+  venue: "Foundations of Physics 2025, Gdansk, Poland"
   video: ""
 
 - title: "Classical mechanics as the high-entropy limit of quantum mechanics"
   date: "2025/05/23"
   filename: "20250523-Quantum2025"
   presenter: "Gabriele Carcassi"
-  venue: "Quantum 2025, Torino"
+  venue: "Quantum 2025, Torino, Italy"
   video: ""
 
 - title: "Assumptions of Physics: the role of entropy in reconstructing physical theories"
   date: "2025/05/07"
   filename: "20250507-Oxford"
   presenter: "Gabriele Carcassi"
-  venue: "Oxford Quantum Information Society, Oxford"
+  venue: "Oxford Quantum Information Society, Oxford, UK"
   video: ""
 
 - title: "Ensemble Spaces and Minimal Interpretation"
@@ -107,14 +114,14 @@
   date: "2024/09/17"
   filename: "20240917-PerimeterEnsembleSpaces"
   presenter: "Gabriele Carcassi"
-  venue: "CausalWorlds2024, Perimeter Institute, Waterloo"
+  venue: "CausalWorlds2024, Perimeter Institute, Waterloo, Canada"
   video: "https://youtu.be/_RcAw-zrfB0"
 
 - title: "Non-additive measures for quantum probability?"
   date: "2024/07/26"
   filename: "20240724-IPMU24NonAdditiveMeasures"
   presenter: "Gabriele Carcassi"
-  venue: "IPMU2024: 20th International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems, Lisbon"
+  venue: "IPMU2024: 20th International Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems, Lisbon, Portugal"
   video: "https://youtu.be/5mhzhT4iwUo"
 
 - title: "2024 project update"
@@ -142,7 +149,7 @@
   date: "2023/06/13"
   filename: "20230613-QIP23"
   presenter: "Gabriele Carcassi"
-  venue: "Quantum Information and Probability (QIP23)"
+  venue: "Quantum Information and Probability (QIP23), Vaxjo, Sweden"
   video: ""
 
 - title: "The Assumptions of Physics project"
@@ -191,7 +198,7 @@
   date: "2022/05/15"
   filename: "20220515-ICASU"
   presenter: "Christine Aidala"
-  venue: "inaugural symposium for the Illinois Center for Advanced Studies of the Universe"
+  venue: "inaugural symposium for the Illinois Center for Advanced Studies of the Universe, UIUC"
   video: ""
 
 - title: "What we learned from proving a quantum postulate redundant"
@@ -226,8 +233,8 @@
   date: "2019/12/17"
   filename: "20191217-MunichSeminar"
   presenter: "Gabriele Carcassi"
-  venue: "Munich Center for Mathematical Philosophy, LMU, Munich and on
-  2019/10/08 at the Physics Department, University of Pavia"
+  venue: "Munich Center for Mathematical Philosophy, LMU, Munich, Germany and on
+  2019/10/08 at the Physics Department, University of Pavia, Italy"
   video: ""
 
 - title: "Space-time structure may be topological and not geometrical"
@@ -235,7 +242,7 @@
   filename: "20190826-ICNFP2019-Slides"
   presenter: "Gabriele Carcassi"
   venue: "International Conference on New Frontiers in Physics 2019,
-  Orthodox Academy of Creta (OAC)"
+  Orthodox Academy of Creta (OAC), Greece"
   video: ""
 
 - title: "On the role of mathematics in physical theories"
@@ -251,7 +258,7 @@
   filename: "20190531-Quantum2019"
   presenter: "Gabriele Carcassi"
   venue: "Quantum 2019,
-  University of Torino"
+  University of Torino, Italy"
   video: ""
 
 - title: "Uncovering the Assumptions of Physics"
@@ -282,5 +289,5 @@
   filename: "20160716-Foundations2016-Slides"
   presenter: "Gabriele Carcassi"
   venue: "Foundations2016: the 18th UK and European Conference on Foundations of Physics,
-  London School of Economics"
+  London School of Economics, UK"
   video: ""
