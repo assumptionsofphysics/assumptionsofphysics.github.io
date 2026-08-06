@@ -3,7 +3,7 @@ title: Ensemble spaces as convex spaces
 category: Geometry
 tags: [Synthetic geometry, Affine geometry, Projective geometry]
 ---
-A recurrent idea in our project is that ensembles are the prime physical objects
+A recurrent idea in our research program is that ensembles are the prime physical objects
 while pure states are the abstraction. The goal, then, is to find the minimum set of
 axioms that are always justified for statistical ensembles. Classical mechanics
 and quantum mechanics should be the specialization of such spaces.

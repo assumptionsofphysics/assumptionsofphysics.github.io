@@ -5,7 +5,7 @@ category: Foundations of Physics
 tags: [Foundations of Physics, Mathematical Modeling, Physical Mathematics]
 ---
 
-Since one of the goals of our project, Assumptions of Physics, is to provide a general mathematical theory for experimental science, one question we need to answer is exactly what can and cannot be formally captured, and why. There are two key problems, which I call respectively the "web of meaning" and the "conceptual cut." In this short essay I will concentrate on the latter.
+Since one of the goals of our research program, Assumptions of Physics, is to provide a general mathematical theory for experimental science, one question we need to answer is exactly what can and cannot be formally captured, and why. There are two key problems, which I call respectively the "web of meaning" and the "conceptual cut." In this short essay I will concentrate on the latter.
 
 Any description of the world, whether scientific or not, will make use of words and ideas that capture objects, qualities or events. While these are typically useful in their contexts, they are ultimately quite vague, and most of the time are not, at close scrutiny, even self-consistent. The idea is that, since no concept can fully describe reality, we are forced to make a "cut" that separates what is and is not interesting within a specific context.
 
